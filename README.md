@@ -143,7 +143,7 @@ The Vue app communicates with the Go backend using a robust API integration stra
 
 By leveraging [Pinia Colada](https://github.com/posva/pinia-colada), we can get a powerful data fetching layer that integrates well with Pinia and Vue 3, providing a smooth and reactive experience for your leaderboard SPA. Bonus :trophy:
 
-```typscript
+```typescript
 <script lang="ts" setup>
 import { useQuery, useMutation, useQueryCache } from '@pinia/colada'
 import { getLeaderboard, submitScore } from '~/api/leaderboard'
@@ -466,6 +466,8 @@ For inquiries or collaborations, please reach out via:
 - GitHub: [@zanuka](https://github.com/zanuka)
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
 - Email: dev@zanuka.io
+- Official Site:  [vuevalkyrie.com](http://vuevalkyrie.com)
+
 
 Your feedback and contributions are always welcome!
 
