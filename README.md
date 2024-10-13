@@ -1,6 +1,6 @@
 # VueValkyrie
 
-VueValkyrie is an open-source, real-time leaderboard system built with Vue 3 and Valkey (AWS's Redis fork). When complete, it will be a high-performance, scalable leaderboard designed for games and competitive applications. 
+VueValkyrie is an open-source, real-time leaderboard system built with Vue 3 and [Valkey](https://github.com/valkey-io/valkey) (AWS's Redis fork). When complete, it will be a high-performance, scalable leaderboard designed for games and competitive applications. 
 
 ## Why Valkey?
 
