@@ -54,7 +54,7 @@ I'm definitely partial to Vue since I've been building with it exclusively for t
 
 ## VueValkyrie User Experience and Technical Details
 
-On the front-end, Vue-Valkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers.
+On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers.
 
 ### Key Features
 
@@ -320,10 +320,10 @@ This project is an open-source prototype of a real-time leaderboard system for m
 
 ## Huma Integration with Go API and Valkey
 
-Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient backend for Vue-Valkyrie:
+Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient backend for VueValkyrie:
 
 1. API Structure:
-   Huma provides a clean, declarative way to define our API endpoints. For Vue-Valkyrie, the plan is to create endpoints for submitting scores, fetching leaderboards, and player rankings.
+   Huma provides a clean, declarative way to define our API endpoints. For VueValkyrie, the plan is to create endpoints for submitting scores, fetching leaderboards, and player rankings.
 
    ```go
    type LeaderboardAPI struct {
@@ -396,7 +396,7 @@ Huma, a modern framework for building Go APIs, can be seamlessly integrated with
    }
    ```
 
-By leveraging Huma's features alongside Valkey, Vue-Valkyrie achieves a clean, efficient, and scalable backend architecture that can handle real-time leaderboard operations with ease.
+By leveraging Huma's features alongside Valkey, VueValkyrie achieves a clean, efficient, and scalable backend architecture that can handle real-time leaderboard operations with ease.
 
 
 ### Testing Strategy
@@ -433,11 +433,11 @@ By leveraging Huma's features alongside Valkey, Vue-Valkyrie achieves a clean, e
 
 ### Error Handling and Logging with Rollbar
 
-By leveraging Rollbar, Vue-Valkyrie can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
+By leveraging Rollbar, VueValkyrie can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
 
 Specifics:
 
-1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the Vue-Valkyrie frontend.
+1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the VueValkyrie frontend.
 
 2. **Detailed Error Context**: Rollbar provides rich context for each error, including stack traces, request parameters, and user information, making debugging more efficient.
 
@@ -456,15 +456,15 @@ Specifics:
 
 ## Contributors
 
-Vue-Valkyrie welcomes contributions from the open-source gaming community! This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
+VueValkyrie welcomes contributions from the open-source gaming community! This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
 
 ### How You Can Contribute
 
 1. **Feature Development**: Add new features or enhance existing ones.
 2. **Bug Fixes**: Help identify and resolve issues.
-3. **Documentation**: Improve our docs to help others integrate Vue-Valkyrie.
+3. **Documentation**: Improve our docs to help others integrate VueValkyrie.
 4. **Testing**: Expand our test coverage and improve test scenarios.
-5. **Performance Optimization**: Help make Vue-Valkyrie even faster and more efficient.
+5. **Performance Optimization**: Help make VueValkyrie even faster and more efficient.
 
 ### Benefits for the Gaming Community
 
@@ -476,7 +476,7 @@ Vue-Valkyrie welcomes contributions from the open-source gaming community! This 
 
 ## Author
 
-Vue-Valkyrie was created and is maintained by [zanuka](https://github.com/zanuka).
+VueValkyrie was created and is maintained by [zanuka](https://github.com/zanuka).
 
 For inquiries or collaborations, please reach out via:
 - GitHub: [@zanuka](https://github.com/zanuka)
