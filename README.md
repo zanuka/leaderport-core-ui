@@ -143,6 +143,22 @@ The Vue app communicates with the Go backend using a robust API integration stra
 
 By leveraging [Pinia Colada](https://github.com/posva/pinia-colada), we can get a powerful data fetching layer that integrates well with Pinia and Vue 3, providing a smooth and reactive experience for your leaderboard SPA. Bonus :trophy:
 
+
+#### Pinia Colada Benefits :tropical_drink:
+
+1. Automatic Caching: Pinia Colada offers smart client-side caching with request deduplication. This is particularly useful for a leaderboard where you might need to frequently fetch updated scores without overwhelming your API.
+
+2. Async State Management: It handles async state seamlessly, which is crucial for real-time leaderboard updates. This can help in managing loading states and error handling more efficiently.
+
+3. TypeScript Support: With full TypeScript support, you can ensure type safety across your leaderboard components, reducing potential bugs and improving developer experience.
+
+4. SSR Support: If you decide to implement server-side rendering for improved initial load times, Pinia Colada's SSR support will be beneficial.
+
+5. Query Invalidation: The ability to invalidate queries easily (as shown in the example with caches.invalidateQueries) is perfect for updating the leaderboard when new scores are submitted.
+
+Here's a quick example of how we can leverage Pinia Colada in the leaderboard component:
+
+
 ```typescript
 <script lang="ts" setup>
 import { useQuery, useMutation, useQueryCache } from '@pinia/colada'
@@ -173,21 +189,6 @@ const { mutate: updateScore } = useMutation({
 ```
 
 This setup allows for efficient data fetching, automatic updates after score submissions, and clean separation of concerns in your leaderboard component.
-
-#### Pinia Colada Benefits :tropical_drink:
-
-1. Automatic Caching: Pinia Colada offers smart client-side caching with request deduplication. This is particularly useful for a leaderboard where you might need to frequently fetch updated scores without overwhelming your API.
-
-2. Async State Management: It handles async state seamlessly, which is crucial for real-time leaderboard updates. This can help in managing loading states and error handling more efficiently.
-
-3. TypeScript Support: With full TypeScript support, you can ensure type safety across your leaderboard components, reducing potential bugs and improving developer experience.
-
-4. SSR Support: If you decide to implement server-side rendering for improved initial load times, Pinia Colada's SSR support will be beneficial.
-
-5. Query Invalidation: The ability to invalidate queries easily (as shown in the example with caches.invalidateQueries) is perfect for updating the leaderboard when new scores are submitted.
-
-Here's a quick example of how you might use Pinia Colada in your leaderboard component:
-
 
 ## Initial Prototype Features
 We will focus on the following features for prototype phase 1 
@@ -307,7 +308,7 @@ This project is an open-source prototype of a real-time leaderboard system for m
 Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient backend for Vue-Valkyrie:
 
 1. API Structure:
-   Huma provides a clean, declarative way to define your API endpoints. For Vue-Valkyrie, you can create endpoints for submitting scores, fetching leaderboards, and player rankings.
+   Huma provides a clean, declarative way to define our API endpoints. For Vue-Valkyrie, you can create endpoints for submitting scores, fetching leaderboards, and player rankings.
 
    ```go
    type LeaderboardAPI struct {
@@ -368,7 +369,7 @@ Huma, a modern framework for building Go APIs, can be seamlessly integrated with
    ```
 
 5. Configuration and Dependency Injection:
-   Use Huma's configuration management to set up your Valkey connection:
+   Use Huma's configuration management to set up our Valkey connection:
 
    ```go
    func NewLeaderboardAPI(config *huma.Config) (*LeaderboardAPI, error) {
