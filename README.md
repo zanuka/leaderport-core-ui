@@ -23,7 +23,7 @@ VueValkyrie can be used for more than just games... for example:
 
 ## Why Valkey?
 
-I've selected Valkey primariluy for its speed, scalability, and real-time capabilities. 
+I've selected Valkey primarily for its speed, scalability, and real-time capabilities. 
 Additional perks include: 
 
 - **High Performance**: Valkey is designed for speed, making it ideal for real-time leaderboard updates and score retrievals.
