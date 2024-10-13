@@ -1,6 +1,6 @@
 # VueValkyrie
 
-Elevating Heroes, Immortalizing Legends
+Elevating Heroes, Immortalizing Legends : [vuevalkyrie.com](http://vuevalkyrie.com)
 
 ![VueValkyrie](images/vue-valkyrie-avatar-1.jpg)
 
