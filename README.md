@@ -27,13 +27,13 @@ I've selected Valkey primarily for its speed, scalability, and real-time capabil
 Additional perks include: 
 
 - **High Performance**: Valkey is designed for speed, making it ideal for real-time leaderboard updates and score retrievals.
-- **Versatile Data Structures**: Valkey supports various data types including sorted sets, perfect for efficiently managing leaderboard rankings.
-- **In-Memory Processing**: As an in-memory data store, Valkey provides extremely low latency for read and write operations, crucial for a responsive leaderboard.
-- **Scalability**: Valkey can run in a cluster configuration, allowing the leaderboard system to scale as the user base grows.
-- **Built-in Replication**: Valkey's replication features ensure high availability, preventing leaderboard downtime.
-- **Lua Scripting Support**: Complex leaderboard operations can be optimized using Valkey's Lua scripting capabilities.
-- **Active Community**: Being open-source with a vibrant community ensures ongoing development and support.
-- **Compatibility**: As a fork of Redis, Valkey maintains compatibility with existing Redis clients and tools, easing integration and development.
+- **Versatile Data Structures**: Valkey supports various data types including sorted sets, perfect for managing rankings.
+- **In-Memory Processing**: provides low latency for read / write operations, crucial for a leaderboard.
+- **Scalability**: runs in a cluster configuration, allowing system to scale as the user base grows.
+- **Built-in Replication**: replication features ensure high availability to prevent leaderboard downtime.
+- **Lua Scripting Support**: Complex operations can be optimized via Lua scripting capabilities.
+- **Active Community**: vibrant open-source community ensures ongoing development and support.
+- **Compatibility**: Redis fork maintains compatibility with existing clients and tools; win.
 
 ## Why Vue.js?
 I'm definitely partial to Vue since I've been building with it exclusively for the past 4 years, and think it's a great choice for this project. Some more specific benefits include: 
