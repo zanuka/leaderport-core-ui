@@ -26,8 +26,8 @@ VueValkyrie can be used for more than just games... for example:
 I've selected Valkey primarily for its speed, scalability, and real-time capabilities. 
 Additional perks include: 
 
-- **High Performance**: Valkey is designed for speed, making it ideal for real-time leaderboard updates and score retrievals.
-- **Versatile Data Structures**: Valkey supports various data types including sorted sets, perfect for managing rankings.
+- **High Performance**: Valkey is designed for speed, ideal for real-time leaderboard updates and score retrievals.
+- **Versatile Data Structures**: supports various data types including sorted sets, perfect for managing rankings.
 - **In-Memory Processing**: provides low latency for read / write operations, crucial for a leaderboard.
 - **Scalability**: runs in a cluster configuration, allowing system to scale as the user base grows.
 - **Built-in Replication**: replication features ensure high availability to prevent leaderboard downtime.
