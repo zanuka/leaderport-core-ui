@@ -152,7 +152,7 @@ By leveraging [Pinia Colada](https://github.com/posva/pinia-colada), we can get 
 
 3. TypeScript Support: With full TypeScript support, you can ensure type safety across your leaderboard components, reducing potential bugs and improving developer experience.
 
-4. SSR Support: If you decide to implement server-side rendering for improved initial load times, Pinia Colada's SSR support will be beneficial.
+4. SSR Support: If at some point we decide to implement server-side rendering for improved initial load times, Pinia Colada's SSR support will be beneficial.
 
 5. Query Invalidation: The ability to invalidate queries easily (as shown in the example with caches.invalidateQueries) is perfect for updating the leaderboard when new scores are submitted.
 
@@ -188,7 +188,7 @@ const { mutate: updateScore } = useMutation({
 </template>
 ```
 
-This setup allows for efficient data fetching, automatic updates after score submissions, and clean separation of concerns in your leaderboard component.
+This setup allows for efficient data fetching, automatic updates after score submissions, and clean separation of concerns in our leaderboard component.
 
 ## Initial Prototype Features
 We will focus on the following features for prototype phase 1 
@@ -271,7 +271,7 @@ This prototype would demonstrate:
 4. Use of Valkey's data structures (sorted sets) for efficient ranking
 5. Rate limiting implementation to showcase Valkey's utility in API protection
 
-You could expand this prototype with features like:
+In future iterations, we can expand this prototype with features like:
 
 - Player profiles
 - Multiple leaderboards
@@ -308,7 +308,7 @@ This project is an open-source prototype of a real-time leaderboard system for m
 Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient backend for Vue-Valkyrie:
 
 1. API Structure:
-   Huma provides a clean, declarative way to define our API endpoints. For Vue-Valkyrie, you can create endpoints for submitting scores, fetching leaderboards, and player rankings.
+   Huma provides a clean, declarative way to define our API endpoints. For Vue-Valkyrie, the plan is to create endpoints for submitting scores, fetching leaderboards, and player rankings.
 
    ```go
    type LeaderboardAPI struct {
@@ -347,7 +347,7 @@ Huma, a modern framework for building Go APIs, can be seamlessly integrated with
    ```
 
 3. WebSocket Integration:
-   While Huma primarily focuses on REST APIs, you can still use it alongside a WebSocket server for real-time updates. Use Valkey's Pub/Sub feature to coordinate updates:
+   While Huma primarily focuses on REST APIs, we can still use it alongside a WebSocket server for real-time updates. Use Valkey's Pub/Sub feature to coordinate updates:
 
    ```go
    func (api *LeaderboardAPI) PublishUpdate(ctx context.Context, update LeaderboardUpdate) error {
