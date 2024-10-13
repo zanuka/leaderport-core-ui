@@ -476,7 +476,7 @@ VueValkyrie welcomes contributions from the open-source gaming community! This p
 
 ## Author
 
-VueValkyrie was created and is maintained by [zanuka](https://github.com/zanuka).
+The VueValkyrie project was conceptualized on the evening of October 13, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. Stay tuned!
 
 For inquiries or collaborations, please reach out via:
 - GitHub: [@zanuka](https://github.com/zanuka)
