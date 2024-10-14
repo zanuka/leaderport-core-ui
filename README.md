@@ -52,11 +52,7 @@ I'm definitely partial to Vue since I've been building with it exclusively for t
 - **Built-in Transition System**: Creates smooth animations for changing leaderboards.
 
 
-## VueValkyrie User Experience and Technical Details
-
-On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers.
-
-### Key Features
+## Key Features
 
 1. Real-time Leaderboard Updates
    - WebSocket integration for instant score changes
@@ -78,7 +74,31 @@ On the front-end, VueValkyrie will offer a responsive Single Page Application (S
 5. Search and Filters
    - Find specific players or filter by various criteria
 
-### Front-end Architecture
+## Initial Product Requirements
+The first version of the VueValkyrie product should include: 
+
+1. Valkey's high-speed data operations for real-time updates
+2. Scalability for handling many concurrent users and score submissions
+3. Caching capabilities for fast leaderboard retrieval
+4. Use of Valkey's data structures (sorted sets) for efficient ranking
+5. Rate limiting implementation to showcase Valkey's utility in API protection
+
+## Future Expansion
+In future iterations, we can expand this prototype with features like:
+
+- Player profiles
+- Multiple leaderboards
+- Time-based competitions
+
+These additional features would further explore Valkey's capabilities and showcase its versatility in game development scenarios.
+
+The end result should be useful for game developers, hobbyists, and projects that require high-performance web applications.
+   
+## Technical Details
+
+On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. In addition, the demo will showcase real-time updates as scores change.
+
+### Front-end Architecture & Stack
 
 - **Vue3 + Composition API**: Leveraging the latest Vue features for efficient, scalable component design.
 - **Pinia**: State management solution for Vue, providing a smooth and reactive data flow.
@@ -140,8 +160,6 @@ The Vue app communicates with the Go backend using a robust API integration stra
 
 [Pinia](https://github.com/vuejs/pinia) is the _intuitive, type safe and flexible Store for Vue_. Our leaderboard app will use a Pinia store to manage the application state, handling data fetching, caching, and real-time updates
 
-#### Pinia Benefits
-
 1. Real-time Updates: Pinia allows for seamless integration of WebSocket data, enabling instant leaderboard updates without page refreshes, enhancing the real-time feel of the application.
 
 2. Caching and Performance: Pinia can cache leaderboard data locally, reducing unnecessary API calls and improving load times, especially beneficial for frequently accessed leaderboard information.
@@ -154,12 +172,10 @@ The Vue app communicates with the Go backend using a robust API integration stra
 
 6. These benefits are crucial for the user experience as they contribute to a smooth, responsive, and interactive leaderboard that feels dynamic and engaging, essential for maintaining user interest in a competitive gaming context.
 
-#### Bonus Points :joystick: Pinia Colada integration!!!
+### Pinia Colada Integration :tropical_drink:
 
 By leveraging [Pinia Colada](https://github.com/posva/pinia-colada), we can get a powerful data fetching layer that integrates well with Pinia and Vue 3, providing a smooth and reactive experience for your leaderboard SPA. Bonus :trophy:
 
-
-#### Pinia Colada Benefits :tropical_drink:
 
 1. Automatic Caching: Pinia Colada offers smart client-side caching with request deduplication. This is particularly useful for a leaderboard where you might need to frequently fetch updated scores without overwhelming your API.
 
@@ -171,6 +187,7 @@ By leveraging [Pinia Colada](https://github.com/posva/pinia-colada), we can get 
 
 5. Query Invalidation: The ability to invalidate queries easily (as shown in the example with caches.invalidateQueries) is perfect for updating the leaderboard when new scores are submitted.
 
+### Pinia Colada Example
 Here's a quick example of how we can leverage Pinia Colada in the leaderboard component:
 
 
@@ -205,20 +222,7 @@ const { mutate: updateScore } = useMutation({
 
 This setup allows for efficient data fetching, automatic updates after score submissions, and clean separation of concerns in our leaderboard component.
 
-## Initial Prototype Features
-We will focus on the following features for prototype phase 1 
-- Real-time updates using WebSockets
-- Efficient data management with Valkey
-- Responsive Vue 3 frontend with TypeScript
-- Scalable Go backend using Huma
-- Easy deployment on AWS infrastructure
 
-The end result should be useful for game developers, hobbyists, and projects that require high-performance web applications.
-
-## Backend (Go API)
-
-1. Create a Go API that handles game score submissions and leaderboard queries.
-2. Use Valkey to store and retrieve player scores and rankings.
 
 ### Leaderboard Logic
 - Implement a sorted set in Valkey to maintain the leaderboard.
@@ -233,12 +237,12 @@ The end result should be useful for game developers, hobbyists, and projects tha
 ### Rate Limiting
 - Use Valkey to implement rate limiting on score submissions to prevent cheating.
 
-## Frontend (Vue SPA)
+## Backend (Go API)
 
-- Create a simple interface to display the leaderboard and allow score submissions.
-- Show real-time updates as scores change.
+1. Create a Go API that handles game score submissions and leaderboard queries.
+2. Use Valkey to store and retrieve player scores and rankings.
 
-## Basic Implementation Outline
+### Valkey Implementation Example in Go
 
 ```go
 import (
@@ -275,29 +279,7 @@ func getLeaderboardHandler(w http.ResponseWriter, r *http.Request) {
 // ... WebSocket handler for pushing updates
 ```
 
- 
-
-
-This prototype would demonstrate:
-
-1. Valkey's high-speed data operations for real-time updates
-2. Scalability for handling many concurrent users and score submissions
-3. Caching capabilities for fast leaderboard retrieval
-4. Use of Valkey's data structures (sorted sets) for efficient ranking
-5. Rate limiting implementation to showcase Valkey's utility in API protection
-
-In future iterations, we can expand this prototype with features like:
-
-- Player profiles
-- Multiple leaderboards
-- Time-based competitions
-
-These additional features would further explore Valkey's capabilities and showcase its versatility in game development scenarios.
-
-## Project Overview
-This project is an open-source prototype of a real-time leaderboard system for mobile games. It demonstrates the capabilities of Valkey (AWS's fork of Redis) in a high-performance, scalable application.
-
-## Tech Stack
+## Tech Stack Details
 - Frontend:
   - Vue 3
   - TypeScript
@@ -435,8 +417,6 @@ By leveraging Huma's features alongside Valkey, VueValkyrie achieves a clean, ef
 
 By leveraging Rollbar, VueValkyrie can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
 
-Specifics:
-
 1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the VueValkyrie frontend.
 
 2. **Detailed Error Context**: Rollbar provides rich context for each error, including stack traces, request parameters, and user information, making debugging more efficient.
@@ -473,6 +453,24 @@ VueValkyrie welcomes contributions from the open-source gaming community! This p
 - **Community-Driven**: Features and improvements guided by real-world needs.
 - **Integration Ready**: Easily adaptable for various game types and platforms.
 
+## Roadmap
+
+### Initial Prototype Features
+We will focus on the following features for Phase 1 prototype 
+- Real-time updates using WebSockets
+- Efficient data management with Valkey
+- Responsive Vue 3 frontend with TypeScript
+- Scalable Go backend using Huma
+- Easy deployment on AWS infrastructure
+
+### Release Milestones
+  1. Launch the npm package with core features.
+  2. Develop a hosted version for enterprises (e.g., leaderboard-as-a-service).
+  3. Expand into additional SDKs (Ruby, Flutter, Lua) based on developer interest.
+  
+### Future Features
+ Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
+
 
 ## Author
 
@@ -482,9 +480,5 @@ For inquiries or collaborations, please reach out via:
 - GitHub: [@zanuka](https://github.com/zanuka)
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
 - Email: dev@zanuka.io
-- Official Site:  [vuevalkyrie.com](http://vuevalkyrie.com)
-
-
-Your feedback and contributions are always welcome!
-
+- Project Site:  [vuevalkyrie.com](http://vuevalkyrie.com)
 
