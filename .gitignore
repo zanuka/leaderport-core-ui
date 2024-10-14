@@ -1,6 +1,3 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -21,5 +18,63 @@
 go.work
 go.work.sum
 
-# env file
+# Environment Variables
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+
+# Misc
+.husky
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Private files
+config/certs/
+*.db
+
+# IDE related
+.vscode
+.idea
+*.iml
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+# Cypress
+cypress/videos
+cypress/screenshots
+cypress/downloads
+cypress/e2e/2-advanced-examples
+cypress/e2e/1-getting-started
+
+# Dependencies
+node_modules/
+
+# Builds
+dist
+build/
+.vercel/
+
+# Vercel
+.vercel
+
+# pnpm
+.pnpm-store
+
+# Kubernetes
+requirements.lock
+deployment/*/charts
+
+# If you prefer the allow list template instead of the deny list, see community template:
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
