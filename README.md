@@ -8,12 +8,13 @@ VueValkyrie is an open-source, real-time leaderboard system built with [Vue.js](
 
 ## Leaderboard Use Cases
 
-VueValkyrie is primarily designed for games and competitive applications, but it can be easily applied to other domains:
+Primarily designed for games and competitive applications, but it can be easily applied to other domains:
 
-- Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL) and amateur competitions
+- Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
 - Education and E-learning: Track student progress and achievements in online courses
 - Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
-- Sales and Marketing Performance: Showcase top performers in sales teams or most effective marketing campaigns
+- Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
+- Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
 
 ## Why Valkey?
 
