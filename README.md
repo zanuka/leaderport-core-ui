@@ -194,7 +194,6 @@ We will focus on the following features for Phase 1 prototype
   
 ### Future Features
  Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
- Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
 
 For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](ROADMAP.md).
 
