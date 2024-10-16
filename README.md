@@ -31,11 +31,12 @@ Primarily designed for games and competitive applications, but it can be easily 
 ## Valkey: A data store and more
 
 I've selected Valkey primarily for its speed, scalability, and real-time capabilities. Official [Valkey GitHub](https://github.com/valkey-io)
-Additional perks include: 
+
+Key advantages of Valkey include:
 
 - **High Performance**: Valkey is designed for speed, ideal for real-time leaderboard updates and score retrievals.
 - **Versatile Data Structures**: supports various [data types](https://valkey.io/topics/data-types/) including sorted sets, perfect for managing rankings.
-- **In-Memory Processing**: [Remote Dictionary Server](https://valkey.io/topics/quickstart) provides low latency for read / write operations, crucial for a leaderboard.
+- **In-Memory Processing**: provides low latency for read / write operations, crucial for a leaderboard.
 - **Scalability**: [Valkey Cluster](https://valkey.io/topics/cluster-tutorial/), allows our system to scale as the user base grows.
 - **Built-in Replication**: [replication](https://valkey.io/topics/replication/) features ensure high availability to prevent leaderboard downtime.
 - **Lua Scripting Support**: Complex operations can be optimized via [Lua scripting capabilities](https://valkey.io/topics/eval-intro/).
@@ -103,15 +104,13 @@ In future iterations, we can expand this prototype with features like:
 - Multiple leaderboards
 - Time-based competitions
 
-These additional features would further explore Valkey's capabilities and showcase its versatility in game development scenarios.
-
-The end result should be useful for game developers, hobbyists, and projects that require high-performance web applications.
+These additional features would further explore Valkey's capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
    
 ## Technical Details
 
 ![VueValkyrie](images/ValkyrieSoars.jpg)
 
-On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. In addition, the demo will showcase real-time updates as scores change.
+On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
 ### Front-end Architecture & Stack
 
@@ -236,7 +235,7 @@ For inquiries or collaborations, please reach out via:
 
 ## Artwork
 
-The captivating artwork featured in this project was generated using DALL-E, powered by [OpenAI](https://www.openai.com/)'s [ChatGPT-4](https://openai.com/chatgpt). These AI-generated images beautifully capture the essence of VueValkyrie, blending Norse mythology with modern technology.
+The captivating artwork featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt). These AI-generated images beautifully capture the essence of VueValkyrie, blending Norse mythology with modern technology.
 
 
 
