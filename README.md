@@ -9,13 +9,13 @@ VueValkyrie is an open-source, real-time leaderboard system built with [Vue.js](
 
 ## Project Roadmap
 
-For a detailed overview of our development phases, milestones, and future plans, please refer to our [ROADMAP.md](ROADMAP.md) file.
+For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](ROADMAP.md).
 
 
 
 ## Project Plan
 
-For a detailed checklist of our milestones and deliverables, please refer to our [PLAN.md](PLAN.md) file.
+For a detailed checklist of our milestones and deliverables, please refer to the [Plan](PLAN.md).
 
 
 ## Leaderboard Use Cases
@@ -30,17 +30,20 @@ Primarily designed for games and competitive applications, but it can be easily 
 
 ## Valkey: A data store and more
 
-I've selected Valkey primarily for its speed, scalability, and real-time capabilities. 
+I've selected Valkey primarily for its speed, scalability, and real-time capabilities. Official [Valkey GitHub](https://github.com/valkey-io)
 Additional perks include: 
 
 - **High Performance**: Valkey is designed for speed, ideal for real-time leaderboard updates and score retrievals.
-- **Versatile Data Structures**: supports various data types including sorted sets, perfect for managing rankings.
-- **In-Memory Processing**: provides low latency for read / write operations, crucial for a leaderboard.
-- **Scalability**: runs in a cluster configuration, allowing system to scale as the user base grows.
-- **Built-in Replication**: replication features ensure high availability to prevent leaderboard downtime.
-- **Lua Scripting Support**: Complex operations can be optimized via Lua scripting capabilities.
-- **Active Community**: vibrant open-source community ensures ongoing development and support.
-- **Compatibility**: Redis fork maintains compatibility with existing clients and tools; win.
+- **Versatile Data Structures**: supports various [data types](https://valkey.io/topics/data-types/) including sorted sets, perfect for managing rankings.
+- **In-Memory Processing**: [Remote Dictionary Server](https://valkey.io/topics/quickstart) provides low latency for read / write operations, crucial for a leaderboard.
+- **Scalability**: [Valkey Cluster](https://valkey.io/topics/cluster-tutorial/), allows our system to scale as the user base grows.
+- **Built-in Replication**: [replication](https://valkey.io/topics/replication/) features ensure high availability to prevent leaderboard downtime.
+- **Lua Scripting Support**: Complex operations can be optimized via [Lua scripting capabilities](https://valkey.io/topics/eval-intro/).
+- **Active Community**: vibrant [open-source community](https://valkey.io/connect/) ensures ongoing development and support.
+- **Compatibility**: [Redis fork](https://github.com/valkey-io/valkey) maintains compatibility with existing clients and tools; win.
+
+For more detailed information about Valkey and its capabilities, please visit the [Valkey Introduction](https://valkey.io/topics/introduction/). This comprehensive guide provides an in-depth look at Valkey's features, architecture, and use cases, helping you understand why it's an excellent choice for high-performance, scalable applications like VueValkyrie.
+
 
 ## Vue.js: The Progressive JavaScript Framework
 
@@ -88,7 +91,7 @@ The first version of the VueValkyrie product should include:
 
 1. Valkey's high-speed data operations for real-time updates
 2. Scalability for handling many concurrent users and score submissions
-3. Caching capabilities for fast leaderboard retrieval
+3. [Client-side caching](https://valkey.io/topics/client-side-caching/) capabilities for fast leaderboard retrieval
 4. Use of Valkey's data structures (sorted sets) for efficient ranking
 5. Rate limiting implementation to showcase Valkey's utility in API protection
 
