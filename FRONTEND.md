@@ -1,7 +1,7 @@
 # Frontend Design
-VueValkyrie's frontend is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, Pinia for state management, and integrates with a Go backend using RESTful APIs and WebSockets for real-time updates. The frontend focuses on delivering a smooth user experience with fast load times, reactive updates, and a clean, intuitive interface for displaying leaderboards and submitting scores.
+VueValkyrie's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, Pinia for state management, and integrates with a Go back end using RESTful APIs and WebSockets for real-time updates. The front end focuses on delivering a smooth user experience with fast load times, reactive updates, and a clean, intuitive interface for displaying leaderboards and submitting scores.
 
-Key features of the frontend include:
+Key features of the front end include:
 - Responsive design for both mobile and desktop browsers
 - Real-time leaderboard updates using WebSockets
 - Efficient state management and data caching with Pinia and PiniaColada
@@ -10,12 +10,12 @@ Key features of the frontend include:
 - Customizable and responsive UI with Tailwind CSS
 - Comprehensive testing suite using Cypress and Vitest
 
-This architecture ensures a scalable, maintainable, and high-performance frontend that can handle the dynamic nature of leaderboard data while providing an engaging user experience.
+This architecture ensures a scalable, maintainable, and high-performance front end that can handle the dynamic nature of leaderboard data while providing an engaging user experience.
 
 
 ## Frontend Architecture
 
-VueValkyrie's frontend architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
+VueValkyrie's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
 
 1. **Vue 3 with Composition API**: 
    - Leverages the latest Vue features for efficient and scalable component design
@@ -35,7 +35,7 @@ VueValkyrie's frontend architecture is built on a modern, robust stack designed 
    - Offers features like automatic persistence and simplified setup
 
 5. **Vite as Build Tool**: 
-   - Provides next-generation frontend tooling for fast development and optimized production builds
+   - Provides next-generation front end tooling for fast development and optimized production builds
    - Offers near-instantaneous server start and hot module replacement (HMR)
 
 6. **Tailwind CSS for Styling**: 
@@ -46,13 +46,13 @@ VueValkyrie's frontend architecture is built on a modern, robust stack designed 
    - Cypress for end-to-end testing, simulating real user interactions
    - Vitest for fast, ESM-native unit and component testing
 
-This architecture is designed to provide a solid foundation for building a high-performance, maintainable, and scalable frontend for VueValkyrie. The combination of Vue 3's reactivity system, Pinia's state management, and PiniaColada's data fetching capabilities allows for efficient data flow and management throughout the application.
+This architecture is designed to provide a solid foundation for building a high-performance, maintainable, and scalable front end for VueValkyrie. The combination of Vue 3's reactivity system, Pinia's state management, and PiniaColada's data fetching capabilities allows for efficient data flow and management throughout the application.
 
 
 
 ### Frontend API Integration
 
-The Vue app communicates with the Go backend using a robust API integration strategy:
+The Vue app communicates with the Go back end using a robust API integration strategy:
 
 1. **Axios for HTTP Requests**: 
    - Custom instance with base URL and default headers
@@ -133,7 +133,7 @@ The Vue app communicates with the Go backend using a robust API integration stra
 
 By leveraging Rollbar, VueValkyrie can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
 
-1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the VueValkyrie frontend.
+1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the VueValkyrie front end.
 
 2. **Detailed Error Context**: Rollbar provides rich context for each error, including stack traces, request parameters, and user information, making debugging more efficient.
 

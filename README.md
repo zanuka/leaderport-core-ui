@@ -59,7 +59,7 @@ I've been building apps with Vue.js for the past 4 years, and think it's a great
 - **Scalability**: Supports both small and large-scale applications.
 - **Easy Learning Curve**: Accessible for new contributors.
 - **Strong Ecosystem**: Provides all tools needed for a full-featured SPA.
-- **Go API Integration**: Ideal frontend partner for a Go backend.
+- **Go API Integration**: Ideal front-end partner for a Go back end.
 - **Single-File Components**: Promotes clean, maintainable code structure.
 - **Built-in Transition System**: Creates smooth animations for changing leaderboards.
 
@@ -117,7 +117,7 @@ On the front-end, VueValkyrie will offer a responsive Single Page Application (S
 - **Vue3 + Composition API**: Leveraging the latest Vue features for efficient, scalable component design.
 - **Pinia**: State management solution for Vue, providing a smooth and reactive data flow.
 - **PiniaColada**: additional layer that works on top of Pinia, specifically focusing on data fetching and caching. Inspired by React Query but designed to work seamlessly with Pinia and Vue 3. data flow with additional features like automatic persistence and simplified setup.
-- **Vite**: Next-generation frontend tooling for fast development and optimized production builds.
+- **Vite**: Next-generation front-end tooling for fast development and optimized production builds.
 - **TypeScript**: Enhancing code quality and developer experience with static typing.
 - **Tailwind CSS**: Utility-first CSS framework for creating a responsive, customizable UI.
 - **Cypress**: End-to-end testing framework for robust, reliable automated testing of web applications. Cypress provides a powerful set of features for writing, running, and debugging tests that simulate real user interactions, ensuring the application works correctly from the user's perspective.
@@ -185,8 +185,8 @@ VueValkyrie welcomes contributions from the open-source gaming community! This p
 We will focus on the following features for Phase 1 prototype 
 - Real-time updates using WebSockets
 - Efficient data management with Valkey
-- Responsive Vue 3 frontend with TypeScript
-- Scalable Go backend using Huma
+- Responsive Vue 3 front end with TypeScript
+- Scalable Go back end using Huma
 - Easy deployment on AWS infrastructure
 
 ### Release Milestones
@@ -208,7 +208,7 @@ VueValkyrie combines three powerful elements: Vue, the progressive JavaScript fr
 
 1. **Vue**: Represents our use of the [Vue.js](https://vuejs.org/) framework, known for its simplicity, flexibility, and performance in building user interfaces.
 
-2. **Valkey**: Symbolizes our utilization of [Valkey](https://valkey.io), AWS's Redis fork, designed for high-performance, scalability, and real-time data processing capabilities. It provides the robust backend infrastructure necessary for handling large-scale leaderboard operations.
+2. **Valkey**: Symbolizes our utilization of [Valkey](https://valkey.io), AWS's Redis fork, designed for high-performance, scalability, and real-time data processing capabilities. It provides the robust back-end infrastructure necessary for handling large-scale leaderboard operations.
 
 3. **Valkyrie**: Inspired by the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie), chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
    - Select and showcase top performers (like Valkyries choosing the best warriors)

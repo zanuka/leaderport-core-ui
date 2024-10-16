@@ -29,18 +29,18 @@
 - [ ] Write unit tests
 
 ### 4. Integration and Testing 
-- [ ] Integrate frontend with backend API
+- [ ] Integrate front end with back-end API
 - [ ] Implement end-to-end testing
 - [ ] Perform load testing and optimize as needed
 
 ### 5. AWS Infrastructure Setup
 - [ ] Set up EC2 instance or ECS cluster
 - [ ] Configure Amazon ElastiCache for Valkey
-- [ ] Set up S3 bucket for frontend hosting
+- [ ] Set up S3 bucket for front-end hosting
 - [ ] Configure networking and security groups
 
 ### 6. CI/CD Pipeline 
-- [ ] Create GitHub Actions workflows for frontend and backend
+- [ ] Create GitHub Actions workflows for front end and back end
 - [ ] Set up automated testing in CI pipeline
 - [ ] Configure deployment to AWS
 
