@@ -2,9 +2,21 @@
 
 Elevating Heroes, Immortalizing Legends : [vuevalkyrie.com](http://vuevalkyrie.com)
 
-![VueValkyrie](images/vue-valkyrie-concept.jpg)
+![VueValkyrie](images/ValkyrieSoarsWithLights.jpg)
 
 VueValkyrie is an open-source, real-time leaderboard system built with [Vue.js](https://vuejs.org/) and [Valkey](https://valkey.io) (AWS's Redis fork). It will be designed primarily for games and competitive applications. By leveraging Valkey's in-memory data storage and high-speed operations, VueValkyrie enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
+
+
+## Project Roadmap
+
+For a detailed overview of our development phases, milestones, and future plans, please refer to our [ROADMAP.md](ROADMAP.md) file.
+
+
+
+## Project Plan
+
+For a detailed checklist of our milestones and deliverables, please refer to our [PLAN.md](PLAN.md) file.
+
 
 ## Leaderboard Use Cases
 
@@ -16,7 +28,7 @@ Primarily designed for games and competitive applications, but it can be easily 
 - Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
 - Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
 
-## Why Valkey?
+## Valkey: A data store and more
 
 I've selected Valkey primarily for its speed, scalability, and real-time capabilities. 
 Additional perks include: 
@@ -30,8 +42,9 @@ Additional perks include:
 - **Active Community**: vibrant open-source community ensures ongoing development and support.
 - **Compatibility**: Redis fork maintains compatibility with existing clients and tools; win.
 
-## Why Vue.js?
-I'm definitely partial to Vue since I've been building with it exclusively for the past 4 years, and think it's a great choice for this project. Some more specific benefits include: 
+## Vue.js: The Progressive JavaScript Framework
+
+I've been building apps with Vue.js for the past 4 years, and think it's a great choice for this project. Specific benefits include:
 
 - **Best of Both Worlds**: Combines Angular's structure with React's flexibility.
 - **Performance**: Lightweight with efficient rendering for fast, responsive leaderboards.
@@ -47,7 +60,7 @@ I'm definitely partial to Vue since I've been building with it exclusively for t
 - **Built-in Transition System**: Creates smooth animations for changing leaderboards.
 
 
-## Key Features
+## Key Features to VueValkyrie
 
 1. Real-time Leaderboard Updates
    - WebSocket integration for instant score changes
@@ -70,6 +83,7 @@ I'm definitely partial to Vue since I've been building with it exclusively for t
    - Find specific players or filter by various criteria
 
 ## Initial Product Requirements
+
 The first version of the VueValkyrie product should include: 
 
 1. Valkey's high-speed data operations for real-time updates
@@ -79,6 +93,7 @@ The first version of the VueValkyrie product should include:
 5. Rate limiting implementation to showcase Valkey's utility in API protection
 
 ## Future Expansion
+
 In future iterations, we can expand this prototype with features like:
 
 - Player profiles
@@ -90,6 +105,8 @@ These additional features would further explore Valkey's capabilities and showca
 The end result should be useful for game developers, hobbyists, and projects that require high-performance web applications.
    
 ## Technical Details
+
+![VueValkyrie](images/ValkyrieSoars.jpg)
 
 On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. In addition, the demo will showcase real-time updates as scores change.
 
@@ -104,121 +121,6 @@ On the front-end, VueValkyrie will offer a responsive Single Page Application (S
 - **Cypress**: End-to-end testing framework for robust, reliable automated testing of web applications. Cypress provides a powerful set of features for writing, running, and debugging tests that simulate real user interactions, ensuring the application works correctly from the user's perspective.
 - **Vitest**: Fast and lightweight unit testing framework for Vite projects. We'll use it for unit and component tests due to its speed, ESM support, and seamless integration with the Vue ecosystem, allowing for efficient and effective testing of Vue components and application logic.
 
-
-### API Integration
-
-The Vue app communicates with the Go backend using a robust API integration strategy:
-
-1. **Axios for HTTP Requests**: 
-   - Custom instance with base URL and default headers
-   - Request/response interceptors for consistent error handling and authentication
-
-   ```typescript
-   // api/axios.ts
-   import axios from 'axios';
-
-   const api = axios.create({
-     baseURL: process.env.VUE_APP_API_URL,
-     headers: {
-       'Content-Type': 'application/json',
-     },
-   });
-
-   api.interceptors.request.use(/* ... */);
-   api.interceptors.response.use(/* ... */);
-
-   export default api;
-   ```
-
-2. **API Service Layer**:
-   - Abstraction for API calls, making them easily reusable across the app
-
-   ```typescript
-   // services/leaderboardService.ts
-   import api from '@/api/axios';
-
-   export const getLeaderboard = async (params) => {
-     const response = await api.get('/leaderboard', { params });
-     return response.data;
-   };
-
-   export const submitScore = async (score) => {
-     const response = await api.post('/scores', score);
-     return response.data;
-   };
-   ```
-
-3. **WebSocket Integration**:
-   - Real-time updates using native WebSocket API or a library like `socket.io-client`
-
-### State Management with Pinia
-
-[Pinia](https://github.com/vuejs/pinia) is the _intuitive, type safe and flexible Store for Vue_. Our leaderboard app will use a Pinia store to manage the application state, handling data fetching, caching, and real-time updates
-
-1. Real-time Updates: Pinia allows for seamless integration of WebSocket data, enabling instant leaderboard updates without page refreshes, enhancing the real-time feel of the application.
-
-2. Caching and Performance: Pinia can cache leaderboard data locally, reducing unnecessary API calls and improving load times, especially beneficial for frequently accessed leaderboard information.
-
-3. Consistent State Across Components: Ensures that all components (e.g., main leaderboard, player profiles, mini-leaderboards) display consistent data, preventing discrepancies in displayed scores or rankings.
-
-4. Complex Filtering and Sorting: Facilitates efficient client-side filtering and sorting of leaderboard data, allowing for quick toggles between different views (e.g., daily, weekly, all-time) without server requests.
-
-5. Optimistic UI Updates: Enables immediate UI updates for user actions (like submitting a new score) before server confirmation, providing a responsive feel while handling asynchronous operations in the background.
-
-6. These benefits are crucial for the user experience as they contribute to a smooth, responsive, and interactive leaderboard that feels dynamic and engaging, essential for maintaining user interest in a competitive gaming context.
-
-### Pinia Colada Integration :tropical_drink:
-
-By leveraging [Pinia Colada](https://github.com/posva/pinia-colada), we can get a powerful data fetching layer that integrates well with Pinia and Vue 3, providing a smooth and reactive experience for your leaderboard SPA. Bonus :trophy:
-
-
-1. Automatic Caching: Pinia Colada offers smart client-side caching with request deduplication. This is particularly useful for a leaderboard where you might need to frequently fetch updated scores without overwhelming your API.
-
-2. Async State Management: It handles async state seamlessly, which is crucial for real-time leaderboard updates. This can help in managing loading states and error handling more efficiently.
-
-3. TypeScript Support: With full TypeScript support, you can ensure type safety across your leaderboard components, reducing potential bugs and improving developer experience.
-
-4. SSR Support: If at some point we decide to implement server-side rendering for improved initial load times, Pinia Colada's SSR support will be beneficial.
-
-5. Query Invalidation: The ability to invalidate queries easily (as shown in the example with caches.invalidateQueries) is perfect for updating the leaderboard when new scores are submitted.
-
-### Pinia Colada Example
-Here's a quick example of how we can leverage Pinia Colada in the leaderboard component:
-
-
-```typescript
-<script lang="ts" setup>
-import { useQuery, useMutation, useQueryCache } from '@pinia/colada'
-import { getLeaderboard, submitScore } from '~/api/leaderboard'
-
-const { data: leaderboard, isLoading } = useQuery({
-  key: ['leaderboard'],
-  query: () => getLeaderboard(),
-})
-
-const caches = useQueryCache()
-
-const { mutate: updateScore } = useMutation({
-  mutation: submitScore,
-  onSettled() {
-    // Invalidate and refetch leaderboard after score update
-    caches.invalidateQueries({ key: ['leaderboard'], exact: true })
-  },
-})
-</script>
-
-<template>
-  <div>
-    <LeaderboardDisplay :data="leaderboard" :is-loading="isLoading" />
-    <ScoreSubmissionForm @submit="updateScore" />
-  </div>
-</template>
-```
-
-This setup allows for efficient data fetching, automatic updates after score submissions, and clean separation of concerns in our leaderboard component.
-
-
-
 ### Leaderboard Logic
 - Implement a sorted set in Valkey to maintain the leaderboard.
 - Use Valkey's atomic operations for accurate, concurrent score updates.
@@ -232,49 +134,9 @@ This setup allows for efficient data fetching, automatic updates after score sub
 ### Rate Limiting
 - Use Valkey to implement rate limiting on score submissions to prevent cheating.
 
-## Backend (Go API)
-
-1. Create a Go API that handles game score submissions and leaderboard queries.
-2. Use Valkey to store and retrieve player scores and rankings.
-
-### Valkey Implementation Example in Go
-
-```go
-import (
-    "github.com/go-redis/redis/v8"
-    // ... other imports
-)
-
-func main() {
-    // Initialize Valkey client
-    valkey := redis.NewClient(&redis.Options{
-        Addr: "your-valkey-instance:6379",
-    })
-
-    // Set up API routes
-    http.HandleFunc("/submit-score", submitScoreHandler)
-    http.HandleFunc("/get-leaderboard", getLeaderboardHandler)
-    
-    // ... WebSocket setup for real-time updates
-
-    http.ListenAndServe(":8080", nil)
-}
-
-func submitScoreHandler(w http.ResponseWriter, r *http.Request) {
-    // Parse player ID and score from request
-    // Use Valkey to update score and leaderboard
-    // Implement rate limiting
-}
-
-func getLeaderboardHandler(w http.ResponseWriter, r *http.Request) {
-    // Retrieve leaderboard data from Valkey
-    // Return JSON response
-}
-
-// ... WebSocket handler for pushing updates
-```
 
 ## Tech Stack Details
+General overview of the basic stack, more details will emerge in time...
 - Frontend:
   - Vue 3
   - TypeScript
@@ -294,139 +156,6 @@ func getLeaderboardHandler(w http.ResponseWriter, r *http.Request) {
 - Additional:
   - WebSocket (for real-time updates)
   - Docker (for containerization)
-
-## Huma Integration with Go API and Valkey
-
-Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient backend for VueValkyrie:
-
-1. API Structure:
-   Huma provides a clean, declarative way to define our API endpoints. For VueValkyrie, the plan is to create endpoints for submitting scores, fetching leaderboards, and player rankings.
-
-   ```go
-   type LeaderboardAPI struct {
-       valkey *redis.Client
-   }
-
-   func (api *LeaderboardAPI) SubmitScore(ctx context.Context, req struct{
-       PlayerID string `json:"player_id"`
-       Score    int    `json:"score"`
-   }) error {
-       // Use Valkey to update score
-       return api.valkey.ZAdd(ctx, "leaderboard", &redis.Z{
-           Score:  float64(req.Score),
-           Member: req.PlayerID,
-       }).Err()
-   }
-
-   func (api *LeaderboardAPI) GetLeaderboard(ctx context.Context) ([]Player, error) {
-       // Fetch top players from Valkey
-       // ...
-   }
-   ```
-
-2. Middleware and Validation:
-   Utilize Huma's middleware for rate limiting and input validation, integrating with Valkey for tracking request counts:
-
-   ```go
-   func RateLimitMiddleware(valkey *redis.Client) huma.Middleware {
-       return func(next http.HandlerFunc) http.HandlerFunc {
-           return func(w http.ResponseWriter, r *http.Request) {
-               // Use Valkey to check and update rate limit
-               // ...
-           }
-       }
-   }
-   ```
-
-3. WebSocket Integration:
-   While Huma primarily focuses on REST APIs, we can still use it alongside a WebSocket server for real-time updates. Use Valkey's Pub/Sub feature to coordinate updates:
-
-   ```go
-   func (api *LeaderboardAPI) PublishUpdate(ctx context.Context, update LeaderboardUpdate) error {
-       return api.valkey.Publish(ctx, "leaderboard_updates", update).Err()
-   }
-   ```
-
-4. Error Handling:
-   Leverage Huma's error handling capabilities while working with Valkey:
-
-   ```go
-   func (api *LeaderboardAPI) GetPlayerRank(ctx context.Context, playerID string) (int64, error) {
-       rank, err := api.valkey.ZRank(ctx, "leaderboard", playerID).Result()
-       if err == redis.Nil {
-           return 0, huma.Error404NotFound("Player not found")
-       }
-       return rank, err
-   }
-   ```
-
-5. Configuration and Dependency Injection:
-   Use Huma's configuration management to set up our Valkey connection:
-
-   ```go
-   func NewLeaderboardAPI(config *huma.Config) (*LeaderboardAPI, error) {
-       valkeyClient := redis.NewClient(&redis.Options{
-           Addr: config.Get("valkey_address"),
-           // other options...
-       })
-       return &LeaderboardAPI{valkey: valkeyClient}, nil
-   }
-   ```
-
-By leveraging Huma's features alongside Valkey, VueValkyrie achieves a clean, efficient, and scalable backend architecture that can handle real-time leaderboard operations with ease.
-
-
-### Testing Strategy
-
-1. **Unit and Component Tests**:
-   - Vitest for fast, ESM-native unit testing
-   - Vue Testing Library for component testing with a focus on user interactions
-
-   ```typescript
-   // tests/components/LeaderboardItem.test.ts
-   import { render, screen } from '@testing-library/vue';
-   import LeaderboardItem from '@/components/LeaderboardItem.vue';
-
-   test('renders player name and score', () => {
-     render(LeaderboardItem, { props: { player: { name: 'John', score: 1000 } } });
-     expect(screen.getByText('John')).toBeInTheDocument();
-     expect(screen.getByText('1000')).toBeInTheDocument();
-   });
-   ```
-
-2. **End-to-End Tests**:
-   - Cypress for comprehensive E2E testing, simulating real user scenarios
-
-   ```javascript
-   // cypress/integration/leaderboard.spec.js
-   describe('Leaderboard', () => {
-     it('displays top players', () => {
-       cy.visit('/leaderboard');
-       cy.get('[data-testid="leaderboard-item"]').should('have.length', 10);
-       cy.get('[data-testid="leaderboard-item"]').first().should('contain', 'Rank #1');
-     });
-   });
-   ```
-
-### Error Handling and Logging with Rollbar
-
-By leveraging Rollbar, VueValkyrie can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
-
-1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the VueValkyrie frontend.
-
-2. **Detailed Error Context**: Rollbar provides rich context for each error, including stack traces, request parameters, and user information, making debugging more efficient.
-
-3. **User Impact Analysis**: With Rollbar's user tracking, we can understand how errors affect specific users or groups, prioritizing fixes based on impact.
-
-4. **Performance Monitoring**: Beyond error tracking, Rollbar can help monitor application performance, identifying slow-loading components or API calls.
-
-5. **Customizable Alerts**: Set up custom alert rules to notify the development team about critical issues immediately.
-
-6. **Error Grouping and Deduplication**: Rollbar automatically groups similar errors, reducing noise and helping focus on unique issues.
-
-7. **Integration with Development Workflow**: Rollbar can integrate with issue trackers and communication tools, streamlining the bug-fixing process.
-
-8. **Release Tracking**: Monitor the impact of new releases on error rates, helping to quickly identify and rollback problematic deployments.
 
 
 ## Contributors
@@ -465,6 +194,32 @@ We will focus on the following features for Phase 1 prototype
   
 ### Future Features
  Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
+ Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
+
+For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](ROADMAP.md).
+
+
+## The origin of VueValkyrie
+
+![VueValkyrie](images/ValkyrieSoars.jpg)
+
+VueValkyrie combines three powerful elements: Vue, the progressive JavaScript framework, Valkey, AWS's high-performance Redis fork, and the concept of Valkyries from Norse mythology. The name reflects the project's core technologies and aspirations:
+
+1. **Vue**: Represents our use of the [Vue.js](https://vuejs.org/) framework, known for its simplicity, flexibility, and performance in building user interfaces.
+
+2. **Valkey**: Symbolizes our utilization of [Valkey](https://valkey.io), AWS's Redis fork, designed for high-performance, scalability, and real-time data processing capabilities. It provides the robust backend infrastructure necessary for handling large-scale leaderboard operations.
+
+3. **Valkyrie**: Inspired by the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie), chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
+   - Select and showcase top performers (like Valkyries choosing the best warriors)
+   - Provide swift, real-time updates (mirroring the Valkyries' speed and agility)
+   - Offer a robust and reliable system (echoing the Valkyries' strength and dependability)
+
+The combination "VueValkyrie" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
+- Swiftly process and display data (Vue's reactivity + Valkey's speed + Valkyries' swiftness)
+- Accurately rank and showcase top performers (Valkyries' selective nature + Valkey's sorting capabilities)
+- Provide a scalable and resilient system (Valkyries' strength + Vue's flexibility + Valkey's scalability)
+
+Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, VueValkyrie aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements, powered by the robust combination of Vue and Valkey.
 
 
 ## Author
@@ -476,4 +231,12 @@ For inquiries or collaborations, please reach out via:
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
 - Email: dev@zanuka.io
 - Project Site:  [vuevalkyrie.com](http://vuevalkyrie.com)
+
+## Artwork
+
+The captivating artwork featured in this project was generated using DALL-E, powered by [OpenAI](https://www.openai.com/)'s [ChatGPT-4](https://openai.com/chatgpt). These AI-generated images beautifully capture the essence of VueValkyrie, blending Norse mythology with modern technology.
+
+
+
+
 
