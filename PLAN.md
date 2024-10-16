@@ -5,7 +5,7 @@
 - [ ] Set up basic project structure
 - [ ] Create initial README with project description and setup instructions
 
-### 2. Backend Development 
+### 2. Back-end Development 
 - [ ] Set up Go project with Huma
 - [ ] Implement Valkey connection and basic operations
 - [ ] Create API endpoints:
@@ -16,7 +16,7 @@
 - [ ] Add rate limiting using Valkey
 - [ ] Write unit tests
 
-### 3. Frontend Development 
+### 3. Front-end Development 
 - [ ] Set up Vue 3 project with Vite and TypeScript
 - [ ] Create basic UI components:
   - [ ] Leaderboard display

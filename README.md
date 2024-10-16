@@ -139,12 +139,12 @@ On the front-end, VueValkyrie will offer a responsive Single Page Application (S
 
 ## Tech Stack Details
 General overview of the basic stack, more details will emerge in time...
-- Frontend:
+- Front-end Stack:
   - Vue 3
   - TypeScript
   - Pinia (for state management)
   - Vite (for build tooling)
-- Backend:
+- Back-end Stack:
   - Go
   - Huma (for API development)
 - Database:

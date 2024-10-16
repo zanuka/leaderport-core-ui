@@ -1,4 +1,4 @@
-# Backend Design
+# Back-end Design
 
 ## Go API Details
 
