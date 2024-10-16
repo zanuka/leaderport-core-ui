@@ -201,7 +201,7 @@ For a detailed breakdown of our development phases and upcoming features, please
 
 ## The origin of VueValkyrie
 
-![VueValkyrie](images/ValkyrieSoars.jpg)
+![VueValkyrie](images/NorseValkyrieSoars.jpg)
 
 VueValkyrie combines three powerful elements: Vue, the progressive JavaScript framework, Valkey, AWS's high-performance Redis fork, and the concept of Valkyries from Norse mythology. The name reflects the project's core technologies and aspirations:
 
