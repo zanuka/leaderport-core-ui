@@ -110,7 +110,7 @@ These additional features would further explore Valkey's capabilities and showca
 
 ![VueValkyrie](images/ValkyrieSoars.jpg)
 
-On the front-end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
+On the front end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
 ### Front-end Architecture & Stack
 
