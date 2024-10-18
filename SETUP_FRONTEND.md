@@ -11,7 +11,7 @@
 
    //\ Use Valkran in your component
 
-## Connecting Frontend to Backend
+## Connecting Front-end to Back-end
 
 1. Update your frontend configuration with the backend API endpoint.
 

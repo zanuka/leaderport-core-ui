@@ -3,7 +3,7 @@ This is a rough draft of a setup guide for developers that will be using Valkran
 
 Depending on how this initial project goes, I will likely create other versions for React, Svelte, Angular, Ember, etc.. Just starting with Vue for now since it's rad. 
 
-## Backend Setup
+## Back-end Setup
 Details on setting up the infrastructure to use Valkran effectively on the major cloud providers or self-hosted solutions.
 
 ### Option 1: AWS with Valkey
@@ -237,7 +237,7 @@ Valkey is flexible and can work with any Redis-compatible service. If you're usi
 
 For guidance on optimizing Valkran for your specific setup, please reach out to our support team.
 
-## Connecting Frontend to Backend
+## Connecting Front-end to Back-end
 
 1. Update your frontend configuration with the backend API endpoint.
 
