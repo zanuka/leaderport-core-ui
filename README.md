@@ -9,8 +9,7 @@ VueValkyrie is an open-source, real-time leaderboard system built with [Vue.js](
 
 ## Project Roadmap
 
-For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](ROADMAP.md).
-
+For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](ROADMAP.md)).
 
 
 ## Project Plan
@@ -20,7 +19,7 @@ For a detailed checklist of our milestones and deliverables, please refer to the
 
 ## Leaderboard Use Cases
 
-Primarily designed for games and competitive applications, but it can be easily applied to other domains:
+Primarily designed for games and competitive apps, but it can be easily applied to other domains:
 
 - Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
 - Education and E-learning: Track student progress and achievements in online courses
@@ -48,7 +47,9 @@ For more detailed information about Valkey and its capabilities, please visit th
 
 ## Vue.js: The Progressive JavaScript Framework
 
-I've been building apps with Vue.js for the past 4 years, and think it's a great choice for this project. Specific benefits include:
+I've been building apps with Vue.js for the past 4 years, and think it's a great framework. 
+
+Batteries-included benefits include:
 
 - **Best of Both Worlds**: Combines Angular's structure with React's flexibility.
 - **Performance**: Lightweight with efficient rendering for fast, responsive leaderboards.
@@ -116,7 +117,7 @@ On the front end, VueValkyrie will offer a responsive Single Page Application (S
 
 - **Vue3 + Composition API**: Leveraging the latest Vue features for efficient, scalable component design.
 - **Pinia**: State management solution for Vue, providing a smooth and reactive data flow.
-- **PiniaColada**: additional layer that works on top of Pinia, specifically focusing on data fetching and caching. Inspired by React Query but designed to work seamlessly with Pinia and Vue 3. data flow with additional features like automatic persistence and simplified setup.
+- **PiniaColada**: additional layer that works on top of Pinia, specifically focusing on data fetching and caching. Inspired by React Query but designed to work seamlessly with Pinia and Vue 3. Data flow with additional features like automatic persistence and simplified setup.
 - **Vite**: Next-generation front-end tooling for fast development and optimized production builds.
 - **TypeScript**: Enhancing code quality and developer experience with static typing.
 - **Tailwind CSS**: Utility-first CSS framework for creating a responsive, customizable UI.
@@ -162,7 +163,7 @@ General overview of the basic stack, more details will emerge in time...
 
 ## Contributors
 
-VueValkyrie welcomes contributions from the open-source gaming community! This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
+VueValkyrie welcomes contributions. This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
 
 ### How You Can Contribute
 
@@ -225,7 +226,7 @@ Just as Valkyries were essential in Norse mythology for recognizing and elevatin
 
 ## Author
 
-The VueValkyrie project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. Stay tuned!
+The VueValkyrie project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
 
 For inquiries or collaborations, please reach out via:
 - GitHub: [@zanuka](https://github.com/zanuka)
@@ -235,8 +236,7 @@ For inquiries or collaborations, please reach out via:
 
 ## Artwork
 
-The captivating artwork featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt). These AI-generated images beautifully capture the essence of VueValkyrie, blending Norse mythology with modern technology.
-
+The artwork I featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt). These AI-generated images beautifully capture the essence of VueValkyrie, blending Norse mythology with modern technology.
 
 
 
