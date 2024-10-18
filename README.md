@@ -1,6 +1,6 @@
 # Valkran
 
-Elevating Heroes, Immortalizing Legends
+Elevating Heroes, Immortalizing Legends :crossed_swords: [valkran.com](https://valkran.com)
 
 ![Valkran](images/ValkyrieSoarsWithLights.jpg)
 
@@ -254,8 +254,7 @@ The Valkran project was conceptualized on the evening of October 12, 2024 by [za
 
 - GitHub: [@zanuka](https://github.com/zanuka)
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
-<!-- - Email: dev@zanuka.io -->
-<!-- - Project Site:  [vuevalkyrie.com](http://vuevalkyrie.com) -->
+- Project Site: [valkran.com](https://valkran.com)
 
 ## Artwork
 
