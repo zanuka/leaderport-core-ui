@@ -1,8 +1,8 @@
 ## Valkran Development Phases
 
 ### 1. Project Setup 
-- [ ] Initialize GitHub repository with MIT license
-- [ ] Create Roadmap outlining key deliverables
+- [x] Initialize GitHub repository with MIT license
+- [x] Create Roadmap outlining key deliverables
 - [ ] Set up basic project structure
 - [ ] Create initial README with project description and setup instructions
 
