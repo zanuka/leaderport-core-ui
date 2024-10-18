@@ -228,7 +228,7 @@ For a detailed breakdown of our development phases and upcoming features, please
 
 ![Valkran](images/NorseValkyrieSoars.jpg)
 
-The name Valkran is a powerful fusion of two key concepts: 'Valk' and 'Ran'.
+The name Valkran is a fusion of two key concepts: 'Valk' and 'Ran'.
 
 'Valk' is derived from Valkyrie, the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie) chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
    - Select and showcase top performers (like Valkyries choosing the best warriors)
@@ -241,9 +241,9 @@ The name Valkran is a powerful fusion of two key concepts: 'Valk' and 'Ran'.
    - The race or "run" to the top of the leaderboard
 
 The combination "Valkran" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
-- Swiftly process and display data (Vue's reactivity + Valkey's speed + Valkyries' swiftness)
-- Accurately rank and showcase top performers (Valkyries' selective nature + Valkey's sorting capabilities)
-- Provide a scalable and resilient system (Valkyries' strength + Vue's flexibility + Valkey's scalability)
+- Swiftly process and display data 
+- Accurately rank and showcase top performers 
+- Provide a scalable and resilient system 
 
 Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, Valkran aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements. By combining the mythical power of the Valkyries ('Valk') with the core functionality of ranking ('Ran'), Valkran stands as a testament to the fusion of legendary inspiration and practical application in modern game development.
 
