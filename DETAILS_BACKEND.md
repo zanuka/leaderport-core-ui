@@ -44,10 +44,10 @@ func getLeaderboardHandler(w http.ResponseWriter, r *http.Request) {
 
 ### Huma Integration with Go API and Valkey
 
-Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient back end for VueValkyrie:
+Huma, a modern framework for building Go APIs, can be seamlessly integrated with Valkey to create a powerful and efficient back end for Valkran:
 
 1. API Structure:
-   Huma provides a clean, declarative way to define our API endpoints. For VueValkyrie, the plan is to create endpoints for submitting scores, fetching leaderboards, and player rankings.
+   Huma provides a clean, declarative way to define our API endpoints. For Valkran, the plan is to create endpoints for submitting scores, fetching leaderboards, and player rankings.
 
    ```go
    type LeaderboardAPI struct {
@@ -120,4 +120,4 @@ Huma, a modern framework for building Go APIs, can be seamlessly integrated with
    }
    ```
 
-By leveraging Huma's features alongside Valkey, VueValkyrie achieves a clean, efficient, and scalable back-end architecture that can handle real-time leaderboard operations with ease.
+By leveraging Huma's features alongside Valkey, Valkran achieves a clean, efficient, and scalable back-end architecture that can handle real-time leaderboard operations with ease.

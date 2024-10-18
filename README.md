@@ -1,10 +1,12 @@
-# VueValkyrie
+# Valkran
 
-Elevating Heroes, Immortalizing Legends : [vuevalkyrie.com](http://vuevalkyrie.com)
+Elevating Heroes, Immortalizing Legends
 
-![VueValkyrie](images/ValkyrieSoarsWithLights.jpg)
+![Valkran](images/ValkyrieSoarsWithLights.jpg)
 
-VueValkyrie is an open-source, real-time leaderboard system built with [Vue.js](https://vuejs.org/), [Valkey](https://valkey.io), and [Go](https://golang.org/). It will be designed primarily for games and competitive applications. By leveraging Valkey's in-memory data storage and high-speed operations, VueValkyrie enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
+Valkran is an open-source, real-time leaderboard system concept. The initial version will be built with [Vue.js](https://vuejs.org/), [Valkey](https://valkey.io), and [Go](https://golang.org/) but will likely evolve to support more tech stack variants. 
+
+It will be designed primarily for games and competitive applications. By leveraging Valkey's in-memory data storage and high-speed operations, Valkran enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
 
 ## Project Roadmap
@@ -42,7 +44,7 @@ Key advantages of Valkey include:
 - **Active Community**: vibrant [open-source community](https://valkey.io/connect/) ensures ongoing development and support.
 - **Compatibility**: [Redis fork](https://github.com/valkey-io/valkey) maintains compatibility with existing clients and tools; win.
 
-For more detailed information about Valkey and its capabilities, please visit the [Valkey Introduction](https://valkey.io/topics/introduction/). This comprehensive guide provides an in-depth look at Valkey's features, architecture, and use cases, helping you understand why it's an excellent choice for high-performance, scalable applications like VueValkyrie.
+For more detailed information about Valkey and its capabilities, please visit the [Valkey Introduction](https://valkey.io/topics/introduction/). This comprehensive guide provides an in-depth look at Valkey's features, architecture, and use cases, helping you understand why it's an excellent choice for high-performance, scalable applications like Valkran.
 
 
 ## Vue.js: The Progressive JavaScript Framework
@@ -65,7 +67,7 @@ Batteries-included benefits include:
 - **Built-in Transition System**: Creates smooth animations for changing leaderboards.
 
 
-## Key Features to VueValkyrie
+## Key Features to Valkran
 
 1. Real-time Leaderboard Updates
    - WebSocket integration for instant score changes
@@ -102,7 +104,7 @@ Batteries-included benefits include:
 
 ## Primary v1 Goals
 
-The first version of the VueValkyrie product should include: 
+The first version of the Valkran product should include: 
 
 1. Valkey's high-speed data operations for real-time updates
 2. Scalability for handling many concurrent users and score submissions
@@ -123,9 +125,9 @@ These additional features would further explore Valkey's capabilities and showca
    
 ## Technical Details
 
-![VueValkyrie](images/ValkyrieSoars.jpg)
+![Valkran](images/ValkyrieSoars.jpg)
 
-On the front end, VueValkyrie will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
+On the front end, Valkran will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
 ### Front-end Architecture & Stack
 
@@ -185,15 +187,15 @@ General overview of the basic stack, more details will emerge in time...
 
 ## Contributors
 
-VueValkyrie welcomes contributions. This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
+Valkran welcomes contributions. This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
 
 ### How You Can Contribute
 
 1. **Feature Development**: Add new features or enhance existing ones.
 2. **Bug Fixes**: Help identify and resolve issues.
-3. **Documentation**: Improve our docs to help others integrate VueValkyrie.
+3. **Documentation**: Improve our docs to help others integrate Valkran.
 4. **Testing**: Expand our test coverage and improve test scenarios.
-5. **Performance Optimization**: Help make VueValkyrie even faster and more efficient.
+5. **Performance Optimization**: Help make Valkran even faster and more efficient.
 
 ### Benefits for the Gaming Community
 
@@ -222,38 +224,38 @@ We will focus on the following features for Phase 1 prototype
 For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](ROADMAP.md).
 
 
-## The origin of VueValkyrie
+## The origin of Valkran
 
-![VueValkyrie](images/NorseValkyrieSoars.jpg)
+![Valkran](images/NorseValkyrieSoars.jpg)
 
-VueValkyrie combines three powerful elements: Vue, the progressive JavaScript framework, Valkey, AWS's high-performance Redis fork, and the concept of Valkyries from Norse mythology. The name reflects the project's core technologies and aspirations:
+The name Valkran is a powerful fusion of two key concepts: 'Valk' and 'Ran'.
 
-1. **Vue**: Represents our use of the [Vue.js](https://vuejs.org/) framework, known for its simplicity, flexibility, and performance in building user interfaces.
-
-2. **Valkey**: Symbolizes our utilization of [Valkey](https://valkey.io), AWS's Redis fork, designed for high-performance, scalability, and real-time data processing capabilities. It provides the robust back-end infrastructure necessary for handling large-scale leaderboard operations.
-
-3. **Valkyrie**: Inspired by the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie), chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
+'Valk' is derived from Valkyrie, the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie) chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
    - Select and showcase top performers (like Valkyries choosing the best warriors)
    - Provide swift, real-time updates (mirroring the Valkyries' speed and agility)
    - Offer a robust and reliable system (echoing the Valkyries' strength and dependability)
 
-The combination "VueValkyrie" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
+'Ran' is a subtle nod to "ranking", which is at the core of any leaderboard system. It represents:
+   - The system's primary function of ranking players
+   - The continuous process of re-evaluating and updating rankings
+   - The race or "run" to the top of the leaderboard
+
+The combination "Valkran" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
 - Swiftly process and display data (Vue's reactivity + Valkey's speed + Valkyries' swiftness)
 - Accurately rank and showcase top performers (Valkyries' selective nature + Valkey's sorting capabilities)
 - Provide a scalable and resilient system (Valkyries' strength + Vue's flexibility + Valkey's scalability)
 
-Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, VueValkyrie aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements, powered by the robust combination of Vue and Valkey.
+Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, Valkran aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements. By combining the mythical power of the Valkyries ('Valk') with the core functionality of ranking ('Ran'), Valkran stands as a testament to the fusion of legendary inspiration and practical application in modern game development.
 
 
 ## Author
 
-The VueValkyrie project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
+The Valkran project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
 
-Contact details:
 - GitHub: [@zanuka](https://github.com/zanuka)
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
-- Email: dev@zanuka.io
-- Project Site:  [vuevalkyrie.com](http://vuevalkyrie.com)
+<!-- - Email: dev@zanuka.io -->
+<!-- - Project Site:  [vuevalkyrie.com](http://vuevalkyrie.com) -->
 
 ## Artwork
 

@@ -1,5 +1,5 @@
 # Front-end Details
-VueValkyrie's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, Pinia for state management, and integrates with a Go back end using RESTful APIs and WebSockets for real-time updates. The front end focuses on delivering a smooth user experience with fast load times, reactive updates, and a clean, intuitive interface for displaying leaderboards and submitting scores.
+Valkran's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, Pinia for state management, and integrates with a Go back end using RESTful APIs and WebSockets for real-time updates. The front end focuses on delivering a smooth user experience with fast load times, reactive updates, and a clean, intuitive interface for displaying leaderboards and submitting scores.
 
 Key features of the front end include:
 - Responsive design for both mobile and desktop browsers
@@ -14,7 +14,7 @@ This architecture ensures a scalable, maintainable, and high-performance front e
 
 ## Front-end Architecture
 
-VueValkyrie's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
+Valkran's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
 
 1. **Vue 3 with Composition API**: 
    - Leverages the latest Vue features for efficient and scalable component design
@@ -45,7 +45,7 @@ VueValkyrie's front end architecture is built on a modern, robust stack designed
    - Cypress for end-to-end testing, simulating real user interactions
    - Vitest for fast, ESM-native unit and component testing
 
-This architecture is designed to provide a solid foundation for building a high-performance, maintainable, and scalable front end for VueValkyrie. The combination of Vue 3's reactivity system, Pinia's state management, and PiniaColada's data fetching capabilities allows for efficient data flow and management throughout the application.
+This architecture is designed to provide a solid foundation for building a high-performance, maintainable, and scalable front end for Valkran. The combination of Vue 3's reactivity system, Pinia's state management, and PiniaColada's data fetching capabilities allows for efficient data flow and management throughout the application.
 
 
 
@@ -130,9 +130,9 @@ The Vue app communicates with the Go back end using a robust API integration str
 
 ### Error Handling and Logging with Rollbar
 
-By leveraging Rollbar, VueValkyrie can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
+By leveraging Rollbar, Valkran can maintain a high-quality user experience, quickly address issues, and continuously improve the application's stability and performance. 
 
-1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the VueValkyrie front end.
+1. **Real-time Error Monitoring**: Rollbar can capture and report errors in real-time, allowing for quick identification and resolution of issues in the Valkran front end.
 
 2. **Detailed Error Context**: Rollbar provides rich context for each error, including stack traces, request parameters, and user information, making debugging more efficient.
 

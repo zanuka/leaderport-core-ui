@@ -1,10 +1,10 @@
-# VueValkyrie Back-end Setup Guide
-This is a rough draft of a setup guide for developers that will be using VueValkyrie. Most of the details are focused on the back-end setup, since the front-end install of the npm package will be pretty straightforward. I've included most of the common stack setups, but feel free to create an issue or pull request to add more.    
+# Valkran Back-end Setup Guide
+This is a rough draft of a setup guide for developers that will be using Valkran. Most of the details are focused on the back-end setup, since the front-end install of the npm package will be pretty straightforward. I've included most of the common stack setups, but feel free to create an issue or pull request to add more.    
 
 Depending on how this initial project goes, I will likely create other versions for React, Svelte, Angular, Ember, etc.. Just starting with Vue for now since it's rad. 
 
 ## Backend Setup
-Details on setting up the infrastructure to use VueValkyrie effectively on the major cloud providers or self-hosted solutions.
+Details on setting up the infrastructure to use Valkran effectively on the major cloud providers or self-hosted solutions.
 
 ### Option 1: AWS with Valkey
 
@@ -20,14 +20,14 @@ Details on setting up the infrastructure to use VueValkyrie effectively on the m
    - Create an IAM role for ElastiCache access
    - Set up security groups to allow inbound traffic on port 6379
 
-4. Deploy the VueValkyrie backend:
-   - Clone the VueValkyrie backend repository
+4. Deploy the Valkran backend:
+   - Clone the Valkran backend repository
    - Update configuration with your ElastiCache endpoint
    - Deploy to AWS (e.g., using Elastic Beanstalk or ECS)
 
 ### Option 2: AWS with Valkey on EC2 with Graviton Processors
 
-AWS Graviton processors offer excellent price performance for cloud workloads. Here's how to set up VueValkyrie using AWS EC2 instances powered by Graviton:
+AWS Graviton processors offer excellent price performance for cloud workloads. Here's how to set up Valkran using AWS EC2 instances powered by Graviton:
 
 1. Sign in to the AWS Management Console:
    - Go to [aws.amazon.com](https://aws.amazon.com) and log in to your account.
@@ -47,7 +47,7 @@ AWS Graviton processors offer excellent price performance for cloud workloads. H
    - Install Valkey (replace with actual Valkey installation commands).
    - Configure Valkey to start on boot.
 
-5. Deploy VueValkyrie backend:
+5. Deploy Valkran backend:
    - Update your backend configuration with the Graviton instance details.
    - Deploy your backend to the Graviton-powered EC2 instance.
 
@@ -57,7 +57,7 @@ AWS Graviton processors offer excellent price performance for cloud workloads. H
 7. Test the connection:
    - Use appropriate tools to interact with your Valkey instance and verify functionality.
 
-Benefits of using AWS Graviton for VueValkyrie:
+Benefits of using AWS Graviton for Valkran:
 - Up to 40% better price performance compared to x86-based instances.
 - Reduced energy consumption, supporting sustainability goals.
 - Seamless integration with other AWS services.
@@ -68,11 +68,11 @@ For more information on optimizing your application for Graviton, refer to the [
 
 ### Option 3: Google Cloud Platform with Valkey
 
-Google Cloud Platform offers a flexible infrastructure that can be used to host Valkey, providing a robust solution for your VueValkyrie backend. Here's how to set it up:
+Google Cloud Platform offers a flexible infrastructure that can be used to host Valkey, providing a robust solution for your Valkran backend. Here's how to set it up:
 
 1. Set up a Google Cloud Platform account:
    - Go to [cloud.google.com](https://cloud.google.com) and create an account if you don't have one.
-   - Create a new project for your VueValkyrie application.
+   - Create a new project for your Valkran application.
 
 2. Create a Compute Engine instance for Valkey:
    - Navigate to the Compute Engine page in the GCP Console.
@@ -101,8 +101,8 @@ Google Cloud Platform offers a flexible infrastructure that can be used to host 
 5. Note the connection details:
    - Once your instance is set up, note down the external IP address.
 
-6. Deploy the VueValkyrie backend:
-   - Clone the VueValkyrie backend repository.
+6. Deploy the Valkran backend:
+   - Clone the Valkran backend repository.
    - Update the configuration file with your Valkey instance's IP address and port.
    - Deploy your backend to Google Cloud (e.g., using Google Kubernetes Engine or Cloud Run).
 
@@ -112,7 +112,7 @@ Google Cloud Platform offers a flexible infrastructure that can be used to host 
 8. Test the connection:
    - Submit a test score and retrieve the leaderboard to ensure everything is working correctly.
 
-Benefits of using GCP with Valkey for VueValkyrie:
+Benefits of using GCP with Valkey for Valkran:
 - Full control over your Valkey instance for custom configurations.
 - Ability to scale your Valkey instance as needed.
 - Integration with other GCP services for comprehensive application deployment.
@@ -122,7 +122,7 @@ Benefits of using GCP with Valkey for VueValkyrie:
 
 ### Option 4: DigitalOcean with Valkey 1-Click App
 
-DigitalOcean offers a Valkey 1-Click App, which provides a pre-configured Valkey instance that's compatible with VueValkyrie. This option simplifies the setup process significantly.
+DigitalOcean offers a Valkey 1-Click App, which provides a pre-configured Valkey instance that's compatible with Valkran. This option simplifies the setup process significantly.
 
 1. Create a DigitalOcean account:
    - Go to [digitalocean.com](https://www.digitalocean.com) and sign up if you haven't already.
@@ -149,7 +149,7 @@ DigitalOcean offers a Valkey 1-Click App, which provides a pre-configured Valkey
    - UFW firewall is enabled by default.
    - Only ports 22 (SSH) and 6379 (Valkey) are open.
 
-6. Deploy VueValkyrie backend:
+6. Deploy Valkran backend:
    - Update your backend configuration with the Valkey connection details.
    - Deploy your backend to DigitalOcean (e.g., using another Droplet or App Platform).
 
@@ -170,7 +170,7 @@ DigitalOcean offers a Valkey 1-Click App, which provides a pre-configured Valkey
 
 For more detailed instructions and API usage, refer to the [official DigitalOcean Valkey documentation](https://docs.digitalocean.com/products/marketplace/catalog/valkey/).
 
-Benefits of using DigitalOcean's Valkey 1-Click App with VueValkyrie:
+Benefits of using DigitalOcean's Valkey 1-Click App with Valkran:
 - Pre-configured and optimized Valkey instance.
 - Simple deployment process.
 - Built-in security measures with UFW firewall.
@@ -179,7 +179,7 @@ Benefits of using DigitalOcean's Valkey 1-Click App with VueValkyrie:
 
 ### Option 5: Oracle Cloud Infrastructure (OCI) with Valkey
 
-Oracle Cloud Infrastructure now supports Valkey, offering a high-performance, scalable solution for your VueValkyrie backend. Here's how to set it up:
+Oracle Cloud Infrastructure now supports Valkey, offering a high-performance, scalable solution for your Valkran backend. Here's how to set it up:
 
 1. Create an Oracle Cloud account:
    - Go to [cloud.oracle.com](https://cloud.oracle.com) and sign up if you haven't already.
@@ -199,7 +199,7 @@ Oracle Cloud Infrastructure now supports Valkey, offering a high-performance, sc
    - Valkey configuration can be found in the instance.
    - By default, Valkey is configured to use 70% of the instance's memory.
 
-5. Deploy VueValkyrie backend:
+5. Deploy Valkran backend:
    - Update your backend configuration with the Valkey connection details.
    - Deploy your backend to OCI (e.g., using OCI Compute or Container Instances).
 
@@ -209,7 +209,7 @@ Oracle Cloud Infrastructure now supports Valkey, offering a high-performance, sc
 7. Test the connection:
    - Use Valkey CLI or your application to interact with the Valkey instance.
 
-Benefits of using Oracle Cloud Infrastructure for Valkey with VueValkyrie:
+Benefits of using Oracle Cloud Infrastructure for Valkey with Valkran:
 - High-performance infrastructure with flexible VM shapes.
 - Integration with OCI's comprehensive security features.
 - Scalability to handle growing leaderboards and user bases.
@@ -230,12 +230,12 @@ Valkey is flexible and can work with any Redis-compatible service. If you're usi
    - Ensure proper authentication is set up.
    - Configure firewall rules to restrict access.
 
-3. Deploy the VueValkyrie backend:
-   - Clone the VueValkyrie backend repository
+3. Deploy the Valkran backend:
+   - Clone the Valkran backend repository
    - Update configuration with your Redis connection details
    - Deploy your backend to your chosen infrastructure
 
-For guidance on optimizing VueValkyrie for your specific setup, please reach out to our support team.
+For guidance on optimizing Valkran for your specific setup, please reach out to our support team.
 
 ## Connecting Frontend to Backend
 

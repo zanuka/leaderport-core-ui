@@ -1,15 +1,15 @@
-# VueValkyrie Front-end Setup Guide
+# Valkran Front-end Setup Guide
 
-1. Install the VueValkyrie npm package:
+1. Install the Valkran npm package:
    ```
    npm install vue-valkyrie
    ```
 
-2. Import and use VueValkyrie in your Vue.js application:
+2. Import and use Valkran in your Vue.js application:
    ```javascript
-   import { VueValkyrie } from 'vue-valkyrie';
+   import { Valkran } from 'vue-valkyrie';
 
-   //\ Use VueValkyrie in your component
+   //\ Use Valkran in your component
 
 ## Connecting Frontend to Backend
 

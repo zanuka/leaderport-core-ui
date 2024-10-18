@@ -1,4 +1,4 @@
-## VueValkyrie Development Phases
+## Valkran Development Phases
 
 ### 1. Project Setup 
 - [ ] Initialize GitHub repository with MIT license
