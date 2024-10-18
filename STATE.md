@@ -1,4 +1,4 @@
-## State Management with Pinia
+## Front-end State Management with Pinia
 
 [Pinia](https://github.com/vuejs/pinia) is the _intuitive, type safe and flexible Store for Vue_. Our leaderboard app will use a Pinia store to manage the application state, handling data fetching, caching, and real-time updates
 

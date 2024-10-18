@@ -9,7 +9,7 @@ VueValkyrie is an open-source, real-time leaderboard system built with [Vue.js](
 
 ## Project Roadmap
 
-For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](ROADMAP.md)).
+For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](ROADMAP.md).
 
 
 ## Project Plan
@@ -141,9 +141,9 @@ On the front end, VueValkyrie will offer a responsive Single Page Application (S
 ### Additional Front-end Guides
 
 - design, architecture, and implementation examples can be found in [Front-end Details](DETAILS_FRONTEND.md)
-- detailed information on Pinia and PiniaColada, refer to [Front-end State Management](STATE.md).
+- detailed information on Pinia and PiniaColada, refer to [Front-end State Management](STATE.md)
 
-- for installing and configuring the front-end, please refer to our [Front-end Setup Guide](SETUP_FRONTEND.md).
+- for installing and configuring the front-end, please refer to our [Front-end Setup Guide](SETUP_FRONTEND.md)
 
 ### Back-end Architecture & Stack
 
@@ -159,7 +159,7 @@ On the front end, VueValkyrie will offer a responsive Single Page Application (S
 
 ### Additional Back-end Guides
 - design, architecture, and implementation examples can be found in [Back-end Details](DETAILS_BACKEND.md)
-- detailed info on back-end infrastructure setup is located in our [Back-end Setup Guide](SETUP_BACKEND.md).
+- detailed info on back-end infrastructure setup is located in our [Back-end Setup Guide](SETUP_BACKEND.md)
 
 ## Tech Stack Details
 General overview of the basic stack, more details will emerge in time...
