@@ -138,11 +138,10 @@ On the front end, VueValkyrie will offer a responsive Single Page Application (S
 - **Cypress**: End-to-end testing framework for robust, reliable automated testing of web applications. Cypress provides a powerful set of features for writing, running, and debugging tests that simulate real user interactions, ensuring the application works correctly from the user's perspective.
 - **Vitest**: Fast and lightweight unit testing framework for Vite projects. We'll use it for unit and component tests due to its speed, ESM support, and seamless integration with the Vue ecosystem, allowing for efficient and effective testing of Vue components and application logic.
 
-### Additional Front-end Guides
+### Detailed Front-end Guides
 
 - design, architecture, and implementation examples can be found in [Front-end Details](DETAILS_FRONTEND.md)
 - detailed information on Pinia and PiniaColada, refer to [Front-end State Management](STATE.md)
-
 - for installing and configuring the front-end, please refer to our [Front-end Setup Guide](SETUP_FRONTEND.md)
 
 ### Back-end Architecture & Stack
@@ -157,7 +156,7 @@ On the front end, VueValkyrie will offer a responsive Single Page Application (S
 - **Configuration Management**: Uses Huma's config system for managing environment-specific settings.
 - **Dependency Injection**: Structuring the application for better testability and modularity.
 
-### Additional Back-end Guides
+### Detailed Back-end Guides
 - design, architecture, and implementation examples can be found in [Back-end Details](DETAILS_BACKEND.md)
 - detailed info on back-end infrastructure setup is located in our [Back-end Setup Guide](SETUP_BACKEND.md)
 
