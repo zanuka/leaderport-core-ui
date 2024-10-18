@@ -197,7 +197,6 @@ We will focus on the following features for Phase 1 prototype
   
 ### Future Features
  Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
-
 For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](ROADMAP.md).
 
 
@@ -228,7 +227,7 @@ Just as Valkyries were essential in Norse mythology for recognizing and elevatin
 
 The VueValkyrie project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
 
-For inquiries or collaborations, please reach out via:
+Contact details:
 - GitHub: [@zanuka](https://github.com/zanuka)
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
 - Email: dev@zanuka.io
@@ -236,7 +235,7 @@ For inquiries or collaborations, please reach out via:
 
 ## Artwork
 
-The artwork I featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt). These AI-generated images beautifully capture the essence of VueValkyrie, blending Norse mythology with modern technology.
+The artwork I featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt) 
 
 
 
