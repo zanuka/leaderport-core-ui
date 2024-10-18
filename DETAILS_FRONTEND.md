@@ -1,4 +1,4 @@
-# Front-end Design
+# Front-end Details
 VueValkyrie's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, Pinia for state management, and integrates with a Go back end using RESTful APIs and WebSockets for real-time updates. The front end focuses on delivering a smooth user experience with fast load times, reactive updates, and a clean, intuitive interface for displaying leaderboards and submitting scores.
 
 Key features of the front end include:
@@ -11,7 +11,6 @@ Key features of the front end include:
 - Comprehensive testing suite using Cypress and Vitest
 
 This architecture ensures a scalable, maintainable, and high-performance front end that can handle the dynamic nature of leaderboard data while providing an engaging user experience.
-
 
 ## Front-end Architecture
 

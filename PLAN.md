@@ -1,9 +1,16 @@
 ## VueValkyrie Development Phases
 
 ### 1. Project Setup 
-- [ ] Initialize GitHub repository with MIT license
+- [x] Initialize GitHub repository with MIT license
+- [x] Create initial README with project description and details
+- [x] Create back-end details doc
+- [x] Create front-end details doc
+- [x] Create plan doc
+- [x] Create back-end setup doc
+- [x] Create front-end setup doc
+- [x] Create back-end setup doc
+- [x] Create front-end state management doc
 - [ ] Set up basic project structure
-- [ ] Create initial README with project description and setup instructions
 
 ### 2. Back-end Development 
 - [ ] Set up Go project with Huma

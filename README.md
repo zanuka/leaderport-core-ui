@@ -87,7 +87,20 @@ Batteries-included benefits include:
 5. Search and Filters
    - Find specific players or filter by various criteria
 
-## Initial Product Requirements
+### Leaderboard Logic
+- Implement a sorted set in Valkey to maintain the leaderboard.
+- Use Valkey's atomic operations for accurate, concurrent score updates.
+
+### Caching
+- Cache frequently accessed leaderboard segments in Valkey for fast retrieval.
+
+### Real-time Updates
+- Implement a WebSocket connection to push leaderboard changes to connected clients.
+
+### Rate Limiting
+- Use Valkey to implement rate limiting on score submissions to prevent cheating.
+
+## Primary v1 Goals
 
 The first version of the VueValkyrie product should include: 
 
@@ -106,6 +119,7 @@ In future iterations, we can expand this prototype with features like:
 - Time-based competitions
 
 These additional features would further explore Valkey's capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
+
    
 ## Technical Details
 
@@ -124,19 +138,28 @@ On the front end, VueValkyrie will offer a responsive Single Page Application (S
 - **Cypress**: End-to-end testing framework for robust, reliable automated testing of web applications. Cypress provides a powerful set of features for writing, running, and debugging tests that simulate real user interactions, ensuring the application works correctly from the user's perspective.
 - **Vitest**: Fast and lightweight unit testing framework for Vite projects. We'll use it for unit and component tests due to its speed, ESM support, and seamless integration with the Vue ecosystem, allowing for efficient and effective testing of Vue components and application logic.
 
-### Leaderboard Logic
-- Implement a sorted set in Valkey to maintain the leaderboard.
-- Use Valkey's atomic operations for accurate, concurrent score updates.
+### Additional Front-end Guides
 
-### Caching
-- Cache frequently accessed leaderboard segments in Valkey for fast retrieval.
+- design, architecture, and implementation examples can be found in [Front-end Details](DETAILS_FRONTEND.md)
+- detailed information on Pinia and PiniaColada, refer to [Front-end State Management](STATE.md).
 
-### Real-time Updates
-- Implement a WebSocket connection to push leaderboard changes to connected clients.
+- for installing and configuring the front-end, please refer to our [Front-end Setup Guide](SETUP_FRONTEND.md).
 
-### Rate Limiting
-- Use Valkey to implement rate limiting on score submissions to prevent cheating.
+### Back-end Architecture & Stack
 
+- **Go**: Efficient and concurrent programming language for building scalable server-side applications.
+- **Huma**: Modern framework for building Go APIs, providing clean and declarative endpoint definitions.
+- **Valkey**: High-performance Redis fork by AWS, used for efficient data storage and retrieval.
+- **WebSocket**: Protocol for real-time, bidirectional communication between clients and server.
+- **go-redis**: Redis client for Go, facilitating interaction with Valkey.
+- **Middleware**: Custom middleware for rate limiting and request validation.
+- **Error Handling**: Utilizing Huma's error handling capabilities for consistent API responses.
+- **Configuration Management**: Uses Huma's config system for managing environment-specific settings.
+- **Dependency Injection**: Structuring the application for better testability and modularity.
+
+### Additional Back-end Guides
+- design, architecture, and implementation examples can be found in [Back-end Details](DETAILS_BACKEND.md)
+- detailed info on back-end infrastructure setup is located in our [Back-end Setup Guide](SETUP_BACKEND.md).
 
 ## Tech Stack Details
 General overview of the basic stack, more details will emerge in time...
@@ -236,7 +259,3 @@ Contact details:
 ## Artwork
 
 The artwork I featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt) 
-
-
-
-
