@@ -151,6 +151,7 @@ On the front end, Valkran will offer a responsive Single Page Application (SPA) 
 - **Go**: Efficient and concurrent programming language for building scalable server-side applications.
 - **Huma**: Modern framework for building Go APIs, providing clean and declarative endpoint definitions.
 - **Valkey**: High-performance Redis fork by AWS, used for efficient data storage and retrieval.
+- **Asyncq**: Distributed task queue for Go, used to spread work across machines.
 - **WebSocket**: Protocol for real-time, bidirectional communication between clients and server.
 - **go-redis**: Redis client for Go, facilitating interaction with Valkey.
 - **Middleware**: Custom middleware for rate limiting and request validation.
