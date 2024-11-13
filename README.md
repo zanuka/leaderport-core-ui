@@ -140,11 +140,22 @@ On the front end, Valkran will offer a responsive Single Page Application (SPA) 
 - **Cypress**: End-to-end testing framework for robust, reliable automated testing of web applications. Cypress provides a powerful set of features for writing, running, and debugging tests that simulate real user interactions, ensuring the application works correctly from the user's perspective.
 - **Vitest**: Fast and lightweight unit testing framework for Vite projects. We'll use it for unit and component tests due to its speed, ESM support, and seamless integration with the Vue ecosystem, allowing for efficient and effective testing of Vue components and application logic.
 
+### Experimental: alien-signals Integration
+
+We're exploring [alien-signals](https://github.com/stackblitz/alien-signals) for its potential to dramatically improve our real-time leaderboard performance:
+
+- **Ultra-Fast Reactivity**: ~400% faster than Vue 3.4's reactivity system
+- **Minimal Overhead**: Strict constraints ensure lightweight operation
+- **Efficient Updates**: Optimized for real-time score and rank changes
+
+For detailed implementation examples and considerations, see our [Alien Signals Overview](ALIEN_SIGNALS_OVERVIEW.md) and [Alien Signals + Valkey Integration](ALIEN_SIGNALS_VALKEY.md).
+
 ### Detailed Front-end Guides
 
 - design, architecture, and implementation examples can be found in [Front-end Details](DETAILS_FRONTEND.md)
 - detailed information on Pinia and PiniaColada, refer to [Front-end State Management](STATE.md)
 - for installing and configuring the front-end, please refer to our [Front-end Setup Guide](SETUP_FRONTEND.md)
+- integration patterns for alien-signals and Valkey can be found in [Alien Signals + Valkey Integration](ALIEN_SIGNALS_VALKEY.md)
 
 ### Back-end Architecture & Stack
 

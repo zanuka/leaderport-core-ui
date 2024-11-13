@@ -6,7 +6,17 @@
 - [ ] Set up basic project structure
 - [ ] Create initial README with project description and setup instructions
 
-### 2. Back-end Development 
+### 2. Research & Development
+- [ ] Evaluate and prototype alien-signals:
+  - [ ] Set up test implementation
+  - [ ] Benchmark performance characteristics
+  - [ ] Test integration with Go/Huma
+  - [ ] Document findings and recommendations
+- [ ] Assess alternative WebSocket solutions
+- [ ] Evaluate different state management approaches
+- [ ] Create proof-of-concept for critical features
+
+### 3. Back-end Development 
 - [ ] Set up Go project with Huma
 - [ ] Implement Valkey connection and basic operations
 - [ ] Create API endpoints:
@@ -17,7 +27,7 @@
 - [ ] Add rate limiting using Valkey
 - [ ] Write unit tests
 
-### 3. Front-end Development 
+### 4. Front-end Development 
 - [ ] Set up Vue 3 project with Vite and TypeScript
 - [ ] Create basic UI components:
   - [ ] Leaderboard display
@@ -28,29 +38,29 @@
 - [ ] Implement responsive design
 - [ ] Write unit tests
 
-### 4. Integration and Testing 
+### 5. Integration and Testing 
 - [ ] Integrate front end with back-end API
 - [ ] Implement end-to-end testing
 - [ ] Perform load testing and optimize as needed
 
-### 5. AWS Infrastructure Setup
+### 6. AWS Infrastructure Setup
 - [ ] Set up EC2 instance or ECS cluster
 - [ ] Configure Amazon ElastiCache for Valkey
 - [ ] Set up S3 bucket for front-end hosting
 - [ ] Configure networking and security groups
 
-### 6. CI/CD Pipeline 
+### 7. CI/CD Pipeline 
 - [ ] Create GitHub Actions workflows for front end and back end
 - [ ] Set up automated testing in CI pipeline
 - [ ] Configure deployment to AWS
 
-### 7. Documentation and Open Source Prep
+### 8. Documentation and Open Source Prep
 - [ ] Write comprehensive README
 - [ ] Create CONTRIBUTING.md guide
 - [ ] Document API endpoints
 - [ ] Add inline code comments
 
-### 8. Final Testing and Launch (2-3 days)
+### 9. Final Testing and Launch (2-3 days)
 - [ ] Perform final integration testing
 - [ ] Do security audit
 - [ ] Create demo instance
