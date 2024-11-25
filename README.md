@@ -22,7 +22,6 @@ For a detailed checklist of our milestones and deliverables, please refer to the
 ## Leaderboard Use Cases
 
 Primarily designed for games and competitive apps, but it can be easily applied to other domains:
-- DOGE Leaderboard: 🐶 for the 'most insanely dumb spending of your tax dollars'
 - Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
 - Education and E-learning: Track student progress and achievements in online courses
 - Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
