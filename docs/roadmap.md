@@ -3,29 +3,38 @@
 ### 1. Project Setup 
 - [x] Initialize GitHub repository with MIT license
 - [x] Create Roadmap outlining key deliverables
-- [ ] Set up basic project structure
-- [ ] Create initial README with project description and setup instructions
+- [x] Create initial README with project description and setup
+- [x] Create supporting markdown files
+- [x] Set up basic project structure
 
 ### 2. Research & Development
 - [ ] Evaluate and prototype alien-signals:
   - [ ] Set up test implementation
   - [ ] Benchmark performance characteristics
-  - [ ] Test integration with Go/Huma
+  - [ ] Test integration with Bun/Hono
   - [ ] Document findings and recommendations
 - [ ] Assess alternative WebSocket solutions
 - [ ] Evaluate different state management approaches
 - [ ] Create proof-of-concept for critical features
 
 ### 3. Back-end Development 
-- [ ] Set up Go project with Huma
+- [ ] Set up Bun project with Hono and Drizzle:
+  - [ ] Initialize project with Bun
+  - [ ] Configure Hono server
+  - [ ] Set up Drizzle ORM
+  - [ ] Configure TypeScript
+  - [ ] Set up Zod validation schemas
 - [ ] Implement Valkey connection and basic operations
-- [ ] Create API endpoints:
-  - [ ] Submit score
-  - [ ] Get leaderboard
-  - [ ] Get player rank
+- [ ] Create API endpoints with Zod validation:
+  - [ ] Submit score (validate score format and range)
+  - [ ] Get leaderboard (validate query parameters)
+  - [ ] Get player rank (validate player ID)
 - [ ] Implement WebSocket for real-time updates
 - [ ] Add rate limiting using Valkey
-- [ ] Write unit tests
+- [ ] Write unit tests using Bun's test runner:
+  - [ ] API endpoint validation tests
+  - [ ] Schema validation tests
+  - [ ] Integration tests with validation
 
 ### 4. Front-end Development 
 - [ ] Set up Vue 3 project with Vite and TypeScript
@@ -48,11 +57,13 @@
 - [ ] Configure Amazon ElastiCache for Valkey
 - [ ] Set up S3 bucket for front-end hosting
 - [ ] Configure networking and security groups
+- [ ] Install and configure Bun runtime environment
 
 ### 7. CI/CD Pipeline 
 - [ ] Create GitHub Actions workflows for front end and back end
-- [ ] Set up automated testing in CI pipeline
+- [ ] Set up automated testing using Bun's test runner
 - [ ] Configure deployment to AWS
+- [ ] Add Bun-specific build and optimization steps
 
 ### 8. Documentation and Open Source Prep
 - [ ] Write comprehensive README

@@ -4,19 +4,19 @@ Elevating Heroes, Immortalizing Legends :crossed_swords: [valkran.com](https://v
 
 ![Valkran](images/ValkyrieSoarsWithLights.jpg)
 
-Valkran is an open-source, real-time leaderboard system concept. The initial version will be built with [Vue.js](https://vuejs.org/), [Valkey](https://valkey.io), and [Go](https://golang.org/) but will likely evolve to support more tech stack variants. 
+Valkran is an open-source, real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
 
-It will be designed primarily for games and competitive applications. By leveraging Valkey's in-memory data storage and high-speed operations, Valkran enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
+By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime performance, Valkran enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
 
 ## Project Roadmap
 
-For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](ROADMAP.md).
+For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
 
 
 ## Project Plan
 
-For a detailed checklist of our milestones and deliverables, please refer to the [Plan](PLAN.md).
+For a detailed checklist of our milestones and deliverables, please refer to the [Plan](./docs/plan.md).
 
 
 ## Leaderboard Use Cases
@@ -48,9 +48,9 @@ For more detailed information about Valkey and its capabilities, please visit th
 
 ## Vue.js: The Progressive JavaScript Framework
 
-I've been building apps with Vue.js for the past 4 years, and think it's a great framework. 
+I've been building apps with Vue.js for the past 4 years, and think it's a fantastic framework. 
 
-Batteries-included benefits include:
+Key advantages of Vue include:
 
 - **Best of Both Worlds**: Combines Angular's structure with React's flexibility.
 - **Performance**: Lightweight with efficient rendering for fast, responsive leaderboards.
@@ -66,26 +66,50 @@ Batteries-included benefits include:
 - **Built-in Transition System**: Creates smooth animations for changing leaderboards.
 
 
+## React: The Popular JavaScript Framework
+
+I think it's also essential to support React, known for its performance, scalability, and developer productivity.
+
+Key advantages of React include:
+
+- **Large Ecosystem**: Extensive library of components and tools
+- **Virtual DOM**: Efficient rendering and updates
+- **Component-Based**: Modular and reusable code structure
+- **JSX**: Intuitive templating with JavaScript
+- **Rich Developer Tools**: Powerful debugging with React DevTools
+- **Strong TypeScript Support**: First-class type safety
+- **Server Components**: Advanced server-side rendering capabilities
+- **Meta Framework Support**: Next.js, Remix, and more
+- **Battle-Tested**: Production-proven at scale
+- **Active Community**: Regular updates and improvements
+
+
 ## Key Features to Valkran
 
 1. Real-time Leaderboard Updates
    - WebSocket integration for instant score changes
+   - TanStack Query for efficient data management
    - Smooth animations for rank changes
 
-2. Responsive Design
+2. Natural Language Queries
+   - Chat with your leaderboard using GPT-4
+   - Stream responses in real-time
+   - Query complex statistics naturally
+
+3. Responsive Design
    - Mobile-first approach with desktop enhancements
    - Adaptive layouts for various screen sizes
 
-3. Player Profile Cards
+4. Player Profile Cards
    - Quick view of player stats and achievements
    - Social sharing capabilities
 
-4. Multiple Leaderboard Views
+5. Multiple Leaderboard Views
    - Global rankings
    - Friend leaderboards
    - Time-based competitions (daily, weekly, monthly)
 
-5. Search and Filters
+6. Search and Filters
    - Find specific players or filter by various criteria
 
 ### Leaderboard Logic
@@ -103,13 +127,13 @@ Batteries-included benefits include:
 
 ## Primary v1 Goals
 
-The first version of the Valkran product should include: 
+The first version of the Valkran product will include: 
 
-1. Valkey's high-speed data operations for real-time updates
-2. Scalability for handling many concurrent users and score submissions
-3. [Client-side caching](https://valkey.io/topics/client-side-caching/) capabilities for fast leaderboard retrieval
-4. Use of Valkey's data structures (sorted sets) for efficient ranking
-5. Rate limiting implementation to showcase Valkey's utility in API protection
+1. Full-stack TypeScript implementation with Hono, Vue, and React
+2. TanStack integration for robust data management
+3. Natural language querying capabilities
+4. Real-time updates via WebSocket
+5. Valkey integration for high-speed operations
 
 ## Future Expansion
 
@@ -128,40 +152,19 @@ These additional features would further explore Valkey's capabilities and showca
 
 On the front end, Valkran will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
-### Front-end Architecture & Stack
-
-- **Vue3 + Composition API**: Leveraging the latest Vue features for efficient, scalable component design.
-- **Pinia**: State management solution for Vue, providing a smooth and reactive data flow.
-- **PiniaColada**: additional layer that works on top of Pinia, specifically focusing on data fetching and caching. Inspired by React Query but designed to work seamlessly with Pinia and Vue 3. Data flow with additional features like automatic persistence and simplified setup.
-- **Vite**: Next-generation front-end tooling for fast development and optimized production builds.
-- **TypeScript**: Enhancing code quality and developer experience with static typing.
-- **Tailwind CSS**: Utility-first CSS framework for creating a responsive, customizable UI.
-- **Cypress**: End-to-end testing framework for robust, reliable automated testing of web applications. Cypress provides a powerful set of features for writing, running, and debugging tests that simulate real user interactions, ensuring the application works correctly from the user's perspective.
-- **Vitest**: Fast and lightweight unit testing framework for Vite projects. We'll use it for unit and component tests due to its speed, ESM support, and seamless integration with the Vue ecosystem, allowing for efficient and effective testing of Vue components and application logic.
-
-### Experimental: alien-signals Integration
-
-We're exploring [alien-signals](https://github.com/stackblitz/alien-signals) for its potential to dramatically improve our real-time leaderboard performance:
-
-- **Ultra-Fast Reactivity**: ~400% faster than Vue 3.4's reactivity system
-- **Minimal Overhead**: Strict constraints ensure lightweight operation
-- **Efficient Updates**: Optimized for real-time score and rank changes
-
-For detailed implementation examples and considerations, see our [Alien Signals Overview](ALIEN_SIGNALS_OVERVIEW.md) and [Alien Signals + Valkey Integration](ALIEN_SIGNALS_VALKEY.md).
-
 ### Detailed Front-end Guides
 
-- design, architecture, and implementation examples can be found in [Front-end Details](DETAILS_FRONTEND.md)
-- detailed information on Pinia and PiniaColada, refer to [Front-end State Management](STATE.md)
-- for installing and configuring the front-end, please refer to our [Front-end Setup Guide](SETUP_FRONTEND.md)
-- integration patterns for alien-signals and Valkey can be found in [Alien Signals + Valkey Integration](ALIEN_SIGNALS_VALKEY.md)
+- design, architecture, and implementation examples can be found in [Front-end Details](./docs/frontend-details.md)
+- detailed information on Pinia and PiniaColada, refer to [Front-end State Management](./docs/state-management.md)
+- for installing and configuring the front-end, please refer to our [Front-end Setup Guide](./docs/frontend-setup.md)
+- integration patterns for alien-signals and Valkey can be found in [TanStack + Valkey Integration](./docs/tanstack-valkey-hono.md)
 
 ### Back-end Architecture & Stack
 
-- **Go**: Efficient and concurrent programming language for building scalable server-side applications.
-- **Huma**: Modern framework for building Go APIs, providing clean and declarative endpoint definitions.
-- **Valkey**: High-performance Redis fork by AWS, used for efficient data storage and retrieval.
-- **Asyncq**: Distributed task queue for Go, used to spread work across machines.
+- **Hono**: Modern framework for building Go APIs, providing clean and declarative endpoint definitions.
+- **Bun**: Superior runtime performance for Go applications.
+- **TypeScript**: Enhancing code quality and developer experience with static typing.
+- **Drizzle ORM**: Database ORM for TypeScript, providing a type-safe and efficient way to interact with databases.
 - **WebSocket**: Protocol for real-time, bidirectional communication between clients and server.
 - **go-redis**: Redis client for Go, facilitating interaction with Valkey.
 - **Middleware**: Custom middleware for rate limiting and request validation.
@@ -170,19 +173,25 @@ For detailed implementation examples and considerations, see our [Alien Signals 
 - **Dependency Injection**: Structuring the application for better testability and modularity.
 
 ### Detailed Back-end Guides
-- design, architecture, and implementation examples can be found in [Back-end Details](DETAILS_BACKEND.md)
-- detailed info on back-end infrastructure setup is located in our [Back-end Setup Guide](SETUP_BACKEND.md)
+- design, architecture, and implementation examples can be found in [Back-end Details](./docs/backend-details.md)
+- detailed info on back-end infrastructure setup is located in our [Back-end Setup Guide](./docs/backend-setup.md)
 
 ## Tech Stack Details
-General overview of the basic stack, more details will emerge in time...
+
 - Front-end Stack:
-  - Vue 3
+  - Vue 3 with Composition API
   - TypeScript
-  - Pinia (for state management)
+  - TanStack Suite:
+    - Query (for data management)
+    - Table (for leaderboard display)
+    - Form (for type-safe forms)
+    - Router (for routing)
   - Vite (for build tooling)
 - Back-end Stack:
-  - Go
-  - Huma (for API development)
+  - Hono (for API and SSR)
+  - Bun (for runtime)
+  - TypeScript
+  - Drizzle ORM (for database operations)
 - Database:
   - Valkey (AWS's Redis fork)
 - Cloud Infrastructure:
@@ -194,6 +203,7 @@ General overview of the basic stack, more details will emerge in time...
 - Additional:
   - WebSocket (for real-time updates)
   - Docker (for containerization)
+  - OpenAI (for natural language leaderboard queries)
 
 
 ## Contributors
@@ -232,7 +242,7 @@ We will focus on the following features for Phase 1 prototype
   
 ### Future Features
  Integrate with **blockchain** or NFT-based systems for gamified economies or decentralized scoring systems.
-For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](ROADMAP.md).
+For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](./docs/roadmap.md).
 
 
 ## The origin of Valkran
@@ -270,3 +280,60 @@ The Valkran project was conceptualized on the evening of October 12, 2024 by [za
 ## Artwork
 
 The artwork I featured in this project was generated using DALL-E, powered by [OpenAI's](https://www.openai.com/) [ChatGPT-4](https://openai.com/chatgpt) 
+
+## Framework Support & CLI Strategy
+
+Valkran provides a flexible CLI tool that empowers developers to create leaderboard projects with their preferred framework. Our strategy focuses on framework-agnostic core functionality with framework-specific implementations.
+
+### Supported Frameworks
+- Vue.js
+- React
+- VanillaJS
+- Svelte
+- Angular
+
+### CLI Architecture
+The `valkran-cli` employs a modular template system that:
+- Maintains separate starter templates for each framework
+- Shares core leaderboard logic across all implementations
+- Provides consistent developer experience regardless of framework choice
+
+### Getting Started
+
+```bash
+# Install the CLI globally
+npm install -g valkran-cli
+
+# Create a new project
+valkran create my-leaderboard
+
+# Follow the interactive prompts to:
+# 1. Select your preferred framework
+# 2. Choose leaderboard features
+# 3. Configure initial settings
+```
+
+### Template Structure
+Each framework template includes:
+- Pre-configured build tools
+- TypeScript support
+- Testing setup
+- Real-time WebSocket integration
+- Valkey connection utilities
+- Framework-specific component architecture
+- Documentation and examples
+
+### Maintenance Strategy
+To ensure consistent quality across all framework implementations:
+- Core leaderboard logic remains framework-agnostic
+- Feature parity is maintained across all frameworks
+- Updates are rolled out simultaneously
+- Each framework implementation receives dedicated testing
+- Community contributions are welcomed for all frameworks
+
+## Getting Started
+
+To create a new Valkran project, use our CLI:
+
+```bash
+# Install the CLI globally

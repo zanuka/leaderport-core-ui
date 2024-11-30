@@ -18,3 +18,7 @@
 2. Test the connection by submitting a score and retrieving the leaderboard.
 
 3. Celebrate 🎉
+
+For detailed frontend architecture information, see [Frontend Details](./frontend-details.md).
+
+For backend connection details, see [Backend Setup Guide](./backend-setup.md).

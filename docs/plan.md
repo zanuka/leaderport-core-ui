@@ -1,4 +1,4 @@
-## Valkran Development Phases
+## Valkran Development Plan
 
 ### 1. Project Setup 
 - [x] Initialize GitHub repository with MIT license
@@ -13,15 +13,23 @@
 - [ ] Set up basic project structure
 
 ### 2. Back-end Development 
-- [ ] Set up Go project with Huma
+- [ ] Set up Bun project with Hono and Drizzle
+- [ ] Set up Zod validation:
+  - [ ] Create score submission schemas
+  - [ ] Create leaderboard query schemas
+  - [ ] Create player rank schemas
+  - [ ] Add middleware for request validation
 - [ ] Implement Valkey connection and basic operations
-- [ ] Create API endpoints:
-  - [ ] Submit score
-  - [ ] Get leaderboard
-  - [ ] Get player rank
+- [ ] Create API endpoints with validation:
+  - [ ] Submit score (with score range validation)
+  - [ ] Get leaderboard (with pagination validation)
+  - [ ] Get player rank (with ID validation)
 - [ ] Implement WebSocket for real-time updates
 - [ ] Add rate limiting using Valkey
-- [ ] Write unit tests
+- [ ] Write unit tests using Bun's test runner:
+  - [ ] Schema validation tests
+  - [ ] API endpoint validation tests
+  - [ ] Error handling tests
 
 ### 3. Front-end Development 
 - [ ] Set up Vue 3 project with Vite and TypeScript
@@ -44,11 +52,13 @@
 - [ ] Configure Amazon ElastiCache for Valkey
 - [ ] Set up S3 bucket for front end hosting
 - [ ] Configure networking and security groups
+- [ ] Install and configure Bun runtime environment
 
 ### 6. CI/CD Pipeline 
 - [ ] Create GitHub Actions workflows for front end and back end
-- [ ] Set up automated testing in CI pipeline
+- [ ] Set up automated testing using Bun's test runner
 - [ ] Configure deployment to AWS
+- [ ] Add Bun-specific build and optimization steps
 
 ### 7. Documentation and Open Source Prep
 - [ ] Write comprehensive README

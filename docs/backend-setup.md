@@ -1,7 +1,16 @@
 # Valkran Back-end Setup Guide
 This is a rough draft of a setup guide for developers that will be using Valkran. Most of the details are focused on the back-end setup, since the front-end install of the npm package will be pretty straightforward. I've included most of the common stack setups, but feel free to create an issue or pull request to add more.    
 
-Depending on how this initial project goes, I will likely create other versions for React, Svelte, Angular, Ember, etc.. Just starting with Vue for now since it's rad. 
+## Prerequisites
+Before starting any of the setup options, ensure you have:
+1. Install Bun:
+   ```bash
+   curl -fsSL https://bun.sh/install | bash
+   ```
+2. Verify installation:
+   ```bash
+   bun --version
+   ```
 
 ## Back-end Setup
 Details on setting up the infrastructure to use Valkran effectively on the major cloud providers or self-hosted solutions.
@@ -22,8 +31,21 @@ Details on setting up the infrastructure to use Valkran effectively on the major
 
 4. Deploy the Valkran backend:
    - Clone the Valkran backend repository
+   - Install dependencies:
+     ```bash
+     bun install
+     ```
    - Update configuration with your ElastiCache endpoint
+   - Initialize Drizzle:
+     ```bash
+     bun add -d drizzle-kit
+     bun drizzle-kit push:pg
+     ```
    - Deploy to AWS (e.g., using Elastic Beanstalk or ECS)
+   - Start the Hono server:
+     ```bash
+     bun run start
+     ```
 
 ### Option 2: AWS with Valkey on EC2 with Graviton Processors
 
@@ -42,19 +64,35 @@ AWS Graviton processors offer excellent price performance for cloud workloads. H
    - Set up security groups to allow necessary inbound traffic.
    - Choose or create a key pair for SSH access.
 
-4. Install and configure Valkey:
-   - SSH into your instance.
-   - Install Valkey (replace with actual Valkey installation commands).
-   - Configure Valkey to start on boot.
+4. Install and configure backend:
+   ```bash
+   # Install Bun
+   curl -fsSL https://bun.sh/install | bash
+   
+   # Install dependencies
+   bun install
+   
+   # Setup database with Drizzle
+   bun add -d drizzle-kit
+   bun drizzle-kit push:pg
+   ```
 
-5. Deploy Valkran backend:
-   - Update your backend configuration with the Graviton instance details.
-   - Deploy your backend to the Graviton-powered EC2 instance.
+5. Install and configure Valkey:
+   - SSH into your instance
+   - Install Valkey (replace with actual Valkey installation commands)
+   - Configure Valkey to start on boot
 
-6. Connect your frontend:
-   - Update your frontend configuration with the backend API endpoint.
+6. Deploy Valkran backend:
+   - Update your backend configuration with the Graviton instance details
+   - Start the Hono server:
+     ```bash
+     bun run start
+     ```
 
-7. Test the connection:
+7. Connect your frontend:
+   - Update your frontend configuration with the backend API endpoint
+
+8. Test the connection:
    - Use appropriate tools to interact with your Valkey instance and verify functionality.
 
 Benefits of using AWS Graviton for Valkran:
@@ -87,29 +125,44 @@ Google Cloud Platform offers a flexible infrastructure that can be used to host 
    - SSH into your new instance from the GCP Console.
    - Update the system: `sudo apt-get update && sudo apt-get upgrade -y`
    - Install Valkey (replace with actual installation commands for Valkey):
-     ```
+     ```bash
      # Example commands (adjust based on Valkey's actual installation process)
      wget https://github.com/valkey/releases/download/v1.0.0/valkey-server
      chmod +x valkey-server
      sudo mv valkey-server /usr/local/bin/
      ```
-   - Configure Valkey to start on boot (create a systemd service file).
+   - Configure Valkey to start on boot (create a systemd service file)
 
-4. Set up networking:
-   - In the VPC network settings, create a firewall rule to allow incoming traffic on Valkey's port (default is usually 6379).
+4. Set up backend on the instance:
+   ```bash
+   # Install Bun
+   curl -fsSL https://bun.sh/install | bash
+   
+   # Install dependencies
+   bun install
+   
+   # Setup database
+   bun add -d drizzle-kit
+   bun drizzle-kit push:pg
+   ```
 
-5. Note the connection details:
-   - Once your instance is set up, note down the external IP address.
+5. Set up networking:
+   - In the VPC network settings, create firewall rules to allow incoming traffic on:
+     - Port 6379 (Valkey)
+     - Port 3000 (Hono server)
 
-6. Deploy the Valkran backend:
-   - Clone the Valkran backend repository.
-   - Update the configuration file with your Valkey instance's IP address and port.
-   - Deploy your backend to Google Cloud (e.g., using Google Kubernetes Engine or Cloud Run).
+6. Note the connection details:
+   - Once your instance is set up, note down the external IP address
 
-7. Connect your frontend:
-   - Update your frontend configuration with the backend API endpoint (the URL of your deployed backend service).
+7. Deploy the Valkran backend:
+   - Clone the Valkran backend repository
+   - Update the configuration file with your Valkey instance's IP address and port
+   - Deploy your backend to Google Cloud (e.g., using Google Kubernetes Engine or Cloud Run)
 
-8. Test the connection:
+8. Connect your frontend:
+   - Update your frontend configuration with the backend API endpoint
+
+9. Test the connection:
    - Submit a test score and retrieve the leaderboard to ensure everything is working correctly.
 
 Benefits of using GCP with Valkey for Valkran:
@@ -244,3 +297,32 @@ For guidance on optimizing Valkran for your specific setup, please reach out to 
 2. Test the connection by submitting a score and retrieving the leaderboard.
 
 3. Celebrate 🎉
+
+## Environment Configuration
+
+Create a .env file in your project root:
+```env
+DATABASE_URL=postgres://...
+VALKEY_URL=redis://localhost:6379
+PORT=3000
+NODE_ENV=development
+```
+
+## Verifying Your Setup
+
+1. Test the Hono server:
+   ```bash
+   curl http://localhost:3000/health
+   ```
+
+2. Test Valkey connection:
+   ```bash
+   curl http://localhost:3000/api/leaderboard
+   ```
+
+3. Test WebSocket connection:
+   ```bash
+   websocat ws://localhost:3000/ws
+   ```
+
+For frontend connection details, see [Frontend Setup Guide](./frontend-setup.md).
