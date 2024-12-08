@@ -1,15 +1,15 @@
-# Valkran Front-end Setup Guide
+# LeaderPort Front-end Setup Guide
 
-1. Install the Valkran npm package:
+1. Install the LeaderPort npm package:
    ```
    npm install vue-valkyrie
    ```
 
-2. Import and use Valkran in your Vue.js application:
+2. Import and use LeaderPort in your Vue.js application:
    ```javascript
-   import { Valkran } from 'vue-valkyrie';
+   import { LeaderPort } from 'vue-valkyrie';
 
-   //\ Use Valkran in your component
+   //\ Use LeaderPort in your component
 
 ## Connecting Front-end to Back-end
 

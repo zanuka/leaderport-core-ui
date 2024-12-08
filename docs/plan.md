@@ -1,4 +1,4 @@
-## Valkran Development Plan
+## LeaderPort Development Plan
 
 ### 1. Project Setup 
 - [x] Initialize GitHub repository with MIT license

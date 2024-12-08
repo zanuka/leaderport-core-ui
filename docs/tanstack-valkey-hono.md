@@ -1,6 +1,6 @@
 ## TanStack + Valkey + Hono Integration
 
-Combining TanStack with Valkey and Hono creates a powerful foundation for the Valkran real-time leaderboard system. Here's how these technologies work together:
+Combining TanStack with Valkey and Hono creates a powerful foundation for the LeaderPort real-time leaderboard system. Here's how these technologies work together:
 
 ### 1. Real-time Score Synchronization
 ```typescript

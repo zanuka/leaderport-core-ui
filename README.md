@@ -1,12 +1,12 @@
-# Valkran
+# LeaderPort
 
-Elevating Heroes, Immortalizing Legends :crossed_swords: [valkran.com](https://valkran.com)
+Elevating Heroes, Immortalizing Legends :crossed_swords: [leaderport.ai](https://leaderport.ai)
 
-![Valkran](images/ValkyrieSoarsWithLights.jpg)
+![LeaderPort](images/ValkyrieSoarsWithLights.jpg)
 
-Valkran is an open-source, real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
+LeaderPort is an open-source, real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
 
-By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime performance, Valkran enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
+By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
 
 ## Project Roadmap
@@ -43,7 +43,7 @@ Key advantages of Valkey include:
 - **Active Community**: vibrant [open-source community](https://valkey.io/connect/) ensures ongoing development and support.
 - **Compatibility**: [Redis fork](https://github.com/valkey-io/valkey) maintains compatibility with existing clients and tools; win.
 
-For more detailed information about Valkey and its capabilities, please visit the [Valkey Introduction](https://valkey.io/topics/introduction/). This comprehensive guide provides an in-depth look at Valkey's features, architecture, and use cases, helping you understand why it's an excellent choice for high-performance, scalable applications like Valkran.
+For more detailed information about Valkey and its capabilities, please visit the [Valkey Introduction](https://valkey.io/topics/introduction/). This comprehensive guide provides an in-depth look at Valkey's features, architecture, and use cases, helping you understand why it's an excellent choice for high-performance, scalable applications like LeaderPort.
 
 
 ## Vue.js: The Progressive JavaScript Framework
@@ -84,7 +84,7 @@ Key advantages of React include:
 - **Active Community**: Regular updates and improvements
 
 
-## Key Features to Valkran
+## Key Features to LeaderPort
 
 1. Real-time Leaderboard Updates
    - WebSocket integration for instant score changes
@@ -127,7 +127,7 @@ Key advantages of React include:
 
 ## Primary v1 Goals
 
-The first version of the Valkran product will include: 
+The first version of the LeaderPort product will include: 
 
 1. Full-stack TypeScript implementation with Hono, Vue, and React
 2. TanStack integration for robust data management
@@ -148,9 +148,9 @@ These additional features would further explore Valkey's capabilities and showca
    
 ## Technical Details
 
-![Valkran](images/ValkyrieSoars.jpg)
+![LeaderPort](images/ValkyrieSoars.jpg)
 
-On the front end, Valkran will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
+On the front end, LeaderPort will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
 ### Detailed Front-end Guides
 
@@ -208,15 +208,15 @@ On the front end, Valkran will offer a responsive Single Page Application (SPA) 
 
 ## Contributors
 
-Valkran welcomes contributions. This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
+LeaderPort welcomes contributions. This project aims to provide a robust, scalable leaderboard solution that game developers can easily integrate into their projects.
 
 ### How You Can Contribute
 
 1. **Feature Development**: Add new features or enhance existing ones.
 2. **Bug Fixes**: Help identify and resolve issues.
-3. **Documentation**: Improve our docs to help others integrate Valkran.
+3. **Documentation**: Improve our docs to help others integrate LeaderPort.
 4. **Testing**: Expand our test coverage and improve test scenarios.
-5. **Performance Optimization**: Help make Valkran even faster and more efficient.
+5. **Performance Optimization**: Help make LeaderPort even faster and more efficient.
 
 ### Benefits for the Gaming Community
 
@@ -245,11 +245,11 @@ We will focus on the following features for Phase 1 prototype
 For a detailed breakdown of our development phases and upcoming features, please check our [Roadmap](./docs/roadmap.md).
 
 
-## The origin of Valkran
+## The origin of LeaderPort
 
-![Valkran](images/NorseValkyrieSoars.jpg)
+![LeaderPort](images/NorseValkyrieSoars.jpg)
 
-The name Valkran is a fusion of two key concepts: 'Valk' and 'Ran'.
+The name LeaderPort is a fusion of two key concepts: 'Valk' and 'Ran'.
 
 'Valk' is derived from Valkyrie, the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie) chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
    - Select and showcase top performers (like Valkyries choosing the best warriors)
@@ -261,21 +261,21 @@ The name Valkran is a fusion of two key concepts: 'Valk' and 'Ran'.
    - The continuous process of re-evaluating and updating rankings
    - The race or "run" to the top of the leaderboard
 
-The combination "Valkran" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
+The combination "LeaderPort" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
 - Swiftly process and display data 
 - Accurately rank and showcase top performers 
 - Provide a scalable and resilient system 
 
-Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, Valkran aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements. By combining the mythical power of the Valkyries ('Valk') with the core functionality of ranking ('Ran'), Valkran stands as a testament to the fusion of legendary inspiration and practical application in modern game development.
+Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, LeaderPort aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements. By combining the mythical power of the Valkyries ('Valk') with the core functionality of ranking ('Ran'), LeaderPort stands as a testament to the fusion of legendary inspiration and practical application in modern game development.
 
 
 ## Author
 
-The Valkran project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
+The LeaderPort project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
 
 - GitHub: [@zanuka](https://github.com/zanuka)
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
-- Project Site: [valkran.com](https://valkran.com)
+- Project Site: [leaderport.ai](https://leaderport.ai)
 
 ## Artwork
 
@@ -283,7 +283,7 @@ The artwork I featured in this project was generated using DALL-E, powered by [O
 
 ## Framework Support & CLI Strategy
 
-Valkran provides a flexible CLI tool that empowers developers to create leaderboard projects with their preferred framework. Our strategy focuses on framework-agnostic core functionality with framework-specific implementations.
+LeaderPort provides a flexible CLI tool that empowers developers to create leaderboard projects with their preferred framework. Our strategy focuses on framework-agnostic core functionality with framework-specific implementations.
 
 ### Supported Frameworks
 - Vue.js
@@ -293,7 +293,7 @@ Valkran provides a flexible CLI tool that empowers developers to create leaderbo
 - Angular
 
 ### CLI Architecture
-The `valkran-cli` employs a modular template system that:
+The `leaderport-cli` employs a modular template system that:
 - Maintains separate starter templates for each framework
 - Shares core leaderboard logic across all implementations
 - Provides consistent developer experience regardless of framework choice
@@ -302,10 +302,10 @@ The `valkran-cli` employs a modular template system that:
 
 ```bash
 # Install the CLI globally
-npm install -g valkran-cli
+npm install -g leaderport-cli
 
 # Create a new project
-valkran create my-leaderboard
+leaderport create my-leaderboard
 
 # Follow the interactive prompts to:
 # 1. Select your preferred framework
@@ -333,7 +333,7 @@ To ensure consistent quality across all framework implementations:
 
 ## Getting Started
 
-To create a new Valkran project, use our CLI:
+To create a new LeaderPort project, use our CLI:
 
 ```bash
 # Install the CLI globally

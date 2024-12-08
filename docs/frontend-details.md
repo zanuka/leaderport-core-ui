@@ -1,5 +1,5 @@
 # Front-end Details
-Valkran's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, integrates TanStack's powerful libraries for data management, and uses Tailwind CSS for a clean, intuitive interface.
+LeaderPort's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, integrates TanStack's powerful libraries for data management, and uses Tailwind CSS for a clean, intuitive interface.
 
 Key features of the front end include:
 - Responsive design for both mobile and desktop browsers
@@ -12,7 +12,7 @@ Key features of the front end include:
 
 ## Front-end Architecture
 
-Valkran's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
+LeaderPort's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
 
 1. **Vue 3 with Composition API**: 
    - Leverages the latest Vue features for efficient and scalable component design

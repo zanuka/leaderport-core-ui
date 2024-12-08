@@ -1,4 +1,4 @@
-## Valkran Development Phases
+## LeaderPort Development Phases
 
 ### 1. Project Setup 
 - [x] Initialize GitHub repository with MIT license

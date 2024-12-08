@@ -1,6 +1,6 @@
 ## TanStack Overview
 
-For Valkran's real-time leaderboard system, we'll utilize the TanStack suite of libraries due to their production-ready status, comprehensive feature set, and excellent performance characteristics. Key benefits include:
+For LeaderPort's real-time leaderboard system, we'll utilize the TanStack suite of libraries due to their production-ready status, comprehensive feature set, and excellent performance characteristics. Key benefits include:
 
 - Production-proven reliability
 - Type-safe by default
@@ -8,7 +8,7 @@ For Valkran's real-time leaderboard system, we'll utilize the TanStack suite of 
 - Extensive community support
 - Enterprise-grade implementations
 
-### Core Components for Valkran
+### Core Components for LeaderPort
 
 #### 1. TanStack Query
 Essential for leaderboard data management:
@@ -83,7 +83,7 @@ const virtualizer = useVirtualizer({
   - [ ] Evaluate TanStack Virtual for large leaderboards
   - [ ] Document findings and recommendations
 
-### Benefits for Valkran
+### Benefits for LeaderPort
 1. Scalability:
    - Handles large datasets efficiently
    - Optimized for real-time updates
