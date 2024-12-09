@@ -2,7 +2,7 @@
 
 Elevating Heroes, Immortalizing Legends :crossed_swords: [leaderport.ai](https://leaderport.ai)
 
-![LeaderPort](images/ValkyrieSoarsWithLights.jpg)
+![LeaderPort](images/LeaderPort_256x256.png)
 
 LeaderPort is an open-source, real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
 
@@ -148,8 +148,6 @@ These additional features would further explore Valkey's capabilities and showca
    
 ## Technical Details
 
-![LeaderPort](images/ValkyrieSoars.jpg)
-
 On the front end, LeaderPort will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
 ### Detailed Front-end Guides
@@ -247,26 +245,25 @@ For a detailed breakdown of our development phases and upcoming features, please
 
 ## The origin of LeaderPort
 
-![LeaderPort](images/NorseValkyrieSoars.jpg)
+Core Definition:
+"LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes."
 
-The name LeaderPort is a fusion of two key concepts: 'Valk' and 'Ran'.
+Key Messaging Points:
+- The "Port" in LeaderPort suggests both a gateway/portal and a place where important information docks/arrives
+- It serves as a central hub where different types of leadership data converge
+- Works across multiple domains:
+  • Sports: "Track champions across every league"
+  • Markets: "Monitor market movers and top performers"
+  • Crypto: "Real-time crypto rankings and momentum"
+  • Education: "Leadership boards for learning achievements"
+  • Fitness: "Top performer tracking for health goals"
+  • Business: "Sales leaderboards and performance metrics"
 
-'Valk' is derived from Valkyrie, the formidable female warriors of [Norse legend](https://en.wikipedia.org/wiki/Valkyrie) chosen by Odin to select the most worthy warriors for Valhalla. This symbolizes our leaderboard system's ability to:
-   - Select and showcase top performers (like Valkyries choosing the best warriors)
-   - Provide swift, real-time updates (mirroring the Valkyries' speed and agility)
-   - Offer a robust and reliable system (echoing the Valkyries' strength and dependability)
+Sample Description:
+"LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you."
 
-'Ran' is a subtle nod to "ranking", which is at the core of any leaderboard system. It represents:
-   - The system's primary function of ranking players
-   - The continuous process of re-evaluating and updating rankings
-   - The race or "run" to the top of the leaderboard
-
-The combination "LeaderPort" embodies our vision of a powerful, efficient, and discerning leaderboard system. It represents our commitment to:
-- Swiftly process and display data 
-- Accurately rank and showcase top performers 
-- Provide a scalable and resilient system 
-
-Just as Valkyries were essential in Norse mythology for recognizing and elevating the most valiant, LeaderPort aims to be an indispensable tool for game developers in highlighting and celebrating their players' achievements. By combining the mythical power of the Valkyries ('Valk') with the core functionality of ranking ('Ran'), LeaderPort stands as a testament to the fusion of legendary inspiration and practical application in modern game development.
+Marketing Hook:
+"In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion."
 
 
 ## Author
