@@ -84,9 +84,6 @@
 - Ensure all tests pass and add new tests for new features
 - Follow code style and documentation standards
 
-## License
-This project is open source and available under the MIT License.
-
 ## Next Steps
 - Implement additional features (e.g., multiple leaderboards, time-based competitions)
 - Optimize for larger scale

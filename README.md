@@ -4,7 +4,10 @@ Elevating Heroes, Immortalizing Legends :crossed_swords: [leaderport.ai](https:/
 
 ![LeaderPort](images/LeaderPort_256x256.png)
 
-LeaderPort is an open-source, real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
+LeaderPort is a real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
+
+The initial prototype will be launched as a Chrome Extension in 2025.
+If successful, work will continue for a full-fledged SASS platform. 
 
 By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
