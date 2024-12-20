@@ -13,6 +13,9 @@ If successful, work will continue towards developing a full-fledged SaaS platfor
 By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime 
 performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
+## Mission Statement
+LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes.
+
 
 ## Chrome Extension Strategy
 
