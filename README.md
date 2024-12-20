@@ -19,15 +19,16 @@ LeaderPort is your universal gateway to real-time rankings and leaderboards, tra
 
 ## Chrome Extension Strategy
 
-LeaderPort's Chrome extension leverages powerful APIs to provide real-time data visualization and insights. Key features include:
+LeaderPort's Chrome extension leverages official sports data APIs and our backend infrastructure to provide real-time data visualization and insights. Key features include:
 
-- **Data Extraction**: Uses `chrome.scripting` to inject scripts and extract data from sites like NBA.com.
-- **Data Storage**: Utilizes `chrome.storage` for caching and user preferences.
-- **Visualization**: Integrates Highcharts for interactive charts and dashboards.
-- **Real-time Updates**: Employs `chrome.alarms` for scheduled data refreshes.
-- **User Interaction**: Displays data in a `chrome.sidePanel` for easy access.
+- **Data Integration**: Connects to LeaderPort's backend API which aggregates data from official sources like Sportradar and league APIs.
+- **Smart Caching**: Utilizes `chrome.storage` for efficient data caching and user preferences, respecting subscription tiers.
+- **Interactive Visualization**: Integrates Highcharts for professional-grade charts and dashboards.
+- **Real-time Updates**: Implements SSE/WebSocket connections for live data streaming based on subscription level.
+- **User Interface**: Displays data in a `chrome.sidePanel` with progressive loading and offline support.
+- **Subscription Management**: Handles user authentication and feature access based on subscription tier.
 
-For a detailed strategy, refer to the [Extension Strategy](./docs/extension-strategy.md).
+For a detailed strategy and API integration details, refer to the [Sports Data Integration Guide](./docs/sports-data.md).
 
 ## Project Roadmap
 
