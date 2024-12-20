@@ -110,7 +110,7 @@ Here's a strategic overview for your LeaderPort Chrome extension:
 ### Use Cases
 1. **Sports Analysis**
 - "Who are the top 3 NBA scorers this season?"
-- "Compare LeBron's stats to Jordan's at the same age"
+- "Compare Lillard's stats to Jordan's at the same age"
 - "Show me trending players in fantasy basketball"
 
 2. **Financial Insights**

@@ -6,11 +6,25 @@ Elevating Heroes, Immortalizing Legends :crossed_swords: [leaderport.ai](https:/
 
 LeaderPort is a real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [Bun](https://bun.sh/), and [Valkey](https://valkey.io), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
 
-The initial prototype will be launched as a Chrome Extension in 2025.
-If successful, work will continue for a full-fledged SASS platform. 
+The initial prototype will be launched as a browser extension in 2025, supporting Chrome, Firefox, and Safari. This MVP aims to ensure seamless functionality across all major browsers, providing a consistent user experience regardless of the platform. 
 
-By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
+If successful, work will continue towards developing a full-fledged SaaS platform. This will include additional features and enhancements based on user feedback and market demand, ensuring LeaderPort remains at the forefront of real-time leaderboard solutions.
 
+By combining Valkey's in-memory data storage with Hono's efficient routing and Bun's superior runtime 
+performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
+
+
+## Chrome Extension Strategy
+
+LeaderPort's Chrome extension leverages powerful APIs to provide real-time data visualization and insights. Key features include:
+
+- **Data Extraction**: Uses `chrome.scripting` to inject scripts and extract data from sites like NBA.com.
+- **Data Storage**: Utilizes `chrome.storage` for caching and user preferences.
+- **Visualization**: Integrates Highcharts for interactive charts and dashboards.
+- **Real-time Updates**: Employs `chrome.alarms` for scheduled data refreshes.
+- **User Interaction**: Displays data in a `chrome.sidePanel` for easy access.
+
+For a detailed strategy, refer to the [Extension Strategy](./docs/extension-strategy.md).
 
 ## Project Roadmap
 
@@ -337,3 +351,7 @@ To create a new LeaderPort project, use our CLI:
 
 ```bash
 # Install the CLI globally
+
+```
+
+
