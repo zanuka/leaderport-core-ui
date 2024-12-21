@@ -30,6 +30,8 @@ LeaderPort's Chrome extension leverages official sports data APIs and our backen
 
 For a detailed strategy and API integration details, refer to the [Sports Data Integration Guide](./docs/sports-data.md).
 
+For development workflow, refer to [Extension Development](./docs/extension-dev.md)
+
 ## Project Roadmap
 
 For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
