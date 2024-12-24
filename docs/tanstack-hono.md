@@ -1,29 +1,36 @@
-## TanStack + Valkey + Hono Integration
+## TanStack + Redis + Hono Integration
 
-Combining TanStack with Valkey and Hono creates a powerful foundation for the LeaderPort real-time leaderboard system. Here's how these technologies work together:
+Combining TanStack with Upstash/Redis and Hono creates a powerful foundation for the LeaderPort real-time leaderboard system. Here's how these technologies work together:
 
 ### 1. Real-time Score Synchronization
 ```typescript
 import { createQuery, createMutation } from '@tanstack/vue-query'
-import { valkeyClient } from './valkey-client'
+import { Redis } from '@upstash/redis'
+
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_URL,
+  token: process.env.UPSTASH_REDIS_TOKEN,
+})
 
 // Real-time score management
 const scoreQuery = createQuery({
   queryKey: ['playerScore'],
-  queryFn: () => valkeyClient.getScore(),
-  // Valkey-specific options
+  queryFn: async () => {
+    const score = await redis.get(`player:${playerId}:score`)
+    return Number(score) || 0
+  },
   staleTime: 1000,
   cacheTime: 5000
 })
 
-// Optimistic updates with Valkey
+// Optimistic updates with Redis
 const scoreMutation = createMutation({
   mutationFn: async (newScore: number) => {
-    await valkeyClient.updateScore(newScore)
+    await redis.set(`player:${playerId}:score`, newScore)
+    await redis.zadd('leaderboard', { score: newScore, member: playerId })
     return newScore
   },
   onMutate: async (newScore) => {
-    // Optimistic update using TanStack's built-in features
     await queryClient.cancelQueries(['playerScore'])
     const previous = queryClient.getQueryData(['playerScore'])
     queryClient.setQueryData(['playerScore'], newScore)
@@ -36,32 +43,35 @@ const scoreMutation = createMutation({
 ```typescript
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import { ValkeyClient } from './valkey-client'
+import { Redis } from '@upstash/redis'
 
 const app = new Hono()
-const valkey = new ValkeyClient()
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_URL,
+  token: process.env.UPSTASH_REDIS_TOKEN,
+})
 
 // Middleware setup
 app.use(cors())
-app.use(async (c, next) => {
-  c.set('valkey', valkey)
-  await next()
-})
 
 // RESTful endpoints for TanStack Query
 app.get('/api/leaderboard', async (c) => {
-  const valkey = c.get('valkey')
-  const data = await valkey.getLeaderboard()
-  return c.json(data)
+  // Get top 100 players using Redis Sorted Set
+  const leaderboard = await redis.zrange('leaderboard', 0, 99, {
+    withScores: true,
+    rev: true
+  })
+  return c.json(leaderboard)
 })
 
 // WebSocket support for real-time updates
 app.get('/ws', async (c) => {
   const ws = await c.upgrade()
-  const valkey = c.get('valkey')
   
-  valkey.subscribe('leaderboard-updates', (data) => {
-    ws.send(JSON.stringify(data))
+  // Subscribe to Redis pub/sub for real-time updates
+  const subscriber = redis.duplicate()
+  await subscriber.subscribe('leaderboard-updates', (message) => {
+    ws.send(JSON.stringify(message))
   })
 })
 ```
@@ -71,15 +81,19 @@ app.get('/ws', async (c) => {
 import { Store } from '@tanstack/store'
 import { useVirtualizer } from '@tanstack/vue-virtual'
 
-// Combine TanStack Store with Valkey data
+// Combine TanStack Store with Redis data
 const leaderboardStore = new Store({
   state: {
     entries: [],
     lastUpdate: null
   },
   onUpdate: async (store) => {
-    // Sync with Valkey
-    await valkeyClient.batchUpdate(store.entries)
+    // Batch update Redis sorted set
+    const pipeline = redis.pipeline()
+    store.entries.forEach(entry => {
+      pipeline.zadd('leaderboard', { score: entry.score, member: entry.playerId })
+    })
+    await pipeline.exec()
   }
 })
 
@@ -102,7 +116,7 @@ const virtualizer = useVirtualizer({
 2. **Real-time Capabilities**
    - WebSocket support through Hono
    - TanStack Query's real-time updates
-   - Valkey's high-performance data storage
+   - Redis's high-performance data storage
 
 3. **Developer Experience**
    - Type safety across the stack
@@ -116,17 +130,19 @@ const virtualizer = useVirtualizer({
 // Hono endpoint
 app.post('/api/score', async (c) => {
   const { score, playerId } = await c.req.json()
-  const valkey = c.get('valkey')
   
-  // Update Valkey
-  await valkey.updateScore(playerId, score)
+  // Update Redis
+  const pipeline = redis.pipeline()
+  pipeline.set(`player:${playerId}:score`, score)
+  pipeline.zadd('leaderboard', { score, member: playerId })
+  await pipeline.exec()
   
-  // Broadcast update
-  valkey.publish('leaderboard-updates', {
+  // Publish update
+  await redis.publish('leaderboard-updates', JSON.stringify({
     type: 'SCORE_UPDATE',
     playerId,
     score
-  })
+  }))
   
   return c.json({ success: true })
 })
@@ -165,10 +181,11 @@ ws.onmessage = (event) => {
 
 ### Performance Benefits
 
-1. **Valkey Advantages**
-   - In-memory data storage
-   - Efficient score updates
-   - Built-in rate limiting
+1. **Redis Advantages**
+   - In-memory data storage with persistence
+   - Atomic operations for score updates
+   - Built-in pub/sub for real-time updates
+   - Sorted sets perfect for leaderboards
 
 2. **TanStack Features**
    - Smart caching strategies
@@ -187,4 +204,4 @@ For backend setup details, see [Backend Setup Guide](./backend-setup.md).
 For detailed implementation guidelines and best practices, refer to:
 - [TanStack Documentation](https://tanstack.com/docs/latest)
 - [Hono Documentation](https://hono.dev)
-- Valkey Documentation (link to be added)
+- [Upstash Redis Documentation](https://docs.upstash.com/redis)

@@ -134,7 +134,6 @@ On the front end, LeaderPort will offer a responsive Single Page Application (SP
 
 - design, architecture, and implementation examples can be found in [Front-end Details](./docs/frontend-details.md)
 - detailed information on Pinia and PiniaColada, refer to [Front-end State Management](./docs/state-management.md)
-- for installing and configuring the front-end, please refer to our [Front-end Setup Guide](./docs/frontend-setup.md)
 - integration patterns can be found in [TanStack + Hono Integration](./docs/tanstack-hono.md)
 
 ## Tech Stack Details
