@@ -4,7 +4,7 @@ Elevating Heroes, Immortalizing Legends :crossed_swords: [leaderport.ai](https:/
 
 ![LeaderPort](images/LeaderPort_256x256.png)
 
-LeaderPort is a leaderboard platform and browser extension suite, built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. Additional technologies leveraged for the initial prototypes include [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), and [Bun](https://bun.sh/). We're focused on modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
+LeaderPort is a leaderboard platform and browser extension suite, built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. Additional technologies leveraged for the initial prototypes include [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [TanStack](docs/tanstack-hono.md) and [Bun](https://bun.sh/). We're focused on modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
 
 ## Achievement Immortalization System
 

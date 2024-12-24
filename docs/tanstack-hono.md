@@ -95,7 +95,7 @@ const virtualizer = useVirtualizer({
 ### Key Benefits of This Integration
 
 1. **Performance Optimization**
-   - TanStack Query's caching aligns with Valkey's in-memory performance
+   - TanStack Query's caching aligns with in-memory performance ( redis )
    - Hono's lightweight design minimizes overhead
    - Virtual scrolling handles large datasets efficiently
 
