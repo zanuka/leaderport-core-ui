@@ -33,15 +33,21 @@ jobs:
 
       - name: Package extension
         run: |
+          mkdir -p artifacts
           cd dist
           if [ "${{ matrix.browser }}" = "edge" ]; then
             cp ../manifest-edge.json ./manifest.json
           fi
-          zip -r ../${{ matrix.browser }}-extension.zip .
+          zip -r ../artifacts/${{ matrix.browser }}-extension.zip .
+          cd ..
+          ls -la artifacts/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.browser }}-extension
-          path: ${{ matrix.browser }}-extension.zip
+          path: artifacts/${{ matrix.browser }}-extension.zip
           retention-days: 5
+          if-no-files-found: error
+          compression-level: 6
+          overwrite: true
