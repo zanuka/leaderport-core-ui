@@ -230,3 +230,28 @@ The LeaderPort project was conceptualized on the evening of October 12, 2024 by 
 - LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
 - Project Site: [leaderport.ai](https://leaderport.ai)
 
+## Development and Builds
+
+### Accessing Built Extensions
+After each successful GitHub Action workflow run, extension packages are available in two ways:
+
+1. **Via GitHub Actions UI**:
+   - Navigate to the [Actions tab](https://github.com/zanuka/leaderport-core-ui/actions)
+   - Click on the latest workflow run
+   - Scroll to the "Artifacts" section
+   - Download the desired browser extension:
+     - `chrome-extension.zip`
+     - `firefox-extension.zip`
+     - `edge-extension.zip`
+     - `opera-extension.zip`
+
+2. **Via GitHub API**:
+   ```
+   https://api.github.com/repos/zanuka/leaderport-core-ui/actions/artifacts
+   ```
+
+Note: Built artifacts are retained for 5 days before automatic deletion.
+
+### Local Development
+For local development instructions, refer to [Extension Development](./docs/extension-dev.md)
+
