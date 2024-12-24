@@ -201,34 +201,22 @@ More details [here](docs/public-private-repos.md).
 
 ## The origin of LeaderPort
 
-Core Definition:
-"LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes."
+Core Definition: LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes.
 
 Key Messaging Points:
 - The "Port" in LeaderPort suggests both a gateway/portal and a place where important information docks/arrives
 - It serves as a central hub where different types of leadership data converge
 - Works across multiple domains:
-  • Sports: "Track champions across every league"
-  • Markets: "Monitor market movers and top performers"
-  • Crypto: "Real-time crypto rankings and momentum"
-  • Education: "Leadership boards for learning achievements"
-  • Fitness: "Top performer tracking for health goals"
-  • Business: "Sales leaderboards and performance metrics"
+  - Sports: "Track champions across every league"
+  - Markets: "Monitor market movers and top performers"
+  - Crypto: "Real-time crypto rankings and momentum"
+  - Education: "Leadership boards for learning achievements"
+  - Fitness: "Top performer tracking for health goals"
+  - Business: "Sales leaderboards and performance metrics"
 
-Sample Description:
-"LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you."
+Product Description: LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you.
 
-Marketing Hook:
-"In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion."
-
-
-## Author
-
-The LeaderPort project was conceptualized on the evening of October 12, 2024 by [zanuka](https://github.com/zanuka) and will be in active development with the goal of launching Phase 1 by January 2025. I'm still trying to figure out what the heck I'm doing on a daily basis so... stay tuned!
-
-- GitHub: [@zanuka](https://github.com/zanuka)
-- LinkedIn: [Mike Delucchi](https://www.linkedin.com/in/zanuka)
-- Project Site: [leaderport.ai](https://leaderport.ai)
+Marketing Hook: In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion.
 
 ## Development and Builds
 
@@ -255,3 +243,36 @@ Note: Built artifacts are retained for 5 days before automatic deletion.
 ### Local Development
 For local development instructions, refer to [Extension Development](./docs/extension-dev.md)
 
+## Contributing
+
+We welcome contributions from developers interested in Web3, Sui blockchain development, and real-time data visualization! 
+
+### Getting Started
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Prerequisites
+
+- Node.js 18+
+- Bun runtime
+- Basic understanding of Vue.js, TypeScript, and Web3 concepts
+- (Optional) Familiarity with Sui Move programming
+
+### Rewards for Contributors
+
+- Get early access to premium features
+- Earn contributor NFTs on Sui network
+- Join our featured contributors list
+- Opportunity to become a core maintainer
+
+We believe in fostering an inclusive and welcoming environment for all contributors. Whether you're fixing a bug, improving documentation, or adding a new feature, your help is appreciated!
+
+### License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2024-present, Mike Delucchi (zanuka)
