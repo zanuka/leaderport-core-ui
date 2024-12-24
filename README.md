@@ -26,7 +26,7 @@ This modern leaderboard platform and browser extension suite will be built on [S
    - Transparent validation processes
    - Anti-cheat mechanism integration
    
-Please reference the [web3 vision](docs/web3-vision.md) doc for more detailed info.
+Please reference the [Web3 vision](docs/web3-vision.md) doc for more detailed info.
 
 By combining Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
