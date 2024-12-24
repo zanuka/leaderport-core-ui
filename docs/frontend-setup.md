@@ -2,14 +2,15 @@
 
 1. Install the LeaderPort npm package:
    ```
-   npm install vue-valkyrie
+   npm install @leaderport/ui
    ```
 
 2. Import and use LeaderPort in your Vue.js application:
    ```javascript
-   import { LeaderPort } from 'vue-valkyrie';
+   import { LeaderPort } from '@leaderport/ui';
 
-   //\ Use LeaderPort in your component
+   // Use LeaderPort in your component
+   ```
 
 ## Connecting Front-end to Back-end
 

@@ -130,3 +130,162 @@ The application uses a comprehensive error handling strategy:
 For state management details, see [State Management Guide](./state-management.md).
 
 For TanStack implementation details, see [TanStack Details](./tanstack-details.md).
+
+## Blockchain Integration
+
+### Real-time and Blockchain Architecture
+
+The frontend implements a dual-layer architecture to handle both real-time updates and blockchain interactions:
+
+```typescript:src/services/LeaderboardService.ts
+// Dual-layer leaderboard service
+export class LeaderboardService {
+    private realTimeDB: Database;
+    private blockchainClient: BlockchainClient;
+
+    constructor() {
+        this.realTimeDB = new Database();
+        this.blockchainClient = new BlockchainClient();
+    }
+
+    // Real-time layer for immediate updates
+    async updateScore(score: Score): Promise<void> {
+        await this.realTimeDB.update(score);
+        
+        // If score meets criteria, immortalize on blockchain
+        if (this.isSignificantAchievement(score)) {
+            await this.blockchainClient.immortalizeScore(score);
+        }
+    }
+
+    // Blockchain layer for historical records
+    async getHistoricalBest(): Promise<Score[]> {
+        return this.blockchainClient.queryHistoricalRecords();
+    }
+}
+```
+
+### Blockchain Client Integration
+
+```typescript:src/blockchain/BlockchainClient.ts
+export class BlockchainClient {
+    private provider: SuiProvider;
+    private wallet: SuiWallet;
+
+    // Handle wallet connections
+    async connectWallet(): Promise<void> {
+        this.wallet = await this.provider.requestWalletConnection();
+    }
+
+    // Interact with smart contracts
+    async immortalizeScore(score: Score): Promise<TransactionResult> {
+        const transaction = await this.provider.createTransaction({
+            target: LEADERPORT_CONTRACT_ADDRESS,
+            method: 'immortalize_score',
+            arguments: [score]
+        });
+        
+        return this.wallet.signAndSubmit(transaction);
+    }
+
+    // Subscribe to achievement events
+    async subscribeToAchievements(): Promise<void> {
+        this.provider.subscribeToEvents(
+            LEADERPORT_CONTRACT_ADDRESS,
+            'AchievementMinted',
+            this.handleNewAchievement
+        );
+    }
+}
+```
+
+### Achievement NFT Integration
+
+```typescript:src/components/AchievementDisplay.vue
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import { useBlockchain } from '@/composables/useBlockchain'
+
+const { mintAchievementNFT, getPlayerAchievements } = useBlockchain()
+const achievements = ref<Achievement[]>([])
+
+onMounted(async () => {
+    achievements.value = await getPlayerAchievements()
+})
+</script>
+
+<template>
+    <div class="achievements-gallery">
+        <div v-for="achievement in achievements" 
+             :key="achievement.id" 
+             class="achievement-card">
+            <img :src="achievement.metadata.image" />
+            <h3>{{ achievement.metadata.title }}</h3>
+            <p>{{ achievement.metadata.description }}</p>
+        </div>
+    </div>
+</template>
+```
+
+### Web3 Composables
+
+```typescript:src/composables/useBlockchain.ts
+export function useBlockchain() {
+    const blockchainClient = inject('blockchainClient')
+    const wallet = ref<SuiWallet | null>(null)
+    const isConnected = ref(false)
+
+    async function connectWallet() {
+        wallet.value = await blockchainClient.connectWallet()
+        isConnected.value = true
+    }
+
+    async function mintAchievementNFT(achievement: Achievement) {
+        if (!isConnected.value) {
+            await connectWallet()
+        }
+        return blockchainClient.mintAchievementNFT(achievement)
+    }
+
+    return {
+        wallet,
+        isConnected,
+        connectWallet,
+        mintAchievementNFT
+    }
+}
+```
+
+### Error Handling and Logging
+
+The blockchain integration includes specialized error handling:
+
+```typescript:src/utils/blockchainErrors.ts
+export class BlockchainError extends Error {
+    constructor(
+        message: string,
+        public readonly code: string,
+        public readonly transaction?: string
+    ) {
+        super(message)
+    }
+}
+
+export function handleBlockchainError(error: unknown) {
+    if (error instanceof BlockchainError) {
+        // Handle specific blockchain errors
+        switch (error.code) {
+            case 'INSUFFICIENT_GAS':
+                notifyUser('Please ensure your wallet has sufficient funds')
+                break;
+            case 'USER_REJECTED':
+                notifyUser('Transaction was rejected')
+                break;
+            default:
+                logError(error)
+        }
+    }
+}
+```
+
+These additions integrate seamlessly with the existing frontend architecture while adding the blockchain capabilities necessary for achievement immortalization and NFT features. Would you like me to expand on any particular aspect?

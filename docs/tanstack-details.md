@@ -120,3 +120,36 @@ For detailed implementation examples and best practices, refer to the [TanStack 
 For detailed integration examples with Valkey and Hono, see [TanStack Valkey Hono Integration](./tanstack-valkey-hono.md).
 
 For state management overview, see [State Management Guide](./state-management.md).
+
+## Implementation Strategy Update
+
+After analyzing the LeaderPort API codebase, TanStack would be more valuable on the frontend/extension side rather than in the API for several reasons:
+
+1. The API already handles:
+   - Efficient caching (Redis)
+   - Rate limiting
+   - Error handling
+   - Data transformation
+
+2. TanStack's primary benefits (Query, Cache, Virtual) are most useful for:
+   - Client-side data fetching
+   - Cache management
+   - UI virtualization
+   - State management
+
+3. For the browser extension, TanStack Query would be excellent for:
+   - Managing API requests
+   - Caching responses
+   - Handling real-time updates
+   - Background data refetching
+   - Optimistic updates
+
+## Revised Architecture
+
+Keep the current API architecture as is, and implement TanStack in the browser extension/frontend where its features will provide the most value. The API's role should remain focused on:
+- Serving data efficiently
+- Managing caching
+- Handling rate limiting
+- Processing requests
+
+The frontend/extension can then use TanStack Query to optimally consume and manage this API data.

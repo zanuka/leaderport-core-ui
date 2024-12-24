@@ -2,12 +2,13 @@
   "name": "leaderport",
   "manifest_version": 3,
   "version": "0.1.0",
-  "description": "leaderport chrome extension",
+  "description": "Browser extension for real-time leaderboards and competitive rankings across sports and markets",
   "permissions": ["scripting", "tabs"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "action": {
     "default_popup": "popup/index.html"
   },
+  "options_page": "options/index.html",
   "icons": {
     "16": "assets/icon-16.png",
     "24": "assets/icon-24.png",

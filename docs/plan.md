@@ -1,76 +1,108 @@
-## LeaderPort Development Plan
+## LeaderPort Extension Development Plan
 
 ### 1. Project Setup 
 - [x] Initialize GitHub repository with MIT license
 - [x] Create initial README with project description and details
-- [x] Create back-end details doc
 - [x] Create front-end details doc
 - [x] Create plan doc
-- [x] Create back-end setup doc
 - [x] Create front-end setup doc
-- [x] Create back-end setup doc
 - [x] Create front-end state management doc
-- [ ] Set up basic project structure
+- [x] Set up browser extension project structure:
+  - [x] Create manifest.json (v3)
+  - [x] Set up content scripts directory
+  - [x] Set up background scripts directory
+  - [ ] Set up popup directory
+  - [ ] Set up options page directory
 
-### 2. Back-end Development 
-- [ ] Set up Bun project with Hono and Drizzle
-- [ ] Set up Zod validation:
-  - [ ] Create score submission schemas
-  - [ ] Create leaderboard query schemas
-  - [ ] Create player rank schemas
-  - [ ] Add middleware for request validation
-- [ ] Implement Valkey connection and basic operations
-- [ ] Create API endpoints with validation:
-  - [ ] Submit score (with score range validation)
-  - [ ] Get leaderboard (with pagination validation)
-  - [ ] Get player rank (with ID validation)
-- [ ] Implement WebSocket for real-time updates
-- [ ] Add rate limiting using Valkey
-- [ ] Write unit tests using Bun's test runner:
-  - [ ] Schema validation tests
-  - [ ] API endpoint validation tests
-  - [ ] Error handling tests
-
-### 3. Front-end Development 
+### 2. Extension Core Development
 - [ ] Set up Vue 3 project with Vite and TypeScript
-- [ ] Create basic UI components:
+- [ ] Configure extension-specific build pipeline
+- [ ] Implement core extension features:
+  - [ ] Background service worker
+  - [ ] Content script injection
+  - [ ] Message passing between components
+  - [ ] Storage management
+  - [ ] Cross-origin permissions
+- [ ] Set up secure communication with LeaderPort API
+- [ ] Implement offline capability
+
+### 3. UI Components Development 
+- [ ] Create extension popup interface:
   - [ ] Leaderboard display
   - [ ] Score submission form
   - [ ] Player rank display
-- [ ] Implement Pinia store for state management
-- [ ] Add real-time updates using WebSocket
+  - [ ] Settings panel
+- [ ] Create options page:
+  - [ ] API connection settings
+  - [ ] Notification preferences
+  - [ ] Theme customization
+- [ ] Implement content script UI elements:
+  - [ ] Game overlay components
+  - [ ] Score submission overlay
+  - [ ] Achievement notifications
 - [ ] Implement responsive design
-- [ ] Write unit tests
+- [ ] Add dark/light theme support
 
-### 4. Integration and Testing 
-- [ ] Integrate front end with back-end API
-- [ ] Implement end-to-end testing
-- [ ] Perform load testing and optimize as needed
+### 4. State Management
+- [ ] Implement Pinia store for state management:
+  - [ ] User preferences store
+  - [ ] Game state store
+  - [ ] Leaderboard data store
+- [ ] Set up extension storage sync
+- [ ] Add real-time updates using WebSocket
+- [ ] Implement state persistence
 
-### 5. AWS Infrastructure Setup
-- [ ] Set up EC2 instance or ECS cluster
-- [ ] Configure Amazon ElastiCache for Valkey
-- [ ] Set up S3 bucket for front end hosting
-- [ ] Configure networking and security groups
-- [ ] Install and configure Bun runtime environment
+### 5. Security Implementation
+- [ ] Implement Content Security Policy
+- [ ] Add CORS handling
+- [ ] Implement secure storage for sensitive data
+- [ ] Add request validation
+- [ ] Implement rate limiting for API calls
+- [ ] Add data sanitization
 
-### 6. CI/CD Pipeline 
-- [ ] Create GitHub Actions workflows for front end and back end
-- [ ] Set up automated testing using Bun's test runner
-- [ ] Configure deployment to AWS
-- [ ] Add Bun-specific build and optimization steps
+### 6. Testing Suite
+- [ ] Set up testing environment for extensions
+- [ ] Write unit tests:
+  - [ ] Component tests
+  - [ ] State management tests
+  - [ ] API communication tests
+- [ ] Implement E2E testing:
+  - [ ] Extension installation tests
+  - [ ] Content script injection tests
+  - [ ] Cross-browser compatibility tests
+- [ ] Add performance testing
 
-### 7. Documentation and Open Source Prep
+### 7. Browser Store Preparation
+- [ ] Prepare Chrome Web Store assets:
+  - [ ] Store listing screenshots
+  - [ ] Promotional images
+  - [ ] Icon sets
+  - [ ] Detailed description
+- [ ] Prepare Firefox Add-ons assets
+- [ ] Create privacy policy
+- [ ] Create terms of service
+- [ ] Implement usage analytics
+
+### 8. CI/CD Pipeline 
+- [ ] Create GitHub Actions workflows
+- [ ] Set up automated testing
+- [ ] Configure version management
+- [ ] Set up automated store submission
+- [ ] Implement automated code signing
+
+### 9. Documentation
 - [ ] Write comprehensive README
 - [ ] Create CONTRIBUTING.md guide
-- [ ] Document API endpoints
+- [ ] Document extension architecture
 - [ ] Add inline code comments
+- [ ] Create user guide
 
-### 8. Final Testing and Launch (2-3 days)
-- [ ] Perform final integration testing
-- [ ] Do security audit
-- [ ] Create demo instance
+### 10. Launch Preparation
+- [ ] Perform cross-browser testing
+- [ ] Complete security audit
+- [ ] Create demo video
 - [ ] Prepare launch announcement
+- [ ] Set up user feedback channels
 
 ## Contribution Guidelines
 - Fork the repository
@@ -80,7 +112,8 @@
 - Follow code style and documentation standards
 
 ## Next Steps
-- Implement additional features (e.g., multiple leaderboards, time-based competitions)
-- Optimize for larger scale
-- Create mobile app version
-- Add authentication system
+- Add support for additional browsers
+- Implement offline game detection
+- Add advanced customization options
+- Create companion mobile app
+- Implement social features

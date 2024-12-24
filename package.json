@@ -1,28 +1,54 @@
 {
-  "name": "leaderport",
+  "name": "leaderport-core-ui",
+  "version": "0.0.2",
+  "description": "Browser extension core UI for real-time leaderboards and immortalized rankings",
+  "type": "module",
   "author": "zanuka",
+  "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zanuka/leaderport"
+    "url": "https://github.com/zanuka/leaderport-core-ui.git"
   },
-  "license": "MIT",
-  "version": "0.0.1",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "generate-icons": "node scripts/generate-icons.js"
+    "generate-icons": "node scripts/generate-icons.js",
+    "build:chrome": "BROWSER=chrome node scripts/copy-manifest.js && vite build",
+    "build:firefox": "BROWSER=firefox node scripts/copy-manifest.js && vite build",
+    "build:safari": "BROWSER=safari node scripts/copy-manifest.js && vite build",
+    "build:edge": "BROWSER=edge node scripts/copy-manifest.js && vite build",
+    "build:opera": "BROWSER=opera node scripts/copy-manifest.js && vite build",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "pinia": "^2.3.0",
     "sharp": "^0.33.5",
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.287",
+    "@types/node": "^22.10.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
+    "eslint": "^8.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.0.0",
     "typescript": "~5.6.2",
     "vite": "^6.0.1",
+    "vitest": "^1.0.0",
     "vue-tsc": "^2.1.10"
+  },
+  "trustedDependencies": [
+    "sharp"
+  ],
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18.0.0"
   }
 }

@@ -8,73 +8,71 @@
 - [x] Set up basic project structure
 
 ### 2. Research & Development
-- [ ] Evaluate and prototype alien-signals:
-  - [ ] Set up test implementation
-  - [ ] Benchmark performance characteristics
-  - [ ] Test integration with Bun/Hono
+- [x] Evaluate and prototype browser extension architecture:
+  - [x] Research manifest v3 requirements
+  - [x] Test content script injection patterns
+  - [ ] Evaluate storage options (chrome.storage)
   - [ ] Document findings and recommendations
-- [ ] Assess alternative WebSocket solutions
-- [ ] Evaluate different state management approaches
+- [ ] Assess cross-browser compatibility
+- [ ] Evaluate state management approaches for extensions
 - [ ] Create proof-of-concept for critical features
 
-### 3. Back-end Development 
-- [ ] Set up Bun project with Hono and Drizzle:
-  - [ ] Initialize project with Bun
-  - [ ] Configure Hono server
-  - [ ] Set up Drizzle ORM
-  - [ ] Configure TypeScript
-  - [ ] Set up Zod validation schemas
-- [ ] Implement Valkey connection and basic operations
-- [ ] Create API endpoints with Zod validation:
-  - [ ] Submit score (validate score format and range)
-  - [ ] Get leaderboard (validate query parameters)
-  - [ ] Get player rank (validate player ID)
-- [ ] Implement WebSocket for real-time updates
-- [ ] Add rate limiting using Valkey
-- [ ] Write unit tests using Bun's test runner:
-  - [ ] API endpoint validation tests
-  - [ ] Schema validation tests
-  - [ ] Integration tests with validation
+### 3. Extension Development 
+- [x] Set up Vue 3 project with extension scaffolding:
+  - [x] Configure manifest.json
+  - [x] Set up content scripts
+  - [x] Configure background service worker
+  - [x] Set up popup interface
+  - [x] Configure TypeScript
+- [ ] Implement core extension features:
+  - [ ] Score detection from game pages
+  - [ ] Local storage management
+  - [ ] Cross-origin communication
+- [ ] Create extension-specific components:
+  - [ ] Popup interface
+  - [ ] Options page
+  - [ ] Content script overlay
+- [ ] Write unit tests for extension components
 
 ### 4. Front-end Development 
-- [ ] Set up Vue 3 project with Vite and TypeScript
 - [ ] Create basic UI components:
   - [ ] Leaderboard display
   - [ ] Score submission form
   - [ ] Player rank display
-- [ ] Implement Pinia store for state management
-- [ ] Add real-time updates using WebSocket
+  - [ ] Settings panel
+- [ ] Implement Pinia store for extension state management
+- [ ] Add offline support and data syncing
 - [ ] Implement responsive design
 - [ ] Write unit tests
 
 ### 5. Integration and Testing 
-- [ ] Integrate front end with back-end API
+- [ ] Test extension across different browsers
 - [ ] Implement end-to-end testing
-- [ ] Perform load testing and optimize as needed
+- [ ] Performance testing for content scripts
+- [ ] Cross-origin security testing
 
-### 6. AWS Infrastructure Setup
-- [ ] Set up EC2 instance or ECS cluster
-- [ ] Configure Amazon ElastiCache for Valkey
-- [ ] Set up S3 bucket for front-end hosting
-- [ ] Configure networking and security groups
-- [ ] Install and configure Bun runtime environment
+### 6. Store Deployment Prep
+- [ ] Prepare Chrome Web Store assets
+- [ ] Create Firefox Add-ons store assets
+- [ ] Configure extension packaging
+- [ ] Prepare store listings and documentation
 
 ### 7. CI/CD Pipeline 
-- [ ] Create GitHub Actions workflows for front end and back end
-- [ ] Set up automated testing using Bun's test runner
-- [ ] Configure deployment to AWS
-- [ ] Add Bun-specific build and optimization steps
+- [ ] Create GitHub Actions workflows for extension builds
+- [ ] Set up automated testing
+- [ ] Configure version management
+- [ ] Add extension-specific build steps
 
-### 8. Documentation and Open Source Prep
+### 8. Documentation
 - [ ] Write comprehensive README
 - [ ] Create CONTRIBUTING.md guide
-- [ ] Document API endpoints
+- [ ] Document extension APIs and events
 - [ ] Add inline code comments
 
-### 9. Final Testing and Launch (2-3 days)
-- [ ] Perform final integration testing
-- [ ] Do security audit
-- [ ] Create demo instance
+### 9. Final Testing and Launch
+- [ ] Perform cross-browser testing
+- [ ] Security audit for extension permissions
+- [ ] Create demo video
 - [ ] Prepare launch announcement
 
 ## Contribution Guidelines
@@ -85,7 +83,7 @@
 - Follow code style and documentation standards
 
 ## Next Steps
-- Implement additional features (e.g., multiple leaderboards, time-based competitions)
-- Optimize for larger scale
-- Create mobile app version
-- Add authentication system
+- Implement additional features (e.g., game detection, automated scoring)
+- Optimize extension performance
+- Add support for more browsers
+- Implement offline mode
