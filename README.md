@@ -4,7 +4,29 @@ Elevating Heroes, Immortalizing Legends :crossed_swords: [leaderport.ai](https:/
 
 ![LeaderPort](images/LeaderPort_256x256.png)
 
-LeaderPort is a real-time leaderboard system concept. Built with [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), and [Bun](https://bun.sh/), it leverages modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
+LeaderPort is a leaderboard platform and browser extension suite, built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. Additional technologies leveraged for the initial prototypes include [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), and [Bun](https://bun.sh/). We're focused on modern TypeScript-first technologies to deliver a high-performance, full-stack leaderboard solution.
+
+## Achievement Immortalization System
+
+1. **Permanent Record Keeping**
+   - Immutable blockchain storage of significant achievements
+   - Historical leaderboards preserved indefinitely
+   - Verifiable proof of accomplishment
+   - Cross-platform achievement persistence
+
+2. **NFT Achievement System**
+   - Dynamic NFT minting for major milestones
+   - Rarity tiers based on achievement difficulty
+   - Tradeable digital collectibles
+   - Achievement showcase functionality
+
+3. **Community Validation**
+   - Decentralized verification of major records
+   - Community voting on achievement authenticity
+   - Transparent validation processes
+   - Anti-cheat mechanism integration
+   
+Please reference the [web3 vision](docs/web3-vision.md) doc for more detailed info.
 
 By combining Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
