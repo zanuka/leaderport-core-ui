@@ -4,8 +4,16 @@
 - [x] Initialize GitHub repository with MIT license
 - [x] Create Roadmap outlining key deliverables
 - [x] Create initial README with project description and setup
-- [x] Create supporting markdown files
-- [x] Set up basic project structure
+- [x] Create supporting markdown files:
+  - [x] Front-end details doc
+  - [x] Front-end setup doc
+  - [x] Front-end state management doc
+- [x] Set up basic project structure:
+  - [x] Create manifest.json (v3)
+  - [x] Set up content scripts directory
+  - [x] Set up background scripts directory
+  - [x] Set up popup directory
+  - [x] Set up options page directory
 
 ### 2. Research & Development
 - [x] Evaluate and prototype browser extension architecture:
@@ -28,52 +36,87 @@
   - [ ] Score detection from game pages
   - [ ] Local storage management
   - [ ] Cross-origin communication
+  - [ ] Message passing between components
+  - [ ] Background service worker
+  - [ ] Offline capability
 - [ ] Create extension-specific components:
-  - [ ] Popup interface
-  - [ ] Options page
-  - [ ] Content script overlay
+  - [ ] Popup interface:
+    - [ ] Leaderboard display
+    - [ ] Score submission form
+    - [ ] Player rank display
+    - [ ] Settings panel
+  - [ ] Options page:
+    - [ ] API connection settings
+    - [ ] Notification preferences
+    - [ ] Theme customization
+  - [ ] Content script UI elements:
+    - [ ] Game overlay components
+    - [ ] Score submission overlay
+    - [ ] Achievement notifications
+- [ ] Implement dark/light theme support
 - [ ] Write unit tests for extension components
 
-### 4. Front-end Development 
-- [ ] Create basic UI components:
-  - [ ] Leaderboard display
-  - [ ] Score submission form
-  - [ ] Player rank display
-  - [ ] Settings panel
-- [ ] Implement Pinia store for extension state management
+### 4. State Management
+- [ ] Implement Pinia store for extension state management:
+  - [ ] User preferences store
+  - [ ] Game state store
+  - [ ] Leaderboard data store
 - [ ] Add offline support and data syncing
-- [ ] Implement responsive design
-- [ ] Write unit tests
+- [ ] Set up extension storage sync
+- [ ] Add real-time updates using WebSocket
+- [ ] Implement state persistence
 
-### 5. Integration and Testing 
-- [ ] Test extension across different browsers
-- [ ] Implement end-to-end testing
-- [ ] Performance testing for content scripts
-- [ ] Cross-origin security testing
+### 5. Security Implementation
+- [ ] Implement Content Security Policy
+- [ ] Add CORS handling
+- [ ] Implement secure storage for sensitive data
+- [ ] Add request validation
+- [ ] Implement rate limiting for API calls
+- [ ] Add data sanitization
 
-### 6. Store Deployment Prep
-- [ ] Prepare Chrome Web Store assets
-- [ ] Create Firefox Add-ons store assets
-- [ ] Configure extension packaging
-- [ ] Prepare store listings and documentation
+### 6. Testing Suite
+- [ ] Set up testing environment for extensions
+- [ ] Write unit tests:
+  - [ ] Component tests
+  - [ ] State management tests
+  - [ ] API communication tests
+- [ ] Implement E2E testing:
+  - [ ] Extension installation tests
+  - [ ] Content script injection tests
+  - [ ] Cross-browser compatibility tests
+- [ ] Add performance testing for content scripts
 
-### 7. CI/CD Pipeline 
-- [ ] Create GitHub Actions workflows for extension builds
+### 7. Browser Store Preparation
+- [ ] Prepare Chrome Web Store assets:
+  - [ ] Store listing screenshots
+  - [ ] Promotional images
+  - [ ] Icon sets
+  - [ ] Detailed description
+- [ ] Prepare Firefox Add-ons assets
+- [ ] Create privacy policy
+- [ ] Create terms of service
+- [ ] Implement usage analytics
+
+### 8. CI/CD Pipeline 
+- [ ] Create GitHub Actions workflows
 - [ ] Set up automated testing
 - [ ] Configure version management
-- [ ] Add extension-specific build steps
+- [ ] Set up automated store submission
+- [ ] Implement automated code signing
 
-### 8. Documentation
+### 9. Documentation
 - [ ] Write comprehensive README
 - [ ] Create CONTRIBUTING.md guide
-- [ ] Document extension APIs and events
+- [ ] Document extension architecture and APIs
 - [ ] Add inline code comments
+- [ ] Create user guide
 
-### 9. Final Testing and Launch
+### 10. Launch Preparation
 - [ ] Perform cross-browser testing
-- [ ] Security audit for extension permissions
+- [ ] Complete security audit
 - [ ] Create demo video
 - [ ] Prepare launch announcement
+- [ ] Set up user feedback channels
 
 ## Contribution Guidelines
 - Fork the repository
@@ -83,7 +126,8 @@
 - Follow code style and documentation standards
 
 ## Next Steps
-- Implement additional features (e.g., game detection, automated scoring)
-- Optimize extension performance
-- Add support for more browsers
-- Implement offline mode
+- Add support for additional browsers
+- Implement offline game detection
+- Add advanced customization options
+- Create companion mobile app
+- Implement social features
