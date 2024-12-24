@@ -36,11 +36,6 @@ For development workflow, refer to [Extension Development](./docs/extension-dev.
 For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
 
 
-## Project Plan
-
-For a detailed checklist of our milestones and deliverables, please refer to the [Plan](./docs/plan.md).
-
-
 ## Leaderboard Use Cases
 
 Primarily designed for games and competitive apps, but it can be easily applied to other domains:
@@ -49,25 +44,6 @@ Primarily designed for games and competitive apps, but it can be easily applied 
 - Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
 - Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
 - Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
-
-## Vue.js: The Progressive JavaScript Framework
-
-I've been building apps with Vue.js for the past 4 years, and think it's a fantastic framework. 
-
-Key advantages of Vue include:
-
-- **Best of Both Worlds**: Combines Angular's structure with React's flexibility.
-- **Performance**: Lightweight with efficient rendering for fast, responsive leaderboards.
-- **Reactive Data Binding**: Keeps UI in sync with data, perfect for real-time updates.
-- **Composition API**: Improves code organization and reusability.
-- **TypeScript Support**: Enhances code quality and developer productivity.
-- **Vue DevTools**: Powerful debugging and performance tuning.
-- **Scalability**: Supports both small and large-scale applications.
-- **Easy Learning Curve**: Accessible for new contributors.
-- **Strong Ecosystem**: Provides all tools needed for a full-featured SPA.
-- **Go API Integration**: Ideal front-end partner for a Go back end.
-- **Single-File Components**: Promotes clean, maintainable code structure.
-- **Built-in Transition System**: Creates smooth animations for changing leaderboards.
 
 
 ## Key Features to LeaderPort
@@ -167,6 +143,39 @@ On the front end, LeaderPort will offer a responsive Single Page Application (SP
   - WebSocket (for real-time updates)
   - Docker (for containerization)
   - OpenAI (for natural language leaderboard queries)
+
+## Open-Source & Paid Feature Strategy
+
+LeaderPort follows a "public core, private premium" development strategy:
+
+**Public Core (GitHub)**
+- Basic leaderboard functionality
+- Standard browser extension features
+- Core UI components
+- Basic data visualization
+- Community-driven improvements
+- MIT licensed
+
+**Premium Features (Private)**
+- Advanced analytics
+- Real-time professional sports data
+- Custom theming engine
+- Advanced data visualization
+- Enterprise-grade support
+- Additional premium features
+
+Both public (open-source) core repositories will be hosted on GitHub, while premium feature repositories will be hosted on GitLab. 
+
+This "hybrid" approach maximizes benefits:
+
+1. **Visibility**: Leverage GitHub's larger open-source community
+2. **Separation**: Natural boundary between public and private code
+3. **Security**: Private code remains isolated on GitLab
+4. **Community**: Better engagement through GitHub's social features
+
+The minor overhead of managing two platforms is outweighed by the benefits of GitHub's open-source ecosystem for public repositories while maintaining premium features secure and separate.
+
+More details [here](docs/public-private-repos.md).
 
 ## The origin of LeaderPort
 
