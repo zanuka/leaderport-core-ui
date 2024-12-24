@@ -117,8 +117,6 @@ const leaderboard = createQuery({
 
 For detailed implementation examples and best practices, refer to the [TanStack documentation](https://tanstack.com/docs/latest).
 
-For detailed integration examples with Valkey and Hono, see [TanStack Valkey Hono Integration](./tanstack-valkey-hono.md).
-
 For state management overview, see [State Management Guide](./state-management.md).
 
 ## Implementation Strategy Update

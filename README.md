@@ -123,7 +123,7 @@ In future iterations, we can expand this prototype with features like:
 - Multiple leaderboards
 - Time-based competitions
 
-These additional features would further explore Valkey's capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
+These additional features would further explore capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
 
    
 ## Technical Details

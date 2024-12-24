@@ -111,41 +111,24 @@ app.get('/api/leaderboard', async (c) => {
 })
 ```
 
-#### Valkey Integration
-Valkey can serve as a distributed state store:
-
-```typescript
-import { ValkeyClient } from './valkey-client'
-
-const valkey = new ValkeyClient()
-
-// Distributed state management
-app.post('/api/score', async (c) => {
-  const { score } = await c.req.json()
-  await valkey.updateScore(score)
-  valkey.publish('score-update', score)
-  return c.json({ success: true })
-})
-```
-
 ### Implementation Strategy
 
 Consider a hybrid approach:
 
 1. **Server State:**
    - TanStack Query for data fetching
-   - Valkey for distributed state
+   - Upstash Redis for distributed state
    - Hono context for request state
 
 2. **Client State:**
    - TanStack Store for global UI state
-   - Signals for component state
+   - Signals for component state 
    - Optional Pinia for Vue-specific features
 
 3. **Real-time Updates:**
    - WebSocket for live data
    - TanStack Query for polling
-   - Valkey for pub/sub
+   - Upstash Redis for pub/sub
 
 ### Research Tasks
 - [ ] Benchmark different combinations:
@@ -169,4 +152,4 @@ For detailed implementation examples
 
 For TanStack-specific implementation details, see [TanStack Details](./tanstack-details.md).
 
-For integration examples with Valkey and Hono, see [TanStack Valkey Hono Integration](./tanstack-valkey-hono.md).
+For integration examples with TanStack, Upstash Redis and Hono, see [TanStack Redis Hono Integration](./tanstack-hono.md).
