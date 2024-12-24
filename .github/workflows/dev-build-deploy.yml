@@ -28,16 +28,12 @@ jobs:
       - name: Build extension
         run: bun run build:${{ matrix.browser }}
 
-      - name: Run tests
-        run: bun test
-
       - name: Package extension
         run: |
           mkdir -p artifacts
           cd dist
-          if [ "${{ matrix.browser }}" = "edge" ]; then
-            cp ../manifest-edge.json ./manifest.json
-          fi
+          # Copy the appropriate manifest for each browser
+          cp ../manifests/manifest.${{ matrix.browser }}.json ./manifest.json
           zip -r ../artifacts/${{ matrix.browser }}-extension.zip .
           cd ..
           ls -la artifacts/

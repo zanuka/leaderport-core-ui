@@ -1,7 +1,7 @@
 {
   "name": "leaderport",
   "manifest_version": 2,
-  "version": "0.1.0",
+  "version": "0.0.2",
   "description": "Browser extension for real-time leaderboards and competitive rankings across sports and markets",
   "permissions": ["activeTab", "tabs", "<all_urls>"],
   "browser_action": {
