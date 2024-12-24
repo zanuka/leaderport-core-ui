@@ -1,5 +1,5 @@
 # Front-end Details
-LeaderPort's front end is designed to provide a seamless, responsive, and real-time leaderboard experience. It leverages Vue 3's Composition API for efficient component design, integrates TanStack's powerful libraries for data management, and uses Tailwind CSS for a clean, intuitive interface.
+LeaderPort's front end is designed to provide a seamless, responsive, and real-time leaderboard experience.
 
 Key features of the front end include:
 - Responsive design for both mobile and desktop browsers
@@ -14,8 +14,8 @@ Key features of the front end include:
 
 LeaderPort's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
 
-1. **Vue 3 with Composition API**: 
-   - Leverages the latest Vue features for efficient and scalable component design
+1. **Vue and/or React**: 
+   - Leverages the latest features for efficient and scalable component design
    - Enables better code organization and reusability through composable functions
 
 2. **TanStack Integration**:
@@ -137,7 +137,9 @@ For TanStack implementation details, see [TanStack Details](./tanstack-details.m
 
 The frontend implements a dual-layer architecture to handle both real-time updates and blockchain interactions:
 
-```typescript:src/services/LeaderboardService.ts
+```typescript
+//:src/services/LeaderboardService.ts
+
 // Dual-layer leaderboard service
 export class LeaderboardService {
     private realTimeDB: Database;
@@ -167,7 +169,8 @@ export class LeaderboardService {
 
 ### Blockchain Client Integration
 
-```typescript:src/blockchain/BlockchainClient.ts
+```typescript
+//:src/blockchain/BlockchainClient.ts
 export class BlockchainClient {
     private provider: SuiProvider;
     private wallet: SuiWallet;
@@ -201,7 +204,8 @@ export class BlockchainClient {
 
 ### Achievement NFT Integration
 
-```typescript:src/components/AchievementDisplay.vue
+```typescript
+//:src/components/AchievementDisplay.vue
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useBlockchain } from '@/composables/useBlockchain'
@@ -229,7 +233,8 @@ onMounted(async () => {
 
 ### Web3 Composables
 
-```typescript:src/composables/useBlockchain.ts
+```typescript
+//:src/composables/useBlockchain.ts
 export function useBlockchain() {
     const blockchainClient = inject('blockchainClient')
     const wallet = ref<SuiWallet | null>(null)
@@ -260,7 +265,8 @@ export function useBlockchain() {
 
 The blockchain integration includes specialized error handling:
 
-```typescript:src/utils/blockchainErrors.ts
+```typescript
+//:src/utils/blockchainErrors.ts
 export class BlockchainError extends Error {
     constructor(
         message: string,
@@ -289,3 +295,76 @@ export function handleBlockchainError(error: unknown) {
 ```
 
 These additions integrate seamlessly with the existing frontend architecture while adding the blockchain capabilities necessary for achievement immortalization and NFT features. 
+
+## Sui Integration
+
+### Sui dApp Kit Integration
+
+LeaderPort leverages the Sui dApp Kit for React components to handle wallet connections and blockchain interactions:
+
+```typescript
+//:src/providers/SuiProviders.tsx
+import { 
+  createNetworkConfig, 
+  SuiClientProvider, 
+  WalletProvider 
+} from '@mysten/dapp-kit';
+import { getFullnodeUrl } from '@mysten/sui/client';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const { networkConfig } = createNetworkConfig({
+  mainnet: { url: getFullnodeUrl('mainnet') },
+  testnet: { url: getFullnodeUrl('testnet') }
+});
+
+const queryClient = new QueryClient();
+
+export function SuiProviders({ children }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <SuiClientProvider networks={networkConfig} defaultNetwork="mainnet">
+        <WalletProvider>
+          {children}
+        </WalletProvider>
+      </SuiClientProvider>
+    </QueryClientProvider>
+  );
+}
+```
+
+### Sui TypeScript SDK Integration
+
+The application uses the Sui TypeScript SDK for blockchain interactions:
+
+```typescript
+//:src/services/sui-client.ts
+import { SuiClient } from '@mysten/sui/client';
+import { Ed25519Keypair } from '@mysten/sui/keypairs/ed25519';
+import { TransactionBlock } from '@mysten/sui/transactions';
+
+export class SuiService {
+  private client: SuiClient;
+  private keypair: Ed25519Keypair;
+
+  constructor() {
+    this.client = new SuiClient({
+      url: getFullnodeUrl('mainnet')
+    });
+  }
+
+  async submitScore(score: number, address: string) {
+    const tx = new TransactionBlock();
+    
+    // Build transaction to submit score
+    tx.moveCall({
+      target: `${CONTRACT_ADDRESS}::leaderboard::submit_score`,
+      arguments: [tx.pure(score)]
+    });
+
+    return await this.client.signAndExecuteTransactionBlock({
+      transactionBlock: tx,
+      requestType: 'WaitForLocalExecution'
+    });
+  }
+}
+```
