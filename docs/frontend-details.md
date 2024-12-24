@@ -288,4 +288,4 @@ export function handleBlockchainError(error: unknown) {
 }
 ```
 
-These additions integrate seamlessly with the existing frontend architecture while adding the blockchain capabilities necessary for achievement immortalization and NFT features. Would you like me to expand on any particular aspect?
+These additions integrate seamlessly with the existing frontend architecture while adding the blockchain capabilities necessary for achievement immortalization and NFT features. 
