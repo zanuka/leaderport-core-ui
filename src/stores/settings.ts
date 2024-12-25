@@ -1,4 +1,5 @@
-import { defineStore } from "pinia";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface Settings {
   apiKey: string;
@@ -6,40 +7,60 @@ interface Settings {
   notifications: boolean;
 }
 
-export const useSettingsStore = defineStore("settings", {
-  state: () => ({
-    settings: {
-      apiKey: "",
-      refreshInterval: 5,
-      notifications: true,
-    } as Settings,
-    savedMessage: "",
-  }),
+interface SettingsState {
+  settings: Settings;
+  savedMessage: string | null;
+  loadSettings: () => Promise<void>;
+  saveSettings: (settings: Settings) => Promise<void>;
+  updateSettings: (partialSettings: Partial<Settings>) => void;
+}
 
-  actions: {
-    async saveSettings(newSettings: Settings) {
-      try {
-        await chrome.storage.sync.set({ settings: newSettings });
-        this.settings = newSettings;
-        this.savedMessage = "Settings saved successfully!";
-        setTimeout(() => {
-          this.savedMessage = "";
-        }, 3000);
-      } catch (err) {
-        this.savedMessage = "Error saving settings";
-        console.error("Failed to save settings:", err);
-      }
-    },
+export const useSettingsStore = create<SettingsState>()(
+  persist(
+    (set, get) => ({
+      settings: {
+        apiKey: "",
+        refreshInterval: 5,
+        notifications: true,
+      },
+      savedMessage: null,
 
-    async loadSettings() {
-      try {
-        const result = await chrome.storage.sync.get("settings");
-        if (result.settings) {
-          this.settings = result.settings;
+      loadSettings: async () => {
+        try {
+          // If you need to load settings from an API, do it here
+          // For now, persist middleware handles local storage
+        } catch (error) {
+          console.error("Failed to load settings:", error);
         }
-      } catch (err) {
-        console.error("Failed to load settings:", err);
-      }
-    },
-  },
-});
+      },
+
+      saveSettings: async (settings: Settings) => {
+        try {
+          // If you need to save to an API, do it here
+          set({ settings });
+          set({ savedMessage: "Settings saved successfully!" });
+
+          // Clear the success message after 3 seconds
+          setTimeout(() => {
+            set({ savedMessage: null });
+          }, 3000);
+        } catch (error) {
+          console.error("Failed to save settings:", error);
+          set({ savedMessage: "Failed to save settings" });
+        }
+      },
+
+      updateSettings: (partialSettings: Partial<Settings>) => {
+        set((state) => ({
+          settings: {
+            ...state.settings,
+            ...partialSettings,
+          },
+        }));
+      },
+    }),
+    {
+      name: "settings-storage", // unique name for localStorage
+    }
+  )
+);

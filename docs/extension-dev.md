@@ -1,8 +1,8 @@
 # LeaderPort Extension Dev Workflow
 
-A simple Chrome Extension starter project that uses Vue 3 + TypeScript + Vite + Bun + Icon Generation
+A simple Chrome Extension starter project that uses React + TypeScript + Vite + Bun + Icon Generation
 
-## Prerequistes
+## Prerequisites
 
 Keep in mind I've created this starter using my personal preferences and it should be easy enough to swap out any of the technologies to match your own prefs. 
 
@@ -78,19 +78,42 @@ Through some basic DOM manipulation, you can set a custom background color.
 
 ## Dependencies
 
-- **sharp**: A high-performance image processing library that allows you to resize, crop, and manipulate images in various formats. It's used for generating icons and other image assets efficiently.
-- **vue**: A progressive JavaScript framework for building user interfaces. Vue is used in this project to create dynamic and interactive components for the Chrome extension.
+- **@mysten/dapp-kit**: SDK for building decentralized applications on the Sui blockchain, providing hooks and utilities for wallet integration and blockchain interactions.
+- **@mysten/sui**: Core library for interacting with the Sui blockchain network.
+- **@radix-ui/colors**: A collection of color primitives that work with Radix UI components.
+- **@radix-ui/react-icons**: A comprehensive set of icons designed for Radix UI components.
+- **@radix-ui/themes**: A design system and component library for building high-quality React applications.
+- **@tanstack/react-query**: Powerful data synchronization library for React applications, handling caching, refetching, and state management.
+- **react**: A JavaScript library for building user interfaces, used as the core framework for this extension.
+- **react-dom**: React package for DOM rendering and manipulation.
+- **react-spinners**: A collection of loading spinner components for React applications.
+- **sharp**: A high-performance image processing library for generating icons and other image assets efficiently.
+- **styled-components**: CSS-in-JS library for styling React components with dynamic styles.
+- **zustand**: Lightweight state management solution for React applications.
 
-## Why Vue?
-Just a personal preference. I'd likely also incorporate Tailwind and shadcn/ui but you can just use Vanilla JS and plain-old css as well. I think for more complex extensions, using Vue, React, or Svelte would be a good way to future-proof things and re-use components. 
+## Why React?
+React provides a robust ecosystem and extensive component libraries that make it ideal for building complex Chrome extensions. The combination of React with Radix UI and other modern tools enables rapid development of polished, maintainable user interfaces.
 
 ## Dev Dependencies
 
-- **@types/chrome**: Provides TypeScript type definitions for the Chrome extension APIs, enabling better type checking and IntelliSense in your development environment.
-- **@vitejs/plugin-vue**: A Vite plugin that provides support for Vue 3 single-file components, allowing you to use Vue's template syntax and features.
-- **typescript**: A language for application-scale JavaScript, providing static type definitions to improve code quality and maintainability.
-- **vite**: A build tool that provides a fast development server and optimized build process for modern web projects.
-- **vue-tsc**: A TypeScript compiler for Vue single-file components, ensuring type safety and compatibility with TypeScript in your Vue project.
+- **@testing-library/jest-dom**: Provides custom DOM element matchers for Jest, making it easier to test React components.
+- **@testing-library/react**: Testing utilities for React applications, focusing on testing components as users use them.
+- **@types/chrome**: Provides TypeScript type definitions for the Chrome extension APIs.
+- **@types/node**: TypeScript type definitions for Node.js.
+- **@types/react**: TypeScript type definitions for React.
+- **@types/react-dom**: TypeScript type definitions for React DOM.
+- **@typescript-eslint/eslint-plugin**: ESLint plugin for TypeScript-specific linting rules.
+- **@typescript-eslint/parser**: Allows ESLint to parse TypeScript code.
+- **@vitejs/plugin-react-swc**: Vite plugin that uses SWC for faster React refresh and compilation.
+- **@vitejs/plugin-react**: Official React plugin for Vite, providing React refresh and JSX support.
+- **eslint**: The core ESLint library for identifying and fixing problems in JavaScript code.
+- **eslint-plugin-react**: React specific linting rules for ESLint.
+- **eslint-plugin-react-hooks**: ESLint plugin for enforcing React Hooks rules.
+- **jsdom**: A pure JavaScript implementation of the DOM for use in testing environments.
+- **prettier**: An opinionated code formatter to ensure consistent code style.
+- **typescript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **vite**: A modern frontend build tool offering a faster and leaner development experience.
+- **vitest**: A Vite-native unit test framework with a Jest-compatible API.
 
 
 official project build started by [zanuka](https://github.com/zanuka) :: December 21, 2024 at 12:05 AM (PST)

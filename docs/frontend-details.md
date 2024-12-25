@@ -14,7 +14,7 @@ Key features of the front end include:
 
 LeaderPort's front end architecture is built on a modern, robust stack designed for performance, scalability, and developer productivity:
 
-1. **Vue and/or React**: 
+1. **React**: 
    - Leverages the latest features for efficient and scalable component design
    - Enables better code organization and reusability through composable functions
 
@@ -42,9 +42,9 @@ The application uses TanStack Query for efficient data management:
 
 ```typescript
 // services/leaderboardQueries.ts
-import { createQuery, createMutation } from '@tanstack/vue-query'
+import { useQuery, useMutation } from '@tanstack/react-query'
 
-export const useLeaderboard = createQuery({
+export const useLeaderboard = () => useQuery({
   queryKey: ['leaderboard'],
   queryFn: async () => {
     const response = await fetch('/api/leaderboard')
@@ -53,7 +53,7 @@ export const useLeaderboard = createQuery({
   staleTime: 1000 * 60 // 1 minute
 })
 
-export const useSubmitScore = createMutation({
+export const useSubmitScore = () => useMutation({
   mutationFn: async (score) => {
     const response = await fetch('/api/scores', {
       method: 'POST',
@@ -70,23 +70,23 @@ WebSocket integration for live updates:
 
 ```typescript
 // composables/useWebSocket.ts
-import { ref, onMounted, onUnmounted } from 'vue'
+import { useEffect, useRef } from 'react'
 
 export function useWebSocket() {
-  const ws = ref<WebSocket | null>(null)
+  const ws = useRef<WebSocket | null>(null)
   
-  onMounted(() => {
-    ws.value = new WebSocket(import.meta.env.VITE_WS_URL)
-    ws.value.onmessage = (event) => {
+  useEffect(() => {
+    ws.current = new WebSocket(import.meta.env.VITE_WS_URL)
+    ws.current.onmessage = (event) => {
       // Handle real-time updates
     }
-  })
 
-  onUnmounted(() => {
-    ws.value?.close()
-  })
+    return () => {
+      ws.current?.close()
+    }
+  }, [])
 
-  return { ws }
+  return { ws: ws.current }
 }
 ```
 
@@ -94,7 +94,6 @@ export function useWebSocket() {
 
 1. **Unit and Component Tests**:
    - Vitest for fast, ESM-native unit testing
-   - Vue Testing Library for component testing
 
 2. **End-to-End Tests**:
    - Cypress for comprehensive E2E testing
@@ -120,7 +119,7 @@ The application uses a comprehensive error handling strategy:
 2. **Real-time Error Handling**:
    - WebSocket reconnection logic
    - Fallback to polling when WebSocket fails
-   - Error state management in Vue components
+   - Error state management in components
 
 3. **Performance Monitoring**:
    - Client-side performance metrics
@@ -205,17 +204,35 @@ export class BlockchainClient {
 ### Achievement NFT Integration
 
 ```typescript
-//:src/components/AchievementDisplay.vue
+//:src/components/AchievementDisplay.tsx
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useBlockchain } from '@/composables/useBlockchain'
+import { useEffect, useState } from 'react'
+import { useBlockchain } from '@/hooks/useBlockchain'
 
-const { mintAchievementNFT, getPlayerAchievements } = useBlockchain()
-const achievements = ref<Achievement[]>([])
+export function AchievementDisplay() {
+    const { mintAchievementNFT, getPlayerAchievements } = useBlockchain()
+    const [achievements, setAchievements] = useState<Achievement[]>([])
 
-onMounted(async () => {
-    achievements.value = await getPlayerAchievements()
-})
+    useEffect(() => {
+        const loadAchievements = async () => {
+            const data = await getPlayerAchievements()
+            setAchievements(data)
+        }
+        loadAchievements()
+    }, [])
+
+    return (
+        <div className="achievements-gallery">
+            {achievements.map(achievement => (
+                <div key={achievement.id} className="achievement-card">
+                    <img src={achievement.metadata.image} alt={achievement.metadata.title} />
+                    <h3>{achievement.metadata.title}</h3>
+                    <p>{achievement.metadata.description}</p>
+                </div>
+            ))}
+        </div>
+    )
+}
 </script>
 
 <template>
@@ -235,18 +252,22 @@ onMounted(async () => {
 
 ```typescript
 //:src/composables/useBlockchain.ts
+import { useContext, useState } from 'react'
+import { BlockchainContext } from '@/context/BlockchainContext'
+
 export function useBlockchain() {
-    const blockchainClient = inject('blockchainClient')
-    const wallet = ref<SuiWallet | null>(null)
-    const isConnected = ref(false)
+    const blockchainClient = useContext(BlockchainContext)
+    const [wallet, setWallet] = useState<SuiWallet | null>(null)
+    const [isConnected, setIsConnected] = useState(false)
 
     async function connectWallet() {
-        wallet.value = await blockchainClient.connectWallet()
-        isConnected.value = true
+        const walletInstance = await blockchainClient.connectWallet()
+        setWallet(walletInstance)
+        setIsConnected(true)
     }
 
     async function mintAchievementNFT(achievement: Achievement) {
-        if (!isConnected.value) {
+        if (!isConnected) {
             await connectWallet()
         }
         return blockchainClient.mintAchievementNFT(achievement)

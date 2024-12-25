@@ -4,7 +4,7 @@
 
 [LeaderPort](https://leaderport.ai) is an open-source project, transforming and visualizing data into insights across sports, markets, and competitive landscapes. Through blockchain integration, achievements and records are permanently immortalized, ensuring legendary performances live forever in Web3.
 
-This modern leaderboard platform and browser extension suite will be built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. Additional technologies leveraged for the initial prototypes include [Vue.js](https://vuejs.org/), [Hono](https://hono.dev/), [TanStack](docs/tanstack-hono.md),  [@upstash/redis](https://github.com/upstash/redis-js) and [Bun](https://bun.sh/).
+This modern leaderboard platform and browser extension suite will be built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. 
 
 ## Achievement Immortalization System
 
@@ -110,7 +110,7 @@ Primarily designed for games and competitive apps, but it can be easily applied 
 
 The first version of the LeaderPort product will include: 
 
-1. Full-stack TypeScript implementation with Hono, Vue, and React
+1. Full-stack TypeScript implementation with Hono and React
 2. TanStack integration for robust data management
 3. Natural language querying capabilities
 4. Real-time updates via WebSocket
@@ -130,16 +130,10 @@ These additional features would further explore capabilities and showcase its ve
 
 On the front end, LeaderPort will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
 
-### Detailed Front-end Guides
-
-- design, architecture, and implementation examples can be found in [Front-end Details](./docs/frontend-details.md)
-- detailed information on Pinia and PiniaColada, refer to [Front-end State Management](./docs/state-management.md)
-- integration patterns can be found in [TanStack + Hono Integration](./docs/tanstack-hono.md)
-
 ## Tech Stack Details
 
 - Front-end Stack:
-  - Vue 3 with Composition API
+  - React with [@mysten/dapp-kit](https://sdk.mystenlabs.com/dapp-kit) (for on-chain features)
   - TypeScript
   - TanStack Suite:
     - Query (for data management)
@@ -147,6 +141,10 @@ On the front end, LeaderPort will offer a responsive Single Page Application (SP
     - Form (for type-safe forms)
     - Router (for routing)
   - Vite (for build tooling)
+  - Sui SDK Dependencies:
+    - @mysten/dapp-kit ^0.14.44
+    - @mysten/sui ^1.18.0
+    - @tanstack/react-query ^5.62.10
 - Back-end Stack:
   - Hono (for API and SSR)
   - Bun (for runtime)
@@ -258,7 +256,7 @@ We welcome contributions from developers interested in Web3, Sui blockchain deve
 
 - Node.js 18+
 - Bun runtime
-- Basic understanding of Vue.js, TypeScript, and Web3 concepts
+- Understanding of React, TypeScript, and Web3 concepts
 - (Optional) Familiarity with Sui Move programming
 
 ### Rewards for Contributors
