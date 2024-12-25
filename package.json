@@ -4,7 +4,7 @@
   "description": "Browser extension core UI for real-time leaderboards and immortalized rankings",
   "type": "module",
   "author": "zanuka",
-  "license": "UNLICENSED",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/zanuka/leaderport-core-ui.git"

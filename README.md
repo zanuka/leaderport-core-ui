@@ -272,6 +272,6 @@ We believe in fostering an inclusive and welcoming environment for all contribut
 
 ### License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [Apache License, Version 2.0](LICENSE).
 
-Copyright (c) 2024-present, Mike Delucchi (zanuka)
+Copyright (c) 2024-present, Mike Delucchi - Zanuka Labs LLC.

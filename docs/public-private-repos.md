@@ -187,3 +187,83 @@ This "hybrid" approach maximizes benefits:
 4. **Community**: Better engagement through GitHub's social features
 
 The minor overhead of managing two platforms is outweighed by the benefits of GitHub's open-source ecosystem for public repositories.
+
+## Licensing Strategy
+
+### Apache 2.0 License Implementation
+
+The `leaderport-core-api` and `leaderport-core-ui` repositories will be licensed under Apache License 2.0, which provides:
+
+- Permission for commercial use, modification, and distribution
+- Patent protection for contributors and users
+- Explicit grant of patent rights
+- Requirement to include original copyright notice
+- Clear documentation of changes made to the code
+
+#### License Application
+
+1. **Root License File**
+```text
+Copyright [yyyy] LeaderPort
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+2. **Source File Headers**
+```typescript
+/*
+ * Copyright [yyyy] LeaderPort
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ */
+```
+
+### Benefits for Our Strategy
+
+1. **Commercial-Friendly**
+   - Allows companies to use our core libraries without fear of IP issues
+   - Enables clear monetization path for our premium features
+   - Provides explicit patent grants
+
+2. **Enterprise Compatibility**
+   - Widely accepted by enterprise legal teams
+   - Clear separation between open-source and proprietary code
+   - Compatible with our dual public/private repository strategy
+
+3. **Contributor Protection**
+   - Contributors retain copyright on their contributions
+   - Patent retaliation clause protects against patent litigation
+   - Clear terms for modification and redistribution
+
+### Implementation Guidelines
+
+1. **Package.json License Field**
+```json
+{
+  "name": "@leaderport/core-api",
+  "license": "Apache-2.0",
+  "private": false
+}
+```
+
+2. **Documentation Requirements**
+   - Include NOTICE file for third-party acknowledgments
+   - Maintain CHANGELOG.md for tracking modifications
+   - Clear contribution guidelines in CONTRIBUTING.md
+
+3. **Derivative Work Strategy**
+   - Private repositories can build upon core without exposing source
+   - Premium features clearly separated from Apache 2.0 licensed code
+   - Proper attribution maintained in documentation
+
