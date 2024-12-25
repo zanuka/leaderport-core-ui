@@ -44,4 +44,10 @@ export default defineConfig({
     port: 5173,
     open: false,
   },
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      options: resolve(__dirname, "options"),
+    },
+  },
 } as VitestConfigExport);
