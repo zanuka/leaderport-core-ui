@@ -19,14 +19,14 @@
 - [x] Evaluate and prototype browser extension architecture:
   - [x] Research manifest v3 requirements
   - [x] Test content script injection patterns
-  - [ ] Evaluate storage options (chrome.storage)
+  - [x] Evaluate storage options (chrome.storage)
   - [ ] Document findings and recommendations
 - [ ] Assess cross-browser compatibility
 - [ ] Evaluate state management approaches for extensions
 - [ ] Create proof-of-concept for critical features
 
 ### 3. Extension Development 
-- [x] Set up Vue 3 project with extension scaffolding:
+- [x] Set up React project with extension scaffolding:
   - [x] Configure manifest.json
   - [x] Set up content scripts
   - [x] Configure background service worker
@@ -57,7 +57,6 @@
 - [ ] Write unit tests for extension components
 
 ### 4. State Management
-- [ ] Implement Pinia store for extension state management:
   - [ ] User preferences store
   - [ ] Game state store
   - [ ] Leaderboard data store

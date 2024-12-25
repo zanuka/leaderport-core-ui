@@ -4,7 +4,7 @@ Combining TanStack with Upstash/Redis and Hono creates a powerful foundation for
 
 ### 1. Real-time Score Synchronization
 ```typescript
-import { createQuery, createMutation } from '@tanstack/vue-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
@@ -13,7 +13,7 @@ const redis = new Redis({
 })
 
 // Real-time score management
-const scoreQuery = createQuery({
+const scoreQuery = useQuery({
   queryKey: ['playerScore'],
   queryFn: async () => {
     const score = await redis.get(`player:${playerId}:score`)
@@ -24,7 +24,8 @@ const scoreQuery = createQuery({
 })
 
 // Optimistic updates with Redis
-const scoreMutation = createMutation({
+const queryClient = useQueryClient()
+const scoreMutation = useMutation({
   mutationFn: async (newScore: number) => {
     await redis.set(`player:${playerId}:score`, newScore)
     await redis.zadd('leaderboard', { score: newScore, member: playerId })
@@ -79,7 +80,7 @@ app.get('/ws', async (c) => {
 ### 3. Efficient Data Management
 ```typescript
 import { Store } from '@tanstack/store'
-import { useVirtualizer } from '@tanstack/vue-virtual'
+import { useVirtualizer } from '@tanstack/react-virtual'
 
 // Combine TanStack Store with Redis data
 const leaderboardStore = new Store({
@@ -100,7 +101,7 @@ const leaderboardStore = new Store({
 // Virtual scrolling for large leaderboards
 const virtualizer = useVirtualizer({
   count: leaderboardStore.state.entries.length,
-  getScrollElement: () => scrollElementRef.value,
+  getScrollElement: () => scrollElementRef.current,
   estimateSize: () => 50,
   overscan: 5
 })
@@ -148,7 +149,7 @@ app.post('/api/score', async (c) => {
 })
 
 // Frontend handling
-const scoreUpdate = createMutation({
+const scoreUpdate = useMutation({
   mutationFn: async (score: number) => {
     const response = await fetch('/api/score', {
       method: 'POST',
@@ -162,7 +163,7 @@ const scoreUpdate = createMutation({
 2. **Real-time Leaderboard**
 ```typescript
 // WebSocket integration with TanStack Query
-const leaderboardQuery = createQuery({
+const leaderboardQuery = useQuery({
   queryKey: ['leaderboard'],
   queryFn: () => fetch('/api/leaderboard').then(r => r.json()),
   refetchInterval: false, // Use WebSocket instead

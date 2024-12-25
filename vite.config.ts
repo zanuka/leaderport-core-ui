@@ -1,9 +1,22 @@
-import vue from "@vitejs/plugin-vue";
+/// <reference types="vitest" />
+
+import react from "@vitejs/plugin-react";
 import { resolve } from "path";
+import type { UserConfig } from "vite";
 import { defineConfig } from "vite";
+import type { InlineConfig } from "vitest";
+
+interface VitestConfigExport extends UserConfig {
+  test: InlineConfig;
+}
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [react()],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: ["./src/test/setup.ts"],
+  },
   build: {
     outDir: "dist",
     assetsDir: "",
@@ -24,6 +37,17 @@ export default defineConfig({
         },
       },
     },
+    chunkSizeWarningLimit: 1000,
   },
   base: "./",
-});
+  server: {
+    port: 5173,
+    open: false,
+  },
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      options: resolve(__dirname, "options"),
+    },
+  },
+} as VitestConfigExport);

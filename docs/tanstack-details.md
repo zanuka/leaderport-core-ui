@@ -13,19 +13,21 @@ For LeaderPort's real-time leaderboard system, we'll utilize the TanStack suite 
 #### 1. TanStack Query
 Essential for leaderboard data management:
 ```typescript
-import { createQuery } from '@tanstack/vue-query'
+import { useQuery } from '@tanstack/react-query'
 
 // Real-time score fetching
-const leaderboardQuery = createQuery({
+const leaderboardQuery = useQuery({
   queryKey: ['leaderboard'],
   queryFn: fetchLeaderboardData,
   refetchInterval: 1000, // Real-time updates
 })
 
 // Automatic background updates
-watch(leaderboardQuery.data, (newData) => {
-  updateLeaderboardUI(newData)
-})
+useEffect(() => {
+  if (leaderboardQuery.data) {
+    updateLeaderboardUI(leaderboardQuery.data)
+  }
+}, [leaderboardQuery.data])
 ```
 
 #### 2. TanStack Store
@@ -49,12 +51,12 @@ const leaderboardStore = new Store({
 #### 3. TanStack Virtual
 Optimized rendering for large leaderboards:
 ```typescript
-import { useVirtualizer } from '@tanstack/vue-virtual'
+import { useVirtualizer } from '@tanstack/react-virtual'
 
 // Virtual scrolling for large leaderboards
 const virtualizer = useVirtualizer({
-  count: leaderboardData.value.length,
-  getScrollElement: () => scrollElementRef.value,
+  count: leaderboardData.length,
+  getScrollElement: () => scrollElementRef.current,
   estimateSize: () => 50,
 })
 ```

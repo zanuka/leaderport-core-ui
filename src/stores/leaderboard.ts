@@ -1,110 +1,59 @@
-import { defineStore } from "pinia";
-import { ref, type Ref } from "vue";
-import { useSettingsStore } from "./settings";
+import { create } from "zustand";
 
 interface Score {
   player: string;
   score: number;
 }
 
-export const useLeaderboardStore = defineStore("leaderboard", () => {
-  const scores: Ref<Score[]> = ref([]);
-  const loading = ref(false);
-  const error = ref<string | null>(null);
-  let refreshInterval: number | null = null;
+interface LeaderboardState {
+  scores: Score[];
+  loading: boolean;
+  error: string | null;
+  refreshInterval: NodeJS.Timer | null;
+  startAutoRefresh: () => void;
+  stopAutoRefresh: () => void;
+  fetchScores: () => Promise<void>;
+}
 
-  async function fetchScores() {
-    loading.value = true;
-    error.value = null;
+export const useLeaderboardStore = create<LeaderboardState>((set, get) => ({
+  scores: [],
+  loading: false,
+  error: null,
+  refreshInterval: null,
 
-    const settingsStore = useSettingsStore();
-    const apiKey = settingsStore.settings.apiKey;
-
-    if (!apiKey) {
-      error.value = "API key not configured";
-      loading.value = false;
-      return;
-    }
-
+  fetchScores: async () => {
+    set({ loading: true, error: null });
     try {
-      const response = await fetch("YOUR_API_ENDPOINT", {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
+      // Replace this with your actual API call
+      const response = await fetch("/api/scores");
       const data = await response.json();
-      scores.value = data.scores; // Adjust based on your API response structure
-    } catch (err) {
-      error.value = "Failed to fetch scores";
-      console.error("API error:", err);
-    } finally {
-      loading.value = false;
-    }
-  }
-
-  async function submitScore(player: string, score: number) {
-    const settingsStore = useSettingsStore();
-    const apiKey = settingsStore.settings.apiKey;
-
-    try {
-      const response = await fetch("YOUR_API_ENDPOINT/submit", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ player, score }),
+      set({ scores: data, loading: false });
+    } catch (error) {
+      set({
+        error:
+          error instanceof Error ? error.message : "Failed to fetch scores",
+        loading: false,
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      await fetchScores();
-    } catch (err) {
-      console.error("Failed to submit score:", err);
-      throw err;
     }
-  }
+  },
 
-  function startAutoRefresh() {
-    stopAutoRefresh(); // Clear any existing timer
+  startAutoRefresh: () => {
+    // First fetch
+    get().fetchScores();
 
-    const settingsStore = useSettingsStore();
-    const intervalMinutes = settingsStore.settings.refreshInterval;
+    // Set up interval for subsequent fetches
+    const interval = setInterval(() => {
+      get().fetchScores();
+    }, 30000); // Refresh every 30 seconds
 
-    // Convert minutes to milliseconds
-    const intervalMs = intervalMinutes * 60 * 1000;
+    set({ refreshInterval: interval });
+  },
 
-    // Set up the timer
-    refreshInterval = window.setInterval(() => {
-      fetchScores();
-    }, intervalMs);
-
-    // Fetch immediately
-    fetchScores();
-  }
-
-  function stopAutoRefresh() {
+  stopAutoRefresh: () => {
+    const { refreshInterval } = get();
     if (refreshInterval) {
-      clearInterval(refreshInterval);
-      refreshInterval = null;
+      clearInterval(refreshInterval as NodeJS.Timeout);
+      set({ refreshInterval: null });
     }
-  }
-
-  return {
-    scores,
-    loading,
-    error,
-    fetchScores,
-    submitScore,
-    startAutoRefresh,
-    stopAutoRefresh,
-  };
-});
+  },
+}));
