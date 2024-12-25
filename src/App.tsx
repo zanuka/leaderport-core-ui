@@ -1,8 +1,13 @@
 import { ConnectButton } from "@mysten/dapp-kit";
-import { Box, Container, Flex, Heading } from "@radix-ui/themes";
+import { Box, Button, Container, Flex, Heading } from "@radix-ui/themes";
 import { WalletStatus } from "./WalletStatus";
 
 function App() {
+  const openOptions = () => {
+    const optionsUrl = chrome.runtime.getURL("options/index.html");
+    chrome.tabs.create({ url: optionsUrl });
+  };
+
   return (
     <>
       <Flex
@@ -15,9 +20,16 @@ function App() {
           borderBottom: "1px solid var(--gray-a2)",
         }}
       >
-        <Box>
-          <Heading>LeaderPort</Heading>
-        </Box>
+        <Flex justify="between" align="center">
+          <Box>
+            <Heading size="4">LeaderPort</Heading>
+          </Box>
+          <Box>
+            <Button variant="soft" onClick={openOptions}>
+              Settings
+            </Button>
+          </Box>
+        </Flex>
         <Box>
           <ConnectButton />
         </Box>
