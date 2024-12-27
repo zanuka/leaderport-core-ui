@@ -6,7 +6,7 @@ import {
 import { Transaction } from "@mysten/sui/transactions";
 import { Achievement } from "../types/Achievement";
 
-const PACKAGE_ADDRESS = ""; // You'll need to deploy your Move package and add its address here
+const PACKAGE_ADDRESS = "0x..."; // Replace with your deployed package address
 
 export function useAchievements() {
   const account = useCurrentAccount();
@@ -45,9 +45,8 @@ export function useAchievements() {
         tx.pure.string(achievement.category),
       ],
     });
-
     return mutate({
-      Transaction: tx,
+      transactionBlock: await tx.build(),
     });
   };
 
