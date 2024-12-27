@@ -108,10 +108,57 @@ There are three methods to obtain test tokens:
 
     sui client publish --gas-budget 100000000
 
-4. Update addresses:
+4. After successful deployment, you'll receive a response containing:
+   - Package ID (e.g., `0xf6af9f9e14afa32c874b44d636121a2ae75de9086ef9cf2ff6a1aaa120671101`)
+   - Transaction digest
+   - Created objects, including an `UpgradeCap` for future package upgrades
+   - Gas costs in MIST (1 SUI = 1,000,000,000 MIST)
+
+5. Update addresses:
    - Copy the published package address
    - Update `Move.toml` with new address
    - Update frontend constants with new address
+
+## Verifying Deployment
+
+### Check Package Status
+After deployment, verify these key components in the transaction output:
+1. Package ID - This is your new package address
+2. Transaction Status - Should show "Success"
+3. Created Objects - Look for:
+   - The `UpgradeCap` object (needed for future upgrades)
+   - Any other objects initialized during deployment
+4. Gas Usage - Review the cost in MIST to estimate future deployment costs
+
+### Update Configuration Files
+1. In Move.toml, update the address:
+
+    [addresses]
+    achievements = "0x<your-package-id>"  # Replace with actual package ID
+
+2. In your frontend configuration (e.g., useAchievements.ts), update the constant:
+
+    const PACKAGE_ADDRESS = "0x<your-package-id>";  # Replace with actual package ID
+
+3. Commit these changes to version control with the transaction ID in the commit message
+   for future reference
+
+### Post-Deployment Verification
+1. Verify your package is queryable:
+   ```bash
+   sui client object <package-id>
+   ```
+
+2. Test core functionality:
+   - Run through key features using the CLI or frontend
+   - Verify object creation and transactions work as expected
+   - Check event emissions if your package uses them
+
+3. Document deployment:
+   - Record the network (devnet/testnet/mainnet)
+   - Save the package ID
+   - Note any initialization parameters or created objects
+   - Document gas costs for future deployments
 
 ## Best Practices
 

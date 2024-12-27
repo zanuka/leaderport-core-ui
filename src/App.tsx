@@ -1,8 +1,12 @@
-import { ConnectButton } from "@mysten/dapp-kit";
+import { ConnectButton, useWallets } from "@mysten/dapp-kit";
 import { Box, Button, Container, Flex, Heading } from "@radix-ui/themes";
 import { WalletStatus } from "./WalletStatus";
+import { AchievementTester } from "./components/AchievementTester";
 
 function App() {
+  const wallets = useWallets();
+  const isConnected = wallets.length > 0;
+
   const openOptions = () => {
     const optionsUrl = chrome.runtime.getURL("options/index.html");
     chrome.tabs.create({ url: optionsUrl });
@@ -42,6 +46,7 @@ function App() {
           style={{ background: "var(--gray-a2)", minHeight: 500 }}
         >
           <WalletStatus />
+          {isConnected && <AchievementTester />}
         </Container>
       </Container>
     </>

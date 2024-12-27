@@ -1,2 +1,10 @@
+[package]
+name = "leaderport-achievements"
+version = "0.0.1"
+edition = "2024.beta"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+
 [addresses]
-achievements = "_" # Replace with your deployed package address 
+leaderport_achievements = "0xf6af9f9e14afa32c874b44d636121a2ae75de9086ef9cf2ff6a1aaa120671101"

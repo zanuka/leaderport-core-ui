@@ -28,6 +28,34 @@ This modern leaderboard platform and browser extension suite will be built on [S
    
 Please reference the [Web3 vision](docs/web3-vision.md) doc for more detailed info.
 
+## Storage with Walrus
+
+This extension will use [Walrus](https://docs.walrus.site/) for decentralized storage of achievement data and related assets. Walrus is specifically designed for storing large binary files ("blobs") on the Sui network.
+
+### Key Features
+- Decentralized storage with Sui blockchain integration
+- Cost-efficient storage using advanced erasure coding
+- Public accessibility of stored data
+- Native WAL token integration for storage payments
+
+### Important Notes
+- All stored data is public and discoverable
+- Currently in Testnet phase - not recommended for production use
+- Uses Testnet WAL and SUI tokens (no real value)
+- Storage state may be wiped during Testnet
+
+### Potential Use Cases
+- Storing achievement badges/images
+- Backing up achievement metadata
+- Storing leaderboard historical data
+
+### Setup Requirements
+1. Testnet WAL tokens for storage operations
+2. Integration with Sui wallet for transactions
+3. Proper error handling for storage operations
+
+⚠️ **Note**: During Testnet, do not store sensitive or private data without additional encryption measures.
+
 By combining Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
 
 The initial prototype will be launched as a browser extension in 2025, supporting Chrome, Firefox, and Safari. This MVP aims to ensure seamless functionality across all major browsers, providing a consistent user experience regardless of the platform. 
@@ -273,3 +301,5 @@ We believe in fostering an inclusive and welcoming environment for all contribut
 This project is licensed under the [Apache License, Version 2.0](LICENSE).
 
 Copyright (c) 2024-present, Mike Delucchi - Zanuka Labs LLC.
+
+
