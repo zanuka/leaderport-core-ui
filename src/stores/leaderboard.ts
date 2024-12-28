@@ -1,15 +1,26 @@
+import { SuiClient } from "@mysten/sui/client";
 import { create } from "zustand";
+
+const NETWORK_URL = import.meta.env.VITE_NETWORK_URL as string;
+const PACKAGE_ADDRESS = import.meta.env.VITE_PACKAGE_ADDRESS as string;
+
+if (!NETWORK_URL || !PACKAGE_ADDRESS) {
+  throw new Error("Missing environment variables");
+}
+
+const suiClient = new SuiClient({ url: NETWORK_URL });
 
 interface Score {
   player: string;
   score: number;
+  timestamp: number;
 }
 
 interface LeaderboardState {
   scores: Score[];
   loading: boolean;
   error: string | null;
-  refreshInterval: NodeJS.Timer | null;
+  refreshInterval: ReturnType<typeof setInterval> | null;
   startAutoRefresh: () => void;
   stopAutoRefresh: () => void;
   fetchScores: () => Promise<void>;
@@ -24,10 +35,25 @@ export const useLeaderboardStore = create<LeaderboardState>((set, get) => ({
   fetchScores: async () => {
     set({ loading: true, error: null });
     try {
-      // Replace this with your actual API call
-      const response = await fetch("/api/scores");
-      const data = await response.json();
-      set({ scores: data, loading: false });
+      // Use a valid filter key for the Sui TypeScript SDK
+      const transactions = await suiClient.queryTransactionBlocks({
+        filter: {
+          InputObject: PACKAGE_ADDRESS,
+        },
+        options: {
+          showEffects: true,
+          showInput: true,
+        },
+      });
+
+      // Transform transactions into scores
+      const scores = transactions.data.map((tx) => ({
+        player: tx.transaction?.data.sender || "unknown",
+        score: 1,
+        timestamp: Date.now(),
+      }));
+
+      set({ scores, loading: false });
     } catch (error) {
       set({
         error:
@@ -38,21 +64,17 @@ export const useLeaderboardStore = create<LeaderboardState>((set, get) => ({
   },
 
   startAutoRefresh: () => {
-    // First fetch
     get().fetchScores();
-
-    // Set up interval for subsequent fetches
     const interval = setInterval(() => {
       get().fetchScores();
     }, 30000); // Refresh every 30 seconds
-
     set({ refreshInterval: interval });
   },
 
   stopAutoRefresh: () => {
     const { refreshInterval } = get();
     if (refreshInterval) {
-      clearInterval(refreshInterval as NodeJS.Timeout);
+      clearInterval(refreshInterval);
       set({ refreshInterval: null });
     }
   },

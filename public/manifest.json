@@ -2,14 +2,39 @@
   "name": "leaderport",
   "manifest_version": 3,
   "version": "0.1.0",
-  "description": "leaderport chrome extension",
-  "permissions": ["scripting", "tabs", "storage"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "description": "Elevating Heroes, Immortalizing Legends",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "storage",
+    "activeTab",
+    "webRequest",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://*.sui.io/*",
+    "https://*.suinet.app/*",
+    "https://*.suiexplorer.com/*",
+    "https://sui-wallet.com/*",
+    "https://*.suiet.app/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://*.sui.io/*",
+      "https://*.suinet.app/*",
+      "https://wallet-provider.sui.io/*",
+      "http://localhost:*/*",
+      "http://127.0.0.1:*/*"
+    ],
+    "accepts_tls_channel_id": false
+  },
   "action": {
-    "default_popup": "popup/index.html"
+    "default_popup": "src/popup/index.html"
   },
   "options_ui": {
-    "page": "options/index.html",
+    "page": "src/options/index.html",
     "open_in_tab": true
   },
   "icons": {

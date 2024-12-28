@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import { styled } from "styled-components";
-import { useLeaderboardStore } from "../../src/stores/leaderboard";
-import { useSettingsStore } from "../../src/stores/settings";
+import { styled, ThemeProvider } from "styled-components";
+import { useLeaderboardStore } from "../../stores/leaderboard";
+import { useSettingsStore } from "../../stores/settings";
+import { theme } from "../../theme";
 
 // Define types for the score object
 interface Score {
@@ -89,25 +90,27 @@ export const LeaderboardDisplay: React.FC = () => {
   }, [loadSettings, startAutoRefresh, stopAutoRefresh]);
 
   return (
-    <LeaderboardContainer>
-      <Title>Leaderboard</Title>
-      <div>
-        {loading ? (
-          <LoadingMessage>Loading...</LoadingMessage>
-        ) : error ? (
-          <ErrorMessage>{error}</ErrorMessage>
-        ) : (
-          <ScoresList>
-            {scores.map((score: Score, index: number) => (
-              <ScoreItem key={index}>
-                <RankSpan>#{index + 1}</RankSpan>
-                <PlayerSpan>{score.player}</PlayerSpan>
-                <ScoreSpan>{score.score}</ScoreSpan>
-              </ScoreItem>
-            ))}
-          </ScoresList>
-        )}
-      </div>
-    </LeaderboardContainer>
+    <ThemeProvider theme={theme}>
+      <LeaderboardContainer>
+        <Title>Leaderboard</Title>
+        <div>
+          {loading ? (
+            <LoadingMessage>Loading...</LoadingMessage>
+          ) : error ? (
+            <ErrorMessage>{error}</ErrorMessage>
+          ) : (
+            <ScoresList>
+              {scores.map((score: Score, index: number) => (
+                <ScoreItem key={index}>
+                  <RankSpan>#{index + 1}</RankSpan>
+                  <PlayerSpan>{score.player}</PlayerSpan>
+                  <ScoreSpan>{score.score}</ScoreSpan>
+                </ScoreItem>
+              ))}
+            </ScoresList>
+          )}
+        </div>
+      </LeaderboardContainer>
+    </ThemeProvider>
   );
 };

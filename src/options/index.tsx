@@ -5,15 +5,7 @@ import "@radix-ui/themes/styles.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "../src/App";
-
-import styled from "styled-components";
-
-const PopupWrapper = styled.div`
-  width: 100%;
-  min-width: 320px;
-  height: 100%;
-`;
+import App from "../App";
 
 const queryClient = new QueryClient();
 
@@ -32,18 +24,13 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Theme appearance="dark">
-        <PopupWrapper>
-          <QueryClientProvider client={queryClient}>
-            <SuiClientProvider
-              networks={networkConfig}
-              defaultNetwork="testnet"
-            >
-              <WalletProvider autoConnect>
-                <App />
-              </WalletProvider>
-            </SuiClientProvider>
-          </QueryClientProvider>
-        </PopupWrapper>
+        <QueryClientProvider client={queryClient}>
+          <SuiClientProvider networks={networkConfig} defaultNetwork="testnet">
+            <WalletProvider autoConnect>
+              <App />
+            </WalletProvider>
+          </SuiClientProvider>
+        </QueryClientProvider>
       </Theme>
     </React.StrictMode>,
   );

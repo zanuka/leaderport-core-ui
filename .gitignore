@@ -32,3 +32,16 @@ dist-ssr
 *.pem       # Private key files
 web-ext-artifacts/  # Web-ext generated files
 .web-extension-id  # Extension ID file if using web-ext
+
+# Move build artifacts
+build/
+*.mv
+
+# Additional Move-related files to ignore
+.coverage/
+.trace/
+move/build/
+
+# Environment variables
+.env
+.env.local
