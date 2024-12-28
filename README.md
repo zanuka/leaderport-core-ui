@@ -42,7 +42,7 @@ Please reference the [Web3 vision](docs/web3-vision.md) doc for more detailed in
 
 <img src="images/walrus.png" alt="Sui" width="128" />
 
-This extension will use [Walrus](https://docs.walrus.site/) for decentralized storage of achievement data and related assets. Walrus is specifically designed for storing large binary files ("blobs") on the Sui network.
+LeaderPort products will use [Walrus](https://docs.walrus.site/) for decentralized storage of achievement data and related assets. Walrus is specifically designed for storing large binary files ("blobs") on the Sui network.
 
 ### Key Features
 - Decentralized storage with Sui blockchain integration
@@ -142,10 +142,18 @@ Primarily designed for games and competitive apps, but it can be easily applied 
 
 The first version of the LeaderPort product will include: 
 
-1. Full-stack TypeScript implementation with Hono and React
+1. TypeScript implementation leveraging [Sui dApp Kit](https://sdk.mystenlabs.com/dapp-kit?ref=blog.sui.io)
 2. TanStack integration for robust data management
 3. Natural language querying capabilities
 4. Real-time updates via WebSocket
+5. Hybrid storage architecture:
+   - Sui blockchain for secure score management
+   - Walrus integration for decentralized media storage
+6. High-performance backend stack:
+   - Hono for efficient API routing
+   - Bun runtime for optimal performance
+   - Sui parallel transaction processing
+7. Scalable data management system capable of handling millions of concurrent users
 
 ## Future Expansion
 
@@ -197,7 +205,7 @@ On the front end, LeaderPort will offer a responsive Single Page Application (SP
 
 ## Open-Source & Paid Feature Strategy
 
-LeaderPort follows a "public core, private premium" development strategy:
+LeaderPort will follow a "public core, private premium" development strategy:
 
 **Public Core (GitHub)**
 - Basic leaderboard functionality
