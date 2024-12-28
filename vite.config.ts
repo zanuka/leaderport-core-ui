@@ -22,8 +22,8 @@ export default defineConfig({
     assetsDir: "",
     rollupOptions: {
       input: {
-        popup: resolve(__dirname, "popup/index.html"),
-        options: resolve(__dirname, "options/index.html"),
+        popup: resolve(__dirname, "src/popup/index.html"),
+        options: resolve(__dirname, "src/options/index.html"),
       },
       output: {
         entryFileNames: "[name]/[name].js",

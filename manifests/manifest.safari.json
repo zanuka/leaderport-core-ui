@@ -2,14 +2,14 @@
   "name": "leaderport",
   "manifest_version": 3,
   "version": "0.1.0",
-  "description": "Browser extension for real-time leaderboards and competitive rankings across sports and markets",
+  "description": "Elevating Heroes, Immortalizing Legends",
   "permissions": ["scripting", "tabs", "storage"],
   "host_permissions": ["http://*/*", "https://*/*"],
   "action": {
-    "default_popup": "popup/index.html"
+    "default_popup": "src/popup/index.html"
   },
   "options_ui": {
-    "page": "options/index.html",
+    "page": "src/options/index.html",
     "open_in_tab": true
   },
   "icons": {

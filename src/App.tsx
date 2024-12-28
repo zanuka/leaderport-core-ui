@@ -10,6 +10,12 @@ function App() {
   const wallets = useWallets();
   const isConnected = wallets.length > 0;
 
+  console.log("Wallet debug:", {
+    wallets,
+    isConnected,
+    walletsLength: wallets.length,
+  });
+
   const openOptions = () => {
     const optionsUrl = chrome.runtime.getURL("options/index.html");
     chrome.tabs.create({ url: optionsUrl });
