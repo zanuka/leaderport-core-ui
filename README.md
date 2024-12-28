@@ -66,16 +66,16 @@ LeaderPort products will use [Walrus](https://docs.walrus.site/) for decentraliz
 2. Integration with Sui wallet for transactions
 3. Proper error handling for storage operations
 
-## Chrome Extension Strategy
+## Browser Extension Strategy
 
-LeaderPort's Chrome extension leverages public APIs and our backend infrastructure will provide real-time data visualization and insights. Key features may include:
+LeaderPort's browser extensions will leverage public APIs the backend will provide real-time data visualization and insights.
 
-- **Data Integration**: Connects to LeaderPort's backend API which aggregates data from official sources like Sportradar and league APIs.
-- **Smart Caching**: Utilizes `chrome.storage` for efficient data caching and user preferences, respecting subscription tiers.
-- **Interactive Visualization**: Integrates Highcharts for professional-grade charts and dashboards.
-- **Real-time Updates**: Implements SSE/WebSocket connections for live data streaming based on subscription level.
-- **User Interface**: Displays data in a `chrome.sidePanel` with progressive loading and offline support.
-- **Subscription Management**: Handles user authentication and feature access based on subscription tier.
+- **Data Integration**: Connects to LeaderPort's backend API which aggregates data from official sources 
+- **Smart Caching**: Utilizes `chrome.storage` for data caching and user prefs, respecting subscription tiers
+- **Interactive Visualization**: Integrates Highcharts for professional-grade charts and dashboards
+- **Real-time Updates**: SSE/WebSocket connections for live data streaming based on subscription level
+- **User Interface**: Displays data in a `chrome.sidePanel` with progressive loading and offline support
+- **Subscription Management**: Handles user authentication and feature access based on subscription tier
 
 For a detailed strategy and API integration details, refer to the [Sports Data Integration Guide](./docs/sports-data.md).
 
