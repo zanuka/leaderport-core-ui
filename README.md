@@ -2,13 +2,13 @@
 
 ![LeaderPort](images/LeaderPort_256x256.png)
 
-[LeaderPort](https://leaderport.ai) is an open-source project, transforming and visualizing data into insights across sports, markets, and competitive landscapes. Through blockchain integration, achievements and records are permanently immortalized, ensuring legendary performances live forever in Web3.
+[LeaderPort](https://leaderport.ai) combines cutting-edge Web3 technologies to create powerful leaderboard solutions that track and immortalize achievements. By leveraging blockchain technology, every record and milestone is permanently preserved, creating an immutable legacy of excellence in Web3.
 
 <img src="images/Sui_Logo_White.svg" alt="Sui" width="48" />
 
 This modern leaderboard platform and browser extension suite will be built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. 
 
-## Achievement Immortalization System
+## Achievement System
 
 1. **Permanent Record Keeping**
    - Immutable blockchain storage of significant achievements
@@ -66,21 +66,9 @@ This extension will use [Walrus](https://docs.walrus.site/) for decentralized st
 2. Integration with Sui wallet for transactions
 3. Proper error handling for storage operations
 
-⚠️ **Note**: During Testnet, do not store sensitive or private data without additional encryption measures.
-
-By combining Hono's efficient routing and Bun's superior runtime performance, LeaderPort enables instant updates and retrieval of leaderboard data, making it ideal for applications requiring real-time ranking and score tracking across millions of users.
-
-The initial prototype will be launched as a browser extension in 2025, supporting Chrome, Firefox, and Safari. This MVP aims to ensure seamless functionality across all major browsers, providing a consistent user experience regardless of the platform. 
-
-If successful, work will continue towards developing a full-fledged SaaS platform. This will include additional features and enhancements based on user feedback and market demand, ensuring LeaderPort remains at the forefront of real-time leaderboard solutions.
-
-## Mission Statement
-LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes.
-
-
 ## Chrome Extension Strategy
 
-LeaderPort's Chrome extension leverages official sports data APIs and our backend infrastructure to provide real-time data visualization and insights. Key features include:
+LeaderPort's Chrome extension leverages public APIs and our backend infrastructure will provide real-time data visualization and insights. Key features may include:
 
 - **Data Integration**: Connects to LeaderPort's backend API which aggregates data from official sources like Sportradar and league APIs.
 - **Smart Caching**: Utilizes `chrome.storage` for efficient data caching and user preferences, respecting subscription tiers.
@@ -93,7 +81,11 @@ For a detailed strategy and API integration details, refer to the [Sports Data I
 
 For development workflow, refer to [Extension Development](./docs/extension-dev.md)
 
-## Project Roadmap
+## Project Plan & Roadmap
+
+The initial prototype will be launched as a browser extension in 2025, supporting Chrome, Firefox, and Safari. This MVP aims to ensure seamless functionality across all major browsers, providing a consistent user experience regardless of the platform. 
+
+If successful, work will continue towards developing a full-fledged SaaS platform. This will include additional features and enhancements based on user feedback and market demand, ensuring LeaderPort remains at the forefront of real-time leaderboard solutions.
 
 For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
 
