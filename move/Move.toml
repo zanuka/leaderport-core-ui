@@ -7,4 +7,4 @@ edition = "2024.beta"
 Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
 
 [addresses]
-leaderport_achievements = "0xf6af9f9e14afa32c874b44d636121a2ae75de9086ef9cf2ff6a1aaa120671101"
+achievements = "0x0"

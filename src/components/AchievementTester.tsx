@@ -1,27 +1,64 @@
+import { useSignAndExecuteTransaction } from "@mysten/dapp-kit";
+import { Transaction } from "@mysten/sui/transactions";
 import { useState } from "react";
 import { useAchievements } from "../hooks/useAchievements";
+import { LeaderboardDisplay } from "../popup/components/LeaderboardDisplay";
 
 export function AchievementTester() {
-  const { achievements, isPending, error, addAchievement } = useAchievements();
+  const { achievements, isPending, error } = useAchievements();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
+  const [statusMessage, setStatusMessage] = useState<string>("");
+  const [showLeaderboard, setShowLeaderboard] = useState<boolean>(false);
+
+  const { mutateAsync: signAndExecuteTransaction } =
+    useSignAndExecuteTransaction();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await addAchievement({
+      const tx = new Transaction();
+
+      // Ensure category is one of the valid options
+      if (!["gaming", "sports", "other"].includes(category)) {
+        setStatusMessage(
+          "Invalid category. Must be 'gaming', 'sports', or 'other'",
+        );
+        return;
+      }
+
+      console.log("Creating achievement with:", {
         title,
         description,
-        category: category as "gaming" | "sports" | "other",
+        category,
         timestamp: Date.now(),
+        packageAddress: import.meta.env.VITE_PACKAGE_ADDRESS,
       });
-      // Clear form
+
+      tx.moveCall({
+        target: `${import.meta.env.VITE_PACKAGE_ADDRESS}::achievements::create_achievement`,
+        arguments: [
+          tx.pure.string(title),
+          tx.pure.string(description),
+          tx.pure.string(category.toLowerCase()),
+          tx.pure.u64(Math.floor(Date.now() / 1000)),
+        ],
+        typeArguments: [],
+      });
+
+      await signAndExecuteTransaction({
+        transaction: tx,
+      });
+
+      setStatusMessage("Achievement created successfully!");
+      setShowLeaderboard(true);
       setTitle("");
       setDescription("");
       setCategory("");
     } catch (err) {
       console.error("Failed to create achievement:", err);
+      setStatusMessage("Failed to create achievement. Please try again.");
     }
   };
 
@@ -112,6 +149,20 @@ export function AchievementTester() {
           <p className="text-gray-500">No achievements yet</p>
         )}
       </div>
+
+      {statusMessage && (
+        <div
+          style={{
+            color: statusMessage.includes("Failed") ? "red" : "green",
+            marginTop: "1rem",
+            textAlign: "center",
+          }}
+        >
+          {statusMessage}
+        </div>
+      )}
+
+      {showLeaderboard && <LeaderboardDisplay />}
     </div>
   );
 }

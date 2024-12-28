@@ -130,6 +130,39 @@ After deployment, verify these key components in the transaction output:
    - Any other objects initialized during deployment
 4. Gas Usage - Review the cost in MIST to estimate future deployment costs
 
+### Troubleshooting "No Data Found"
+If you can't find your package in Sui Explorer:
+
+> ⚠️ **Most Common Issue**: Wrong network selected in Sui Explorer
+> - Always check the network dropdown in top-right corner
+> - Make sure "Devnet" is selected when working with devnet
+> - Your wallet network and explorer network must match
+
+1. **Verify Network First**
+   - Go to [Sui Explorer](https://suiexplorer.com/?network=devnet)
+   - Look for network selector in top-right
+   - Select "Devnet" from dropdown
+   - Confirm network matches your wallet
+
+2. **Verify Package Address**
+   - Check your `.env` file for `VITE_PACKAGE_ADDRESS`
+   - Ensure it matches your deployed contract on devnet
+   - Package address format should be like: `0x...`
+
+3. **Finding Your Package**
+   - Go to [Sui Explorer Devnet](https://suiexplorer.com/?network=devnet)
+   - Use the search bar to find:
+     - Your wallet address
+     - Your package address
+     - Recent transactions
+   - Check "Published" tab for your package
+
+4. **Resolution Steps**
+   - Verify package deployment status
+   - Check deployment logs
+   - Try redeploying the package
+   - Update `.env` with new package address
+
 ### Update Configuration Files
 1. In Move.toml, update the address:
 

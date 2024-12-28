@@ -111,7 +111,7 @@ function AchievementComponent() {
 
 ## Dependencies
 - Requires `@mysten/dapp-kit` for Sui blockchain interaction
-- Uses `@mysten/sui.js` for transaction handling
+- Uses `@mysten/sui` for transaction handling
 - Needs configured package address for smart contract
 
 ## Configuration

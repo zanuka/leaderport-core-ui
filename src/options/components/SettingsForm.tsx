@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import { useSettingsStore } from "../../src/stores/settings";
+import { useSettingsStore } from "../../stores/settings";
 
 export default function SettingsForm() {
   const { settings, saveSettings, loadSettings, savedMessage, updateSettings } =
