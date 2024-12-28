@@ -4,6 +4,8 @@
 
 [LeaderPort](https://leaderport.ai) is an open-source project, transforming and visualizing data into insights across sports, markets, and competitive landscapes. Through blockchain integration, achievements and records are permanently immortalized, ensuring legendary performances live forever in Web3.
 
+<img src="images/Sui_Logo_White.svg" alt="Sui" width="48" />
+
 This modern leaderboard platform and browser extension suite will be built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. 
 
 ## Achievement Immortalization System
@@ -14,11 +16,19 @@ This modern leaderboard platform and browser extension suite will be built on [S
    - Verifiable proof of accomplishment
    - Cross-platform achievement persistence
 
-2. **NFT Achievement System**
+2. **NFT Achievement System with SuiFrens**
    - Dynamic NFT minting for major milestones
    - Rarity tiers based on achievement difficulty
    - Tradeable digital collectibles
    - Achievement showcase functionality
+   - SuiFrens Integration:
+     - Customizable SuiFren characters as achievement badges
+     - Progressive trait unlocks based on milestones
+     - Community-driven rarity system
+     - Cross-platform achievement display
+     - Interoperable with SuiFrens ecosystem
+
+Please reference the [SuiFrens Integration](docs/sui-frens.md) doc for detailed implementation info.
 
 3. **Community Validation**
    - Decentralized verification of major records
@@ -29,6 +39,8 @@ This modern leaderboard platform and browser extension suite will be built on [S
 Please reference the [Web3 vision](docs/web3-vision.md) doc for more detailed info.
 
 ## Storage with Walrus
+
+<img src="images/walrus.png" alt="Sui" width="128" />
 
 This extension will use [Walrus](https://docs.walrus.site/) for decentralized storage of achievement data and related assets. Walrus is specifically designed for storing large binary files ("blobs") on the Sui network.
 
