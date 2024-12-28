@@ -66,6 +66,25 @@ LeaderPort products will use [Walrus](https://docs.walrus.site/) for decentraliz
 2. Integration with Sui wallet for transactions
 3. Proper error handling for storage operations
 
+## LeaderPort concept
+
+Core Definition: LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes.
+
+Key Messaging Points:
+- The "Port" in LeaderPort suggests both a gateway/portal and a place where important information docks/arrives
+- It serves as a central hub where different types of leadership data converge
+- Works across multiple domains:
+  - Sports: "Track champions across every league"
+  - Markets: "Monitor market movers and top performers"
+  - Crypto: "Real-time crypto rankings and momentum"
+  - Education: "Leadership boards for learning achievements"
+  - Fitness: "Top performer tracking for health goals"
+  - Business: "Sales leaderboards and performance metrics"
+
+Product Description: LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you.
+
+Marketing Hook: In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion.
+
 ## Browser Extension Strategy
 
 LeaderPort's browser extensions will leverage public APIs the backend will provide real-time data visualization and insights.
@@ -235,25 +254,6 @@ This "hybrid" approach maximizes benefits:
 The minor overhead of managing two platforms is outweighed by the benefits of GitHub's open-source ecosystem for public repositories while maintaining premium features secure and separate.
 
 More details [here](docs/public-private-repos.md).
-
-## The origin of LeaderPort
-
-Core Definition: LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes.
-
-Key Messaging Points:
-- The "Port" in LeaderPort suggests both a gateway/portal and a place where important information docks/arrives
-- It serves as a central hub where different types of leadership data converge
-- Works across multiple domains:
-  - Sports: "Track champions across every league"
-  - Markets: "Monitor market movers and top performers"
-  - Crypto: "Real-time crypto rankings and momentum"
-  - Education: "Leadership boards for learning achievements"
-  - Fitness: "Top performer tracking for health goals"
-  - Business: "Sales leaderboards and performance metrics"
-
-Product Description: LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you.
-
-Marketing Hook: In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion.
 
 ## Development and Builds
 
