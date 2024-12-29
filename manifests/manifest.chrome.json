@@ -14,7 +14,9 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["/content.js"]
+      "js": ["content/content.js"],
+      "run_at": "document_idle",
+      "world": "ISOLATED"
     }
   ],
   "externally_connectable": {
@@ -23,11 +25,11 @@
       "https://*.suinet.app/*",
       "https://wallet-provider.sui.io/*"
     ],
-    "ids": ["opcgpfmipidbgpenhmajoajpbobppdil"],
-    "accepts_tls_channel_id": false
+    "ids": ["opcgpfmipidbgpenhmajoajpbobppdil"]
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self' https://*.sui.io chrome-extension://opcgpfmipidbgpenhmajoajpbobppdil/"
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; worker-src 'self'"
   },
   "web_accessible_resources": [
     {
@@ -50,5 +52,8 @@
     "32": "assets/icon-32.png",
     "48": "assets/icon-48.png",
     "128": "assets/icon-128.png"
+  },
+  "background": {
+    "service_worker": "service_worker.js"
   }
 }

@@ -12,6 +12,8 @@ interface VitestConfigExport extends UserConfig {
 
 export default defineConfig({
   plugins: [react()],
+  root: ".",
+  publicDir: "./public",
   test: {
     globals: true,
     environment: "jsdom",
@@ -19,23 +21,36 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    assetsDir: "",
+    assetsDir: "assets",
+    modulePreload: false,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/main/index.html"),
         popup: resolve(__dirname, "src/popup/index.html"),
         options: resolve(__dirname, "src/options/index.html"),
-        content: resolve(__dirname, "src/content/content.ts"),
+        content: resolve(__dirname, "src/content/content.js"),
+        service_worker: resolve(__dirname, "src/background/service_worker.js"),
       },
       output: {
         entryFileNames: (chunkInfo) => {
-          if (chunkInfo.name === "content") {
-            return "content.js";
+          if (chunkInfo.name === "service_worker") {
+            return "[name].js";
           }
-          return "[name].[hash].js";
+          return `${chunkInfo.name}/${chunkInfo.name}.js`;
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.endsWith(".html")) {
+            const folder = assetInfo.name.split("/")[0];
+            return `${folder}/index.html`;
+          }
+          if (assetInfo.name?.endsWith(".css")) {
+            return `styles/[name].[ext]`;
+          }
+          if (assetInfo.name?.startsWith("assets/")) {
+            return assetInfo.name;
+          }
+          return "assets/[name].[ext]";
         },
         chunkFileNames: "[name]/[name].js",
-        assetFileNames: "assets/[name].[ext]",
         sanitizeFileName: (name) => {
           return name
             .replace(/\x00/g, "")
@@ -46,7 +61,7 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 1000,
   },
-  base: "./",
+  base: "",
   server: {
     port: 5173,
     open: false,
@@ -58,7 +73,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
-      options: resolve(__dirname, "options"),
+      options: resolve(__dirname, "src/options"),
     },
   },
 } as VitestConfigExport);

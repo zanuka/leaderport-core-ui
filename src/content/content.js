@@ -7,5 +7,3 @@ window.addEventListener("message", function (event) {
     chrome.runtime.sendMessage("opcgpfmipidbgpenhmajoajpbobppdil", event.data);
   }
 });
-
-export {}; // Make this a module
