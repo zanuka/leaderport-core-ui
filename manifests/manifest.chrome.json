@@ -11,14 +11,6 @@
     "https://sui-wallet.com/*",
     "https://*.suiet.app/*"
   ],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content/content.js"],
-      "run_at": "document_idle",
-      "world": "ISOLATED"
-    }
-  ],
   "externally_connectable": {
     "matches": [
       "https://*.sui.io/*",
@@ -52,8 +44,5 @@
     "32": "assets/icon-32.png",
     "48": "assets/icon-48.png",
     "128": "assets/icon-128.png"
-  },
-  "background": {
-    "service_worker": "service_worker.js"
   }
 }

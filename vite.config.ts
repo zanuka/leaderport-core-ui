@@ -31,25 +31,8 @@ export default defineConfig({
         service_worker: resolve(__dirname, "src/background/service_worker.js"),
       },
       output: {
-        entryFileNames: (chunkInfo) => {
-          if (chunkInfo.name === "service_worker") {
-            return "[name].js";
-          }
-          return `${chunkInfo.name}/${chunkInfo.name}.js`;
-        },
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith(".html")) {
-            const folder = assetInfo.name.split("/")[0];
-            return `${folder}/index.html`;
-          }
-          if (assetInfo.name?.endsWith(".css")) {
-            return `styles/[name].[ext]`;
-          }
-          if (assetInfo.name?.startsWith("assets/")) {
-            return assetInfo.name;
-          }
-          return "assets/[name].[ext]";
-        },
+        entryFileNames: "[name]/[name].js",
+        assetFileNames: "assets/[name].[ext]",
         chunkFileNames: "[name]/[name].js",
       },
     },
