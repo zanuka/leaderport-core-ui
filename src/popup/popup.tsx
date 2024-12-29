@@ -17,7 +17,7 @@ const PopupWrapper = styled.div`
 
 const queryClient = new QueryClient();
 
-const container = document.getElementById("app");
+const container = document.getElementById("root");
 if (container) {
   const root = createRoot(container);
   root.render(
