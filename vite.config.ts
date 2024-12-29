@@ -51,29 +51,21 @@ export default defineConfig({
           return "assets/[name].[ext]";
         },
         chunkFileNames: "[name]/[name].js",
-        sanitizeFileName: (name) => {
-          return name
-            .replace(/\x00/g, "")
-            .replace(/^_/, "plugin-")
-            .replace(/:/g, "-");
-        },
       },
     },
-    chunkSizeWarningLimit: 1000,
   },
-  base: "",
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+    },
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+  },
   server: {
     port: 5173,
     open: false,
     headers: {
       "Content-Security-Policy":
         "script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none';",
-    },
-  },
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "src"),
-      options: resolve(__dirname, "src/options"),
     },
   },
 } as VitestConfigExport);
