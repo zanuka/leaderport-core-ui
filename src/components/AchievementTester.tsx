@@ -1,16 +1,17 @@
 import { useSignAndExecuteTransaction } from "@mysten/dapp-kit";
 import { Transaction } from "@mysten/sui/transactions";
+import * as Form from "@radix-ui/react-form";
+import { Button, Container, Flex, Heading, Text } from "@radix-ui/themes";
 import { useState } from "react";
 import { useAchievements } from "../hooks/useAchievements";
 import { LeaderboardDisplay } from "../popup/components/LeaderboardDisplay";
 
 export function AchievementTester() {
-  const { achievements, isPending, error } = useAchievements();
+  const { isPending, error } = useAchievements();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [statusMessage, setStatusMessage] = useState<string>("");
-  const [showLeaderboard, setShowLeaderboard] = useState<boolean>(false);
 
   const { mutateAsync: signAndExecuteTransaction } =
     useSignAndExecuteTransaction();
@@ -52,7 +53,6 @@ export function AchievementTester() {
       });
 
       setStatusMessage("Achievement created successfully!");
-      setShowLeaderboard(true);
       setTitle("");
       setDescription("");
       setCategory("");
@@ -63,106 +63,133 @@ export function AchievementTester() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4">Test Achievement Creation</h2>
+    <Container
+      size={{
+        initial: "4", // Widest size on mobile
+        sm: "2", // More constrained on desktop
+      }}
+      my="2"
+    >
+      <Heading mb="2">Achievement Tester</Heading>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Title
-          </label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Description
-          </label>
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Category
-          </label>
-          <input
-            type="text"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
-          disabled={isPending}
-        >
-          {isPending ? "Creating..." : "Create Achievement"}
-        </button>
-      </form>
-
-      {error && (
-        <div className="mt-4 p-4 bg-red-100 text-red-700 rounded-md">
-          Error: {error.message}
-        </div>
-      )}
-
-      <div className="mt-8">
-        <h3 className="text-xl font-semibold mb-4">Existing Achievements</h3>
-        {achievements ? (
-          <ul className="space-y-4">
-            {achievements.data.map((achievement) => {
-              const content = achievement.data?.content;
-              if (!content || !("fields" in content)) return null;
-
-              const fields = content.fields as {
-                name: string;
-                earned: boolean;
-              };
-              return (
-                <li
-                  key={achievement.data?.objectId}
-                  className="p-4 bg-gray-50 rounded-md"
+      <Flex
+        direction="column"
+        gap="4"
+        className="bg-zinc-50 dark:bg-zinc-900 rounded-lg p-4"
+      >
+        <Form.Root onSubmit={handleSubmit}>
+          <Flex
+            direction="column"
+            gap="4"
+            className="bg-zinc-800 rounded-lg p-6"
+          >
+            <Form.Field className="FormField" name="title">
+              <div className="mb-2">
+                <Form.Label className="text-zinc-100 text-base font-medium">
+                  Title
+                </Form.Label>
+                <Form.Message
+                  className="text-sm text-red-400"
+                  match="valueMissing"
                 >
-                  <h4 className="font-medium">{fields.name}</h4>
-                  <p className="text-gray-600">
-                    Status: {fields.earned ? "Earned" : "Not Earned"}
-                  </p>
-                </li>
-              );
-            })}
-          </ul>
-        ) : (
-          <p className="text-gray-500">No achievements yet</p>
+                  Please enter a title
+                </Form.Message>
+              </div>
+              <Form.Control asChild>
+                <input
+                  className="w-full px-4 py-3 rounded-md border border-zinc-700 
+                           bg-zinc-900 text-zinc-100 placeholder-zinc-500
+                           focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  required
+                  placeholder="Enter achievement title"
+                />
+              </Form.Control>
+            </Form.Field>
+
+            <Form.Field className="FormField" name="description">
+              <div className="mb-2">
+                <Form.Label className="text-zinc-100 text-base font-medium">
+                  Description
+                </Form.Label>
+                <Form.Message
+                  className="text-sm text-red-400"
+                  match="valueMissing"
+                >
+                  Please enter a description
+                </Form.Message>
+              </div>
+              <Form.Control asChild>
+                <textarea
+                  className="w-full px-4 py-3 rounded-md border border-zinc-700 
+                           bg-zinc-900 text-zinc-100 placeholder-zinc-500 min-h-[120px]
+                           focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  required
+                  placeholder="Enter achievement description"
+                />
+              </Form.Control>
+            </Form.Field>
+
+            <Form.Field className="FormField" name="category">
+              <div className="mb-2">
+                <Form.Label className="text-zinc-100 text-base font-medium">
+                  Category
+                </Form.Label>
+                <Form.Message
+                  className="text-sm text-red-400"
+                  match="valueMissing"
+                >
+                  Please select a category
+                </Form.Message>
+              </div>
+              <Form.Control asChild>
+                <input
+                  className="w-full px-4 py-3 rounded-md border border-zinc-700 
+                           bg-zinc-900 text-zinc-100 placeholder-zinc-500
+                           focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                  required
+                  placeholder="gaming, sports, or other"
+                />
+              </Form.Control>
+            </Form.Field>
+
+            <Form.Submit asChild>
+              <Button
+                size="3"
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 rounded-md"
+                disabled={isPending}
+              >
+                {isPending ? "Creating..." : "Create Achievement"}
+              </Button>
+            </Form.Submit>
+          </Flex>
+        </Form.Root>
+
+        {error && (
+          <Text
+            color="red"
+            className="p-3 bg-red-100 dark:bg-red-900/50 rounded-md"
+          >
+            Error: {error.message}
+          </Text>
         )}
-      </div>
 
-      {statusMessage && (
-        <div
-          style={{
-            color: statusMessage.includes("Failed") ? "red" : "green",
-            marginTop: "1rem",
-            textAlign: "center",
-          }}
-        >
-          {statusMessage}
-        </div>
-      )}
+        {statusMessage && (
+          <Text
+            color={statusMessage.includes("Failed") ? "red" : "green"}
+            className="text-center"
+          >
+            {statusMessage}
+          </Text>
+        )}
 
-      {showLeaderboard && <LeaderboardDisplay />}
-    </div>
+        <LeaderboardDisplay />
+      </Flex>
+    </Container>
   );
 }

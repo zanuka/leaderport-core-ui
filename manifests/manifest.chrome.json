@@ -27,7 +27,9 @@
     "accepts_tls_channel_id": false
   },
   "action": {
-    "default_popup": "src/popup/index.html"
+    "default_popup": "src/popup/index.html",
+    "default_width": 375,
+    "default_height": 600
   },
   "options_ui": {
     "page": "src/options/index.html",

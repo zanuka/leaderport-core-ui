@@ -16,22 +16,20 @@
     "https://*.suinet.app/*",
     "https://*.suiexplorer.com/*",
     "https://sui-wallet.com/*",
-    "https://*.suiet.app/*",
-    "http://localhost:*/*",
-    "http://127.0.0.1:*/*"
+    "https://*.suiet.app/*"
   ],
   "externally_connectable": {
     "matches": [
       "https://*.sui.io/*",
       "https://*.suinet.app/*",
-      "https://wallet-provider.sui.io/*",
-      "http://localhost:*/*",
-      "http://127.0.0.1:*/*"
+      "https://wallet-provider.sui.io/*"
     ],
     "accepts_tls_channel_id": false
   },
   "action": {
-    "default_popup": "src/popup/index.html"
+    "default_popup": "src/popup/index.html",
+    "default_width": 375,
+    "default_height": 600
   },
   "options_ui": {
     "page": "src/options/index.html",

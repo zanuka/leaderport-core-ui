@@ -22,6 +22,7 @@ export default defineConfig({
     assetsDir: "",
     rollupOptions: {
       input: {
+        main: resolve(__dirname, "src/main/index.html"),
         popup: resolve(__dirname, "src/popup/index.html"),
         options: resolve(__dirname, "src/options/index.html"),
       },
@@ -43,6 +44,10 @@ export default defineConfig({
   server: {
     port: 5173,
     open: false,
+    headers: {
+      "Content-Security-Policy":
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none';",
+    },
   },
   resolve: {
     alias: {

@@ -5,7 +5,9 @@
   "description": "Elevating Heroes, Immortalizing Legends",
   "permissions": ["activeTab", "tabs", "storage", "<all_urls>"],
   "browser_action": {
-    "default_popup": "src/popup/index.html"
+    "default_popup": "src/popup/index.html",
+    "default_width": 375,
+    "default_height": 600
   },
   "options_ui": {
     "page": "src/options/index.html",

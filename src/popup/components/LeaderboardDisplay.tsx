@@ -92,7 +92,7 @@ export const LeaderboardDisplay: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <LeaderboardContainer>
-        <Title>Leaderboard</Title>
+        <Title>Achievement Leaderboard</Title>
         <div>
           {loading ? (
             <LoadingMessage>Loading...</LoadingMessage>

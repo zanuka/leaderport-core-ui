@@ -24,7 +24,13 @@ export function WalletStatus() {
   );
 
   return (
-    <Container my="2">
+    <Container
+      size={{
+        initial: "4", // Widest size on mobile
+        sm: "2", // More constrained on desktop
+      }}
+      my="2"
+    >
       <Heading mb="2">Sui Wallet Status</Heading>
 
       {account ? (
