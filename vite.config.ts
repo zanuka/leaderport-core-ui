@@ -26,12 +26,19 @@ export default defineConfig({
     rollupOptions: {
       input: {
         popup: resolve(__dirname, "src/popup/index.html"),
+        "popup/index": resolve(__dirname, "src/popup/index.tsx"),
         options: resolve(__dirname, "src/options/index.html"),
+        "options/index": resolve(__dirname, "src/options/index.tsx"),
         content: resolve(__dirname, "src/content/content.js"),
         service_worker: resolve(__dirname, "src/background/service_worker.js"),
       },
       output: {
-        entryFileNames: "[name]/[name].js",
+        entryFileNames: (chunkInfo) => {
+          if (chunkInfo.name === "service_worker") {
+            return "[name].js";
+          }
+          return `${chunkInfo.name.split("/")[0]}/${chunkInfo.name.split("/")[1] || chunkInfo.name}.js`;
+        },
         assetFileNames: "assets/[name].[ext]",
         chunkFileNames: "[name]/[name].js",
       },
