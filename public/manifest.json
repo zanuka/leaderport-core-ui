@@ -3,14 +3,7 @@
   "manifest_version": 3,
   "version": "0.1.0",
   "description": "Elevating Heroes, Immortalizing Legends",
-  "permissions": [
-    "scripting",
-    "tabs",
-    "storage",
-    "activeTab",
-    "webRequest",
-    "notifications"
-  ],
+  "permissions": ["scripting", "tabs", "storage", "activeTab"],
   "host_permissions": [
     "https://*.sui.io/*",
     "https://*.suinet.app/*",
@@ -18,14 +11,30 @@
     "https://sui-wallet.com/*",
     "https://*.suiet.app/*"
   ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["/content.js"]
+    }
+  ],
   "externally_connectable": {
     "matches": [
       "https://*.sui.io/*",
       "https://*.suinet.app/*",
       "https://wallet-provider.sui.io/*"
     ],
+    "ids": ["opcgpfmipidbgpenhmajoajpbobppdil"],
     "accepts_tls_channel_id": false
   },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self' https://*.sui.io chrome-extension://opcgpfmipidbgpenhmajoajpbobppdil/"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "action": {
     "default_popup": "src/popup/index.html",
     "default_width": 375,

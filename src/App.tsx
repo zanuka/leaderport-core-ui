@@ -1,8 +1,8 @@
-import { ConnectButton, SuiClientProvider, useWallets } from "@mysten/dapp-kit";
+import { SuiClientProvider, useWallets } from "@mysten/dapp-kit";
 import { getFullnodeUrl } from "@mysten/sui/client";
 import { Box, Button, Container, Flex, Heading, Theme } from "@radix-ui/themes";
-import { WalletStatus } from "./WalletStatus";
 import { AchievementTester } from "./components/AchievementTester";
+import { WalletStatus } from "./components/WalletStatus";
 
 const devnetUrl = getFullnodeUrl("devnet");
 
@@ -50,9 +50,6 @@ function App() {
               </Button>
             </Box>
           </Flex>
-          <Box>
-            <ConnectButton />
-          </Box>
         </Flex>
         <Container>
           <Container

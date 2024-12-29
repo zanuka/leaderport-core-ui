@@ -25,9 +25,15 @@ export default defineConfig({
         main: resolve(__dirname, "src/main/index.html"),
         popup: resolve(__dirname, "src/popup/index.html"),
         options: resolve(__dirname, "src/options/index.html"),
+        content: resolve(__dirname, "src/content/content.ts"),
       },
       output: {
-        entryFileNames: "[name]/[name].js",
+        entryFileNames: (chunkInfo) => {
+          if (chunkInfo.name === "content") {
+            return "content.js";
+          }
+          return "[name].[hash].js";
+        },
         chunkFileNames: "[name]/[name].js",
         assetFileNames: "assets/[name].[ext]",
         sanitizeFileName: (name) => {

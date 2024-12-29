@@ -5,9 +5,9 @@ import "@radix-ui/themes/styles.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "../App";
-
 import styled from "styled-components";
+import App from "../App";
+import { networkConfig } from "../networkConfig";
 
 const PopupWrapper = styled.div`
   width: 100%;
@@ -17,15 +17,6 @@ const PopupWrapper = styled.div`
 
 const queryClient = new QueryClient();
 
-const networkConfig = {
-  testnet: {
-    url: "https://fullnode.testnet.sui.io",
-  },
-  mainnet: {
-    url: "https://fullnode.mainnet.sui.io",
-  },
-};
-
 const container = document.getElementById("app");
 if (container) {
   const root = createRoot(container);
@@ -34,10 +25,7 @@ if (container) {
       <Theme appearance="dark">
         <PopupWrapper>
           <QueryClientProvider client={queryClient}>
-            <SuiClientProvider
-              networks={networkConfig}
-              defaultNetwork="testnet"
-            >
+            <SuiClientProvider networks={networkConfig} defaultNetwork="devnet">
               <WalletProvider autoConnect>
                 <App />
               </WalletProvider>
