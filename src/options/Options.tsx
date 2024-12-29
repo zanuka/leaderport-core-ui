@@ -8,7 +8,7 @@ import Options from "./OptionSettings";
 
 const queryClient = new QueryClient();
 
-const container = document.getElementById("root");
+const container = document.getElementById("app");
 if (container) {
   const root = createRoot(container);
   root.render(
