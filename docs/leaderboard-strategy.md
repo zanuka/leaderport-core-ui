@@ -1,4 +1,4 @@
-# Leaderboard Strategy
+# Leaderboard Strategies
 
 ## Overview
 Our leaderboard system will combine traditional competitive gaming mechanics with Web3 capabilities to create an engaging, multi-faceted ranking system that drives user engagement and provides clear value to players.
@@ -95,7 +95,10 @@ Our leaderboard system will combine traditional competitive gaming mechanics wit
 - Regular auditing of scores
 - Community feedback integration
 
+
 ## Sui Ecosystem Integration
+
+<img src="../images/Sui_Logo_White.svg" alt="Sui" width="36" />
 
 ### 1. Native Sui Advantages
 - **Object-Centric Model Integration**
@@ -139,5 +142,127 @@ Our leaderboard system will combine traditional competitive gaming mechanics wit
 - Collaborative tournaments and events
 - Shared reward pools
 - Cross-promotion opportunities
+
+### 7. Developer Experience
+
+Adding a leaderboard to your project should be an enjoyable experience, not something you dread. LeaderPort aims to make the process a breeze with its simple installation and configuration process.
+
+#### Quick Start Integration
+
+_Note: This is currently in brainstorm draft-mode, all subject to change as project matures :-)_
+
+Initialize in your project:
+
+    import { LeaderPort } from '@leaderport/core';
+    import { SuiProvider } from '@leaderport/sui';
+
+    const leaderboard = new LeaderPort({
+      provider: new SuiProvider(),
+      projectId: 'your-project-id'
+    });
+
+#### Core Features
+Submit scores with a single line:
+
+    await leaderboard.submitScore({
+      playerId: '0x123...',
+      score: 1000,
+      category: 'weekly-challenge'
+    });
+
+Configure your leaderboard:
+
+    const config = {
+      updateFrequency: '1m',          // Real-time, 1m, 5m, etc.
+      resetSchedule: '0 0 * * MON',   // CRON expression
+      scoreStrategy: 'highest',       // highest, lowest, latest, cumulative
+      tiebreaker: 'timestamp',        // timestamp, secondary_score
+      archiveEnabled: true,           // Store historical data
+      maxEntries: 100000,            // Maximum entries per leaderboard
+    };
+
+#### Ready-Made Components
+Drop-in React components:
+
+    import { LeaderboardView, PlayerCard } from '@leaderport/react';
+
+    <LeaderboardView 
+      category="weekly-challenge"
+      layout="vertical"
+      showRank
+      showScore
+      showTimestamp
+    />
+
+#### Advanced Integration Examples
+Real-time updates:
+
+    leaderboard.subscribe('weekly-challenge', {
+      onUpdate: (scores) => {
+        console.log('New scores:', scores);
+      },
+      onReset: () => {
+        console.log('Leaderboard reset');
+      }
+    });
+
+Custom scoring formulas:
+
+    leaderboard.setScoreStrategy('pvp-ranking', {
+      calculate: (stats) => {
+        return (stats.wins * 100) + (stats.kills * 10) - (stats.deaths * 5);
+      }
+    });
+
+#### Developer Tools
+Command-line interface:
+
+    leaderport init        # Project setup
+    leaderport deploy      # Deploy contracts
+    leaderport simulate    # Test scoring
+
+#### Key Features
+- **Type-Safe Development**
+  - Full TypeScript support
+  - Runtime type checking
+  - Schema validation
+  - Custom type definitions
+
+- **Performance First**
+  - Automatic batching
+  - Smart caching
+  - Rate limiting
+  - Load balancing
+  - Pagination support
+
+- **Extensive Middleware**
+  - Score validation
+  - Anti-cheat systems
+  - Custom authentication
+  - Event webhooks
+  - Analytics tracking
+
+- **Comprehensive Documentation**
+  - Interactive tutorials
+  - Code examples
+  - API reference
+  - TypeDoc generation
+  - Community support
+
+- **Enterprise Ready**
+  - Custom deployments
+  - Advanced analytics
+  - SLA guarantees
+  - Priority support
+  - Custom features
+
+- **Easy Migration**
+  - Legacy system support
+  - Data import/export
+  - Version management
+  - Backward compatibility
+
+This developer-first approach ensures teams can focus on their game mechanics while LeaderPort manages the complexities of both on-chain and off-chain leaderboard systems.
+
 
 

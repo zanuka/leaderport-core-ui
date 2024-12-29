@@ -4,9 +4,11 @@
 
 [LeaderPort](https://leaderport.ai) combines cutting-edge Web3 technologies to create powerful leaderboard solutions that track and immortalize achievements. By leveraging blockchain technology, every record and milestone is permanently preserved, creating an immutable legacy of excellence in Web3.
 
+By taking a developer-first approach, our integrations allow teams dial-in their game mechanics & business logic while LeaderPort manages the complexities of both on-chain and off-chain leaderboard systems. For more details, check out our [Leaderboard Strategy](docs/leaderboard-strategy.md). 
+
 <img src="images/Sui_Logo_White.svg" alt="Sui" width="48" />
 
-This modern leaderboard platform and browser extension suite will be built on [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. 
+This modern leaderboard platform and browser extension suite will initially support [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. Depending on developer demand and community consensus we will consider supporting other blockchains and wallets.
 
 ## Achievement System
 
