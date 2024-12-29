@@ -12,6 +12,8 @@ interface VitestConfigExport extends UserConfig {
 
 export default defineConfig({
   plugins: [react()],
+  root: ".",
+  publicDir: "./public",
   test: {
     globals: true,
     environment: "jsdom",
@@ -19,35 +21,41 @@ export default defineConfig({
   },
   build: {
     outDir: "dist",
-    assetsDir: "",
+    assetsDir: "assets",
+    modulePreload: false,
     rollupOptions: {
       input: {
         popup: resolve(__dirname, "src/popup/index.html"),
+        "popup/index": resolve(__dirname, "src/popup/index.tsx"),
         options: resolve(__dirname, "src/options/index.html"),
+        "options/index": resolve(__dirname, "src/options/index.tsx"),
+        content: resolve(__dirname, "src/content/content.js"),
+        service_worker: resolve(__dirname, "src/background/service_worker.js"),
       },
       output: {
-        entryFileNames: "[name]/[name].js",
-        chunkFileNames: "[name]/[name].js",
-        assetFileNames: "assets/[name].[ext]",
-        sanitizeFileName: (name) => {
-          return name
-            .replace(/\x00/g, "")
-            .replace(/^_/, "plugin-")
-            .replace(/:/g, "-");
+        entryFileNames: (chunkInfo) => {
+          if (chunkInfo.name === "service_worker") {
+            return "[name].js";
+          }
+          return `${chunkInfo.name.split("/")[0]}/${chunkInfo.name.split("/")[1] || chunkInfo.name}.js`;
         },
+        assetFileNames: "assets/[name].[ext]",
+        chunkFileNames: "[name]/[name].js",
       },
     },
-    chunkSizeWarningLimit: 1000,
-  },
-  base: "./",
-  server: {
-    port: 5173,
-    open: false,
   },
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
-      options: resolve(__dirname, "options"),
+    },
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+  },
+  server: {
+    port: 5173,
+    open: false,
+    headers: {
+      "Content-Security-Policy":
+        "script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none';",
     },
   },
 } as VitestConfigExport);

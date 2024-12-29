@@ -1,99 +1,130 @@
 ## Front-end State Management
 
 ### Zustand Implementation (Current)
-We use Zustand for state management due to its lightweight nature and excellent TypeScript support. Our implementation consists of two main stores:
+We're currently using Zustand for state management due to its lightweight nature and excellent TypeScript support. The implementation follows a centralized store pattern with separate slices for different concerns:
 
 ```typescript
-// Leaderboard Store
-const useLeaderboardStore = create<LeaderboardState>((set, get) => ({
-  scores: [],
-  loading: false,
-  error: null,
-  refreshInterval: null,
-  
-  // Core functionality
-  fetchScores: async () => { /* ... */ },
-  startAutoRefresh: () => { /* ... */ },
-  stopAutoRefresh: () => { /* ... */ }
-}))
+// Centralized Store Definition
+interface OptionsState {
+  someOption: boolean;
+  setSomeOption: (value: boolean) => void;
+  network: 'testnet' | 'mainnet';
+  setNetwork: (network: 'testnet' | 'mainnet') => void;
+  updateFrequency: number;
+  setUpdateFrequency: (seconds: number) => void;
+}
 
-// Settings Store with persistence
-const useSettingsStore = create<SettingsState>()(
-  persist(
-    (set) => ({
-      theme: 'light',
-      refreshRate: 30000,
-      loadSettings: async () => { /* ... */ },
-      updateSettings: (newSettings) => { /* ... */ }
-    }),
-    {
-      name: 'settings-storage'
-    }
-  )
-)
+interface PopupState {
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
+}
+
+// Store Implementation
+export const useOptionsStore = create<OptionsState>((set) => ({
+  someOption: false,
+  setSomeOption: (value) => set({ someOption: value }),
+  network: 'testnet',
+  setNetwork: (network) => set({ network }),
+  updateFrequency: 30,
+  setUpdateFrequency: (seconds) => set({ updateFrequency: seconds }),
+}));
+
+export const usePopupStore = create<PopupState>((set) => ({
+  isOpen: false,
+  setIsOpen: (value) => set({ isOpen: value }),
+}));
+
+// Combined Store Hook
+export const useStore = () => ({
+  options: useOptionsStore(),
+  popup: usePopupStore(),
+});
 ```
 
-Benefits:
-1. **Minimal Boilerplate:**
-   - Simple API with hooks-based access
-   - Clean TypeScript integration
-   - Easy persistence with built-in middleware
+### Store Organization
 
-2. **Performance:**
-   - Small bundle size (~1KB)
-   - Automatic render optimization
-   - Efficient updates
+The stores are organized in a centralized `src/stores` directory with the following structure:
 
-3. **Developer Experience:**
-   - Great DevTools support
-   - Easy debugging
-   - Familiar React patterns
+```
+src/
+├── stores/
+│   ├── index.ts        # Main store exports and interfaces
+│   ├── leaderboard.ts  # Leaderboard-specific state
+│   └── settings.ts     # Settings and configuration state
+```
 
 ### Implementation Strategy
 
-Our current implementation follows these patterns:
+1. **Centralized State Management:**
+   - All stores are defined in `src/stores/index.ts`
+   - Clear interfaces for each store slice
+   - Combined store hook for accessing multiple slices
 
-1. **State Organization:**
-   - Separate stores for different concerns (leaderboard, settings)
-   - Persistent storage for user preferences
-   - Automatic state rehydration on page load
-
-2. **Data Flow:**
-   - Components subscribe only to needed state
-   - Centralized data fetching logic
-   - Automatic refresh cycles
-
-3. **Usage Pattern:**
+2. **Usage in Components:**
 ```tsx
-function LeaderboardDisplay() {
-  const { scores, loading, startAutoRefresh } = useLeaderboardStore();
-  const { theme } = useSettingsStore();
-  
-  useEffect(() => {
-    startAutoRefresh();
-    return () => stopAutoRefresh();
-  }, []);
-  
-  // Component logic
+function Options() {
+  const { 
+    someOption, 
+    setSomeOption,
+    network,
+    setNetwork 
+  } = useOptionsStore();
+
+  return (
+    <Container>
+      <Select.Root value={network} onValueChange={setNetwork}>
+        {/* Component JSX */}
+      </Select.Root>
+    </Container>
+  );
 }
 ```
+
+3. **Benefits:**
+   - Single source of truth for all state
+   - Type-safe state management
+   - Easy state sharing between extension views (popup, options, etc.)
+   - Simplified testing and maintenance
+   - Clear separation of concerns
 
 ### Getting Started
 
 1. Install Zustand:
 ```bash
-npm install zustand
+bun add zustand
 # or
-yarn add zustand
+npm install zustand
 ```
 
 2. Import and use stores:
 ```typescript
-import { useLeaderboardStore } from '../stores/leaderboard';
-import { useSettingsStore } from '../stores/settings';
+import { useOptionsStore, usePopupStore, useStore } from '../stores';
+
+// Use individual stores
+const { network } = useOptionsStore();
+
+// Or use combined store
+const { options, popup } = useStore();
 ```
 
 For detailed implementation examples, see:
-- [LeaderboardDisplay.tsx](./popup/components/LeaderboardDisplay.tsx)
-- [leaderboard.ts](./src/stores/leaderboard.ts)
-- [settings.ts](./src/stores/settings.ts)
+- [Options.tsx](./src/options/Options.tsx)
+- [Popup.tsx](./src/popup/popup.tsx)
+- [stores/index.ts](./src/stores/index.ts)
+
+### Best Practices
+
+1. **State Organization:**
+   - Keep related state together in the same store
+   - Use clear, descriptive names for state and actions
+   - Define TypeScript interfaces for all store states
+
+2. **Component Integration:**
+   - Subscribe only to needed state
+   - Use destructuring to access specific store values
+   - Implement actions as store methods
+
+3. **Extension-specific Considerations:**
+   - Share state between popup and options pages
+   - Use persistence when needed for settings
+   - Handle initialization and cleanup properly

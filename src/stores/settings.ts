@@ -17,7 +17,7 @@ interface SettingsState {
 
 export const useSettingsStore = create<SettingsState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       settings: {
         apiKey: "",
         refreshInterval: 5,
@@ -61,6 +61,6 @@ export const useSettingsStore = create<SettingsState>()(
     }),
     {
       name: "settings-storage", // unique name for localStorage
-    }
-  )
+    },
+  ),
 );

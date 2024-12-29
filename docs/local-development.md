@@ -73,3 +73,67 @@ The frontend interacts with the Move contract through:
 3. Use separate wallets for development and production
 4. Test transactions with minimal gas budget first
 5. Add console logging for debugging 
+
+## Development Entry Points
+
+The application has three distinct entry points, each serving different purposes:
+
+1. **Main Application** (`/src/main/index.html`)
+   ```bash
+   # Development
+   npm run dev
+   bun run dev
+   pnpm dev
+
+   # Preview build
+   npm run preview
+   bun run preview
+   pnpm preview
+   ```
+   This is the primary application interface.
+
+2. **Popup Interface** (`/src/popup/index.html`)
+   ```bash
+   # Development
+   npm run dev:popup
+   bun run dev:popup
+   pnpm dev:popup
+
+   # Preview build
+   npm run preview:popup
+   bun run preview:popup
+   pnpm preview:popup
+   ```
+   Used for extension popup functionality.
+
+3. **Options Page** (`/src/options/index.html`)
+   ```bash
+   # Development
+   npm run dev:options
+   bun run dev:options
+   pnpm dev:options
+
+   # Preview build
+   npm run preview:options
+   bun run preview:options
+   pnpm preview:options
+   ```
+   Handles extension configuration and settings.
+
+### Testing Configuration
+
+The project uses Vitest for testing, configured in `vitest.config.ts`. Tests are:
+- Located in `src/**/*.{test,spec}.{js,ts,jsx,tsx}`
+- Run in a JSDOM environment to simulate browser APIs
+- Can be executed using:
+  ```bash
+  # Run tests
+  npm run test
+  bun run test
+  pnpm test
+
+  # Run tests with coverage
+  npm run test:coverage
+  bun run test:coverage
+  pnpm test:coverage
+  ``` 

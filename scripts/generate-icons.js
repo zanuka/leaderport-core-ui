@@ -2,7 +2,7 @@ import { mkdirSync } from "fs";
 import { join } from "path";
 import sharp from "sharp";
 
-// Ensure the assets directory exists
+// Update assets directory path to public/assets
 const assetsDir = "./public/assets";
 try {
   mkdirSync(assetsDir, { recursive: true });
