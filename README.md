@@ -203,16 +203,9 @@ In future iterations, we can expand this prototype with features like:
 
 These additional features would further explore capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
 
-
-
 View the [public core, private premium](docs/public-private-repos.md) repo setup doc for details on the open-source and paid feature strategy.
 
-### Local Development
-For local development instructions, refer to [Extension Development](./docs/extension-dev.md)
-
-### Support the Project
-
-Donate (SUI address): 0x9ad0d7ee1ebf1de8da2c9e817707b1d34f140bbbb0a75fe9b74dfbfdf0e4512d
+## Support the Project
 
 If you find LeaderPort valuable, consider supporting its development through SUI donations. Your contributions help maintain and improve this open-source project.
 
