@@ -119,7 +119,6 @@ Primarily designed for Web3 gaming and competitive dApps, with extensibility to 
 - Liquidity Provider Rankings: Monitor top LPs across different pools
 - Yield Farming Performance: Track APY and TVL across protocols
 - Wallet Performance: Track portfolio growth and trading success
-- *Future support planned for additional blockchain ecosystems based on community demand
 
 ### Traditional Use Cases
 - Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
@@ -127,6 +126,9 @@ Primarily designed for Web3 gaming and competitive dApps, with extensibility to 
 - Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
 - Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
 - Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
+
+Future support planned for additional blockchain ecosystems based on community demand
+
 
 ## Key Features to LeaderPort
 
