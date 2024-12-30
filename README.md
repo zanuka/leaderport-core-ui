@@ -102,24 +102,31 @@ For a detailed strategy and API integration details, refer to the [Sports Data I
 
 For development workflow, refer to [Extension Development](./docs/extension-dev.md)
 
-## Project Plan & Roadmap
-
-The initial prototype will be launched as a browser extension in 2025, supporting Chrome, Firefox, and Safari. This MVP aims to ensure seamless functionality across all major browsers, providing a consistent user experience regardless of the platform. 
-
-If successful, work will continue towards developing a full-fledged SaaS platform. This will include additional features and enhancements based on user feedback and market demand, ensuring LeaderPort remains at the forefront of real-time leaderboard solutions.
-
-For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
-
 
 ## Leaderboard Use Cases
 
-Primarily designed for games and competitive apps, but it can be easily applied to other domains:
+Primarily designed for Web3 gaming and competitive dApps, with extensibility to traditional applications:
+
+### Web3 Gaming & NFTs
+- Sui Ecosystem Games: Track player achievements, rankings, and in-game asset performance
+- NFT Collection Rankings: Monitor floor prices, trading volume, and holder statistics
+- Play-to-Earn Leaderboards: Track earnings, achievements, and player progression
+- Cross-Game Achievement Systems: Unified leaderboards across multiple Web3 games
+- SuiFrens Integration: Achievement-based trait unlocks and rarity tracking
+
+### DeFi & Trading
+- DEX Trading Volumes: Track top traders and trading pair performance
+- Liquidity Provider Rankings: Monitor top LPs across different pools
+- Yield Farming Performance: Track APY and TVL across protocols
+- Wallet Performance: Track portfolio growth and trading success
+- *Future support planned for additional blockchain ecosystems based on community demand
+
+### Traditional Use Cases
 - Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
 - Education and E-learning: Track student progress and achievements in online courses
 - Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
 - Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
 - Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
-
 
 ## Key Features to LeaderPort
 
@@ -176,6 +183,14 @@ The first version of the LeaderPort product will include:
    - Sui parallel transaction processing
 7. Scalable data management system capable of handling millions of concurrent users
 
+## Project Plan & Roadmap
+
+The initial prototype will be launched as a browser extension in 2025, supporting Chrome, Firefox, and Safari. This MVP aims to ensure seamless functionality across all major browsers, providing a consistent user experience regardless of the platform. 
+
+If successful, work will continue towards developing a full-fledged SaaS platform. This will include additional features and enhancements based on user feedback and market demand, ensuring LeaderPort remains at the forefront of real-time leaderboard solutions.
+
+For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
+
 ## Future Expansion
 
 In future iterations, we can expand this prototype with features like:
@@ -187,38 +202,8 @@ In future iterations, we can expand this prototype with features like:
 These additional features would further explore capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
 
 
-## Open-Source & Paid Feature Strategy
 
-LeaderPort will follow a "public core, private premium" development strategy:
-
-**Public Core (GitHub)**
-- Basic leaderboard functionality
-- Standard browser extension features
-- Core UI components
-- Basic data visualization
-- Community-driven improvements
-- MIT licensed
-
-**Premium Features (Private)**
-- Advanced analytics
-- Real-time professional sports data
-- Custom theming engine
-- Advanced data visualization
-- Enterprise-grade support
-- Additional premium features
-
-Both public (open-source) core repositories will be hosted on GitHub, while premium feature repositories will be hosted on GitLab. 
-
-This "hybrid" approach maximizes benefits:
-
-1. **Visibility**: Leverage GitHub's larger open-source community
-2. **Separation**: Natural boundary between public and private code
-3. **Security**: Private code remains isolated on GitLab
-4. **Community**: Better engagement through GitHub's social features
-
-The minor overhead of managing two platforms is outweighed by the benefits of GitHub's open-source ecosystem for public repositories while maintaining premium features secure and separate.
-
-More details [here](docs/public-private-repos.md).
+View the [public core, private premium](docs/public-private-repos.md) repo setup doc for details on the open-source and paid feature strategy.
 
 ### Local Development
 For local development instructions, refer to [Extension Development](./docs/extension-dev.md)

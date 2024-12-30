@@ -1,6 +1,33 @@
 # Public & Private Repo Strategy
 
-This document outlines the repository structure strategy for LeaderPort, separating public core functionality from private enhancements.
+LeaderPort will follow a "public core, private premium" development strategy:
+
+**Public Core (GitHub)**
+- Basic leaderboard functionality
+- Standard browser extension features
+- Core UI components
+- Basic data visualization
+- Community-driven improvements
+- MIT licensed
+
+**Premium Features (Private)**
+- Advanced analytics
+- Real-time professional sports data
+- Custom theming engine
+- Advanced data visualization
+- Enterprise-grade support
+- Additional premium features
+
+Both public (open-source) core repositories will be hosted on GitHub, while premium feature repositories will be hosted on GitLab. 
+
+This "hybrid" approach maximizes benefits:
+
+1. **Visibility**: Leverage GitHub's larger open-source community
+2. **Separation**: Natural boundary between public and private code
+3. **Security**: Private code remains isolated on GitLab
+4. **Community**: Better engagement through GitHub's social features
+
+The minor overhead of managing two platforms is outweighed by the benefits of GitHub's open-source ecosystem for public repositories while maintaining premium features secure and separate.
 
 ## Repository Structure
 
