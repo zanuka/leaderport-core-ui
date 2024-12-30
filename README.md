@@ -310,6 +310,25 @@ We welcome contributions from developers interested in Web3, Sui blockchain deve
 
 We believe in fostering an inclusive and welcoming environment for all contributors. Whether you're fixing a bug, improving documentation, or adding a new feature, your help is appreciated!
 
+### Donate to the LeaderPort project
+
+Donate (SUI address): 0x9ad0d7ee1ebf1de8da2c9e817707b1d34f140bbbb0a75fe9b74dfbfdf0e4512d
+
+### Support the Project
+
+If you find LeaderPort valuable, consider supporting its development through SUI donations. Your contributions help maintain and improve this open-source project.
+
+SUI Address:
+```
+0x9ad0d7ee1ebf1de8da2c9e817707b1d34f140bbbb0a75fe9b74dfbfdf0e4512d
+```
+
+### GitHub Sponsors
+
+You can also support LeaderPort's development through GitHub Sponsors. GitHub Sponsors allows you to make recurring monthly donations and receive sponsor-exclusive benefits.
+
+[![Sponsor LeaderPort](https://img.shields.io/github/sponsors/zanuka?label=Sponsor&logo=GitHub)](https://github.com/sponsors/zanuka)
+
 ### License
 
 This project is licensed under the [Apache License, Version 2.0](LICENSE).
