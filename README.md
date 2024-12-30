@@ -129,7 +129,7 @@ Primarily designed for games and competitive apps, but it can be easily applied 
    - Smooth animations for rank changes
 
 2. Natural Language Queries
-   - Chat with your leaderboard using GPT-4
+   - Chat and interact with your leaderboard using AI
    - Stream responses in real-time
    - Query complex statistics naturally
 
@@ -186,43 +186,6 @@ In future iterations, we can expand this prototype with features like:
 
 These additional features would further explore capabilities and showcase its versatility in game development scenarios. The leaderboard should be useful for game developers, hobbyists, and projects that require high-performance web applications.
 
-   
-## Technical Details
-
-On the front end, LeaderPort will offer a responsive Single Page Application (SPA) designed for optimal performance across both mobile and desktop browsers. The UX would include a simple interface to display the leaderboard and allow score submissions. The demo will showcase real-time updates as scores change.
-
-## Tech Stack Details
-
-- Front-end Stack:
-  - React with [@mysten/dapp-kit](https://sdk.mystenlabs.com/dapp-kit) (for on-chain features)
-  - TypeScript
-  - TanStack Suite:
-    - Query (for data management)
-    - Table (for leaderboard display)
-    - Form (for type-safe forms)
-    - Router (for routing)
-  - Vite (for build tooling)
-  - Sui SDK Dependencies:
-    - @mysten/dapp-kit ^0.14.44
-    - @mysten/sui ^1.18.0
-    - @tanstack/react-query ^5.62.10
-- Back-end Stack:
-  - Hono (for API and SSR)
-  - Bun (for runtime)
-  - TypeScript
-  - Drizzle ORM (for database operations)
-- Database:
-  - Redis
-- Cloud Infrastructure:
-  - AWS (EC2 or ECS for hosting)
-  - Amazon ElastiCache for Redis
-  - S3 (for static asset hosting)
-- CI/CD:
-  - GitHub Actions
-- Additional:
-  - WebSocket (for real-time updates)
-  - Docker (for containerization)
-  - OpenAI (for natural language leaderboard queries)
 
 ## Open-Source & Paid Feature Strategy
 
@@ -257,64 +220,12 @@ The minor overhead of managing two platforms is outweighed by the benefits of Gi
 
 More details [here](docs/public-private-repos.md).
 
-## Development and Builds
-
-### Accessing Built Extensions
-After each successful GitHub Action workflow run, extension packages are available in two ways:
-
-1. **Via GitHub Actions UI**:
-   - Navigate to the [Actions tab](https://github.com/zanuka/leaderport-core-ui/actions)
-   - Click on the latest workflow run
-   - Scroll to the "Artifacts" section
-   - Download the desired browser extension:
-     - `chrome-extension.zip`
-     - `firefox-extension.zip`
-     - `edge-extension.zip`
-     - `opera-extension.zip`
-
-2. **Via GitHub API**:
-   ```
-   https://api.github.com/repos/zanuka/leaderport-core-ui/actions/artifacts
-   ```
-
-Note: Built artifacts are retained for 5 days before automatic deletion.
-
 ### Local Development
 For local development instructions, refer to [Extension Development](./docs/extension-dev.md)
 
-## Contributing
-
-We welcome contributions from developers interested in Web3, Sui blockchain development, and real-time data visualization! 
-
-### Getting Started
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Prerequisites
-
-- Node.js 18+
-- Bun runtime
-- Understanding of React, TypeScript, and Web3 concepts
-- (Optional) Familiarity with Sui Move programming
-
-### Rewards for Contributors
-
-- Get early access to premium features
-- Earn contributor NFTs on Sui network
-- Join our featured contributors list
-- Opportunity to become a core maintainer
-
-We believe in fostering an inclusive and welcoming environment for all contributors. Whether you're fixing a bug, improving documentation, or adding a new feature, your help is appreciated!
-
-### Donate to the LeaderPort project
+### Support the Project
 
 Donate (SUI address): 0x9ad0d7ee1ebf1de8da2c9e817707b1d34f140bbbb0a75fe9b74dfbfdf0e4512d
-
-### Support the Project
 
 If you find LeaderPort valuable, consider supporting its development through SUI donations. Your contributions help maintain and improve this open-source project.
 

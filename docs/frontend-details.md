@@ -1,14 +1,40 @@
 # Front-end Details
 LeaderPort's front end is designed to provide a seamless, responsive, and real-time leaderboard experience.
 
-Key features of the front end include:
-- Responsive design for both mobile and desktop browsers
-- Real-time leaderboard updates using WebSockets
-- Efficient data management with TanStack Query
-- Type-safe development with TypeScript
-- Fast development and build times with Vite
-- Customizable and responsive UI with Tailwind CSS
-- Comprehensive testing suite using Cypress and Vitest
+## Tech Stack Outline
+
+> **Note**: This is a preliminary tech stack outline and may be subject to change as the project evolves.
+
+- Front-end Stack:
+  - React with [@mysten/dapp-kit](https://sdk.mystenlabs.com/dapp-kit) (for on-chain features)
+  - TypeScript
+  - TanStack Suite:
+    - Query (for data management)
+    - Table (for leaderboard display)
+    - Form (for type-safe forms)
+    - Router (for routing)
+  - Vite (for build tooling)
+  - Sui SDK Dependencies:
+    - @mysten/dapp-kit ^0.14.44
+    - @mysten/sui ^1.18.0
+    - @tanstack/react-query ^5.62.10
+- Back-end Stack:
+  - Hono (for API and SSR)
+  - Bun (for runtime)
+  - TypeScript
+  - Drizzle ORM (for database operations)
+- Database:
+  - Redis
+- Cloud Infrastructure:
+  - AWS (EC2 or ECS for hosting)
+  - Amazon ElastiCache for Redis
+  - S3 (for static asset hosting)
+- CI/CD:
+  - GitHub Actions
+- Additional:
+  - WebSocket (for real-time updates)
+  - Docker (for containerization)
+  - OpenAI (for natural language leaderboard queries)
 
 ## Front-end Architecture
 
@@ -35,6 +61,18 @@ LeaderPort's front end architecture is built on a modern, robust stack designed 
 5. **Vite as Build Tool**: 
    - Provides next-generation front end tooling
    - Offers near-instantaneous server start and hot module replacement (HMR)
+
+6. **Sui dApp Kit Integration**:
+   - Official Sui development toolkit for React applications
+   - Provides seamless wallet connection and management
+   - Includes React hooks for blockchain state and interactions
+   - Simplifies transaction handling and smart contract interactions
+
+7. **Walrus Wallet Integration**:
+   - Primary supported wallet for Sui blockchain interactions
+   - Secure transaction signing and account management
+   - Built-in support for NFT viewing and management
+   - Seamless integration with Sui dApp Kit
 
 ### Data Management Strategy
 
