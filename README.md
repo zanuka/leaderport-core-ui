@@ -226,4 +226,4 @@ This project is licensed under the [Apache License, Version 2.0](LICENSE).
 
 Copyright (c) 2024-present, Mike Delucchi - Zanuka Labs LLC.
 
-
+Official project build started by [zanuka](https://github.com/zanuka) :: December 21, 2024 at 12:05 AM (PST)
