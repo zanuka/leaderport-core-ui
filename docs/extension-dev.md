@@ -2,10 +2,6 @@
 
 A simple Chrome Extension starter project that uses React + TypeScript + Vite + Bun + Icon Generation
 
-## Prerequisites
-
-Keep in mind I've created this starter using my personal preferences and it should be easy enough to swap out any of the technologies to match your own prefs. 
-
 ### Installing Bun
 
 Bun is a fast all-in-one JavaScript runtime like Node.js, but with a focus on performance and developer experience. You can also just use npm or pnpm, whatever works for you. 
@@ -66,21 +62,13 @@ This will generate the following icons in the `public/assets` directory:
 
 **Note:** After making changes, run `bun run build` again and click the refresh icon on the extension card in your browser's extension page.
 
-## UI Testing
-You should see this after pinning the new extension:
-
-![Preview A](./src/assets/preview-a.png)
-
-## Basic Functionality
-Through some basic DOM manipulation, you can set a custom background color. 
-
-![Preview B](./src/assets/preview-b.png)
-
 ## Dependencies
 
 - **@mysten/dapp-kit**: SDK for building decentralized applications on the Sui blockchain, providing hooks and utilities for wallet integration and blockchain interactions.
 - **@mysten/sui**: Core library for interacting with the Sui blockchain network.
 - **@radix-ui/colors**: A collection of color primitives that work with Radix UI components.
+- **@radix-ui/react-collapsible**: Collapsible component from Radix UI for creating expandable/collapsible sections.
+- **@radix-ui/react-form**: Form primitives from Radix UI for building accessible forms.
 - **@radix-ui/react-icons**: A comprehensive set of icons designed for Radix UI components.
 - **@radix-ui/themes**: A design system and component library for building high-quality React applications.
 - **@tanstack/react-query**: Powerful data synchronization library for React applications, handling caching, refetching, and state management.
@@ -104,16 +92,19 @@ React provides a robust ecosystem and extensive component libraries that make it
 - **@types/react-dom**: TypeScript type definitions for React DOM.
 - **@typescript-eslint/eslint-plugin**: ESLint plugin for TypeScript-specific linting rules.
 - **@typescript-eslint/parser**: Allows ESLint to parse TypeScript code.
-- **@vitejs/plugin-react-swc**: Vite plugin that uses SWC for faster React refresh and compilation.
 - **@vitejs/plugin-react**: Official React plugin for Vite, providing React refresh and JSX support.
+- **@vitejs/plugin-react-swc**: Vite plugin that uses SWC for faster React refresh and compilation.
+- **autoprefixer**: PostCSS plugin to parse CSS and add vendor prefixes automatically.
 - **eslint**: The core ESLint library for identifying and fixing problems in JavaScript code.
 - **eslint-plugin-react**: React specific linting rules for ESLint.
 - **eslint-plugin-react-hooks**: ESLint plugin for enforcing React Hooks rules.
 - **jsdom**: A pure JavaScript implementation of the DOM for use in testing environments.
+- **postcss**: A tool for transforming CSS with JavaScript plugins.
 - **prettier**: An opinionated code formatter to ensure consistent code style.
+- **tailwindcss**: A utility-first CSS framework for rapidly building custom user interfaces.
 - **typescript**: A typed superset of JavaScript that compiles to plain JavaScript.
 - **vite**: A modern frontend build tool offering a faster and leaner development experience.
 - **vitest**: A Vite-native unit test framework with a Jest-compatible API.
 
 
-official project build started by [zanuka](https://github.com/zanuka) :: December 21, 2024 at 12:05 AM (PST)
+Official project build started by [zanuka](https://github.com/zanuka) :: December 21, 2024 at 12:05 AM (PST)
