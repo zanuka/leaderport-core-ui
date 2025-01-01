@@ -4,7 +4,7 @@
 
 [leaderport.xyz](https://leaderport.xyz) is a comprehensive real-time ranking and leaderboard platform, delivered through three main channels:
 
-1. **Web Application** (leaderport.ai)
+1. **Web Application**
    - Instant access to public leaderboards
    - Web3 wallet integration for premium features
    - Real-time sports, markets, and competitive data
@@ -25,7 +25,7 @@ Our Web3 integration allows users to connect their Sui Wallet (and other support
 
 <img src="images/Sui_Logo_White.svg" alt="Sui" width="48" />
 
-The platform initially supports [Sui](https://sui.io/), the first internet-scale programmable blockchain platform, for Web3 features. Depending on developer demand and community consensus we will consider supporting other blockchains and wallets.
+The platform will initially support [Sui](https://sui.io/), the first internet-scale programmable blockchain platform, for Web3 features. Depending on developer demand and community consensus we will consider supporting other blockchains and wallets.
 
 ## Achievement System
 

@@ -2,7 +2,7 @@
 
 ## Overview
 LeaderPort will evolve into a comprehensive platform with three main delivery channels:
-1. Web Application (leaderport.ai)
+1. Web Application (leaderport.xyz)
 2. Browser Extensions
 3. Mobile Applications
 
@@ -121,7 +121,7 @@ sequenceDiagram
     participant Wallet
     participant API
 
-    User->>App: Visit leaderport.ai
+    User->>App: Visit leaderport.xyz
     App->>User: Show login options
     User->>App: Choose wallet login
     App->>Wallet: Request connection
