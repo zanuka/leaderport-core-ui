@@ -2,13 +2,30 @@
 
 ![LeaderPort](images/LeaderPort_256x256.png)
 
-[LeaderPort](https://leaderport.ai) combines cutting-edge Web3 technologies to create powerful leaderboard solutions that track and immortalize achievements. By leveraging blockchain technology, every record and milestone is permanently preserved, creating an immutable legacy of excellence in Web3.
+[leaderport.xyz](https://leaderport.xyz) is a comprehensive real-time ranking and leaderboard platform, delivered through three main channels:
 
-By taking a developer-first approach, our integrations allow teams dial-in their game mechanics & business logic while LeaderPort manages the complexities of both on-chain and off-chain leaderboard systems. For more details, check out our [Leaderboard Strategy](docs/leaderboard-strategy.md). 
+1. **Web Application**
+   - Instant access to public leaderboards
+   - Web3 wallet integration for premium features
+   - Real-time sports, markets, and competitive data
+
+2. **Browser Extensions**
+   - Transform your browser into a command center
+   - Instant leaderboard updates
+   - Cross-platform achievement tracking
+
+3. **Mobile Applications**
+   - Native iOS and Android experiences
+   - Real-time notifications
+   - On-the-go leaderboard access
+
+By taking a platform-first approach, LeaderPort transforms raw data into actionable insights across sports, markets, and competitive landscapes. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership.
+
+Our Web3 integration allows users to connect their Sui Wallet (and other supported wallets in the future) to access premium features, integrate with Web3 games/achievements, and make blockchain-enabled transactions. For more details on our Web3 strategy, check out our [Web3 Vision](docs/web3-vision.md).
 
 <img src="images/Sui_Logo_White.svg" alt="Sui" width="48" />
 
-This modern leaderboard platform and browser extension suite will initially support [Sui](https://sui.io/), the first internet-scale programmable blockchain platform. Depending on developer demand and community consensus we will consider supporting other blockchains and wallets.
+The platform will initially support [Sui](https://sui.io/), the first internet-scale programmable blockchain platform, for Web3 features. Depending on developer demand and community consensus we will consider supporting other blockchains and wallets.
 
 ## Achievement System
 
