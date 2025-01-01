@@ -15,12 +15,12 @@
     "matches": [
       "https://*.sui.io/*",
       "https://*.suinet.app/*",
-      "https://wallet-provider.sui.io/*"
-    ],
-    "ids": ["opcgpfmipidbgpenhmajoajpbobppdil"]
+      "https://wallet-provider.sui.io/*",
+      "chrome-extension://opcgpfmipidbgpenhmajoajpbobppdil/*"
+    ]
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
+    "extension_pages": "script-src 'self'; object-src 'self'",
     "sandbox": "sandbox allow-scripts allow-forms allow-popups allow-modals; script-src 'self' 'unsafe-inline' 'unsafe-eval'; worker-src 'self'"
   },
   "web_accessible_resources": [
