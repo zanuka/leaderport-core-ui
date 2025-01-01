@@ -1,8 +1,8 @@
 # LeaderPort
+In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, this platform can serve as your all-in-one portal to performance leadership. 
 
-![LeaderPort](images/LeaderPort_256x256.png)
 
-[leaderport.xyz](https://leaderport.xyz) is a comprehensive real-time ranking and leaderboard platform, delivered through three main channels:
+The platform will be delivered through three main channels:
 
 1. **Web Application**
    - Instant access to public leaderboards
@@ -19,7 +19,7 @@
    - Real-time notifications
    - On-the-go leaderboard access
 
-By taking a platform-first approach, LeaderPort transforms raw data into actionable insights across sports, markets, and competitive landscapes. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership.
+
 
 Our Web3 integration allows users to connect their Sui Wallet (and other supported wallets in the future) to access premium features, integrate with Web3 games/achievements, and make blockchain-enabled transactions. For more details on our Web3 strategy, check out our [Web3 Vision](docs/web3-vision.md).
 
@@ -87,9 +87,6 @@ LeaderPort products will use [Walrus](https://docs.walrus.site/) for decentraliz
 
 ## LeaderPort concept
 
-Core Definition: LeaderPort is your universal gateway to real-time rankings and leaderboards, transforming raw data into actionable insights across sports, markets, and competitive landscapes.
-
-Key Messaging Points:
 - The "Port" in LeaderPort suggests both a gateway/portal and a place where important information docks/arrives
 - It serves as a central hub where different types of leadership data converge
 - Works across multiple domains:
@@ -102,7 +99,7 @@ Key Messaging Points:
 
 Product Description: LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you.
 
-Marketing Hook: In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion.
+
 
 ## Browser Extension Strategy
 
