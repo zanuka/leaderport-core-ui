@@ -130,29 +130,6 @@ sequenceDiagram
     API->>App: Return session token
 ```
 
-## Immediate Next Steps
-
-1. **Project Setup**
-   ```bash
-   # Initialize monorepo
-   pnpm init
-   pnpm add -D turbo
-
-   # Create Next.js web app
-   cd apps
-   pnpm create next-app web
-   ```
-
-2. **Core Package Development**
-   - Implement shared types
-   - Create base UI components
-   - Set up authentication flows
-
-3. **Web Application Development**
-   - Build home page with dual path
-   - Implement public leaderboard view
-   - Create wallet connection flow
-
 ## Technical Considerations
 
 1. **Code Sharing Strategy**
