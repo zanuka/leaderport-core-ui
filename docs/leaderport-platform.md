@@ -174,4 +174,20 @@ sequenceDiagram
    - App Store deployment
    - Play Store deployment
    - Beta testing channels
-```
+
+## Primary v1 Goals
+
+The first version of the LeaderPort product will include: 
+
+1. TypeScript implementation leveraging [Sui dApp Kit](https://sdk.mystenlabs.com/dapp-kit?ref=blog.sui.io)
+2. TanStack integration for robust data management
+3. Natural language querying capabilities
+4. Real-time updates via WebSocket
+5. Hybrid storage architecture:
+   - Sui blockchain for secure score management
+   - Walrus integration for decentralized media storage
+6. High-performance backend stack:
+   - Hono for efficient API routing
+   - Bun runtime for optimal performance
+   - Sui parallel transaction processing
+7. Scalable data management system capable of handling millions of concurrent users

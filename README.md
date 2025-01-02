@@ -1,4 +1,7 @@
-# LeaderPort
+<img src="images/leaderport_logo_2.jpg" alt="Sui" width="256" />
+
+<br>
+
 In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, this platform can serve as your all-in-one portal to performance leadership. 
 
 
@@ -19,7 +22,36 @@ The platform will be delivered through three main channels:
    - Real-time notifications
    - On-the-go leaderboard access
 
+### Key Platform Features
 
+1. Real-time Leaderboard Updates
+   - WebSocket integration for instant score changes
+   - TanStack Query for efficient data management
+   - Smooth animations for rank changes
+
+2. Natural Language Queries
+   - Chat and interact with your leaderboard using AI
+   - Stream responses in real-time
+   - Query complex statistics naturally
+
+3. Responsive Design
+   - Mobile-first approach with desktop enhancements
+   - Adaptive layouts for various screen sizes
+
+4. Player Profile Cards
+   - Quick view of player stats and achievements
+   - Social sharing capabilities
+
+5. Multiple Leaderboard Views
+   - Global rankings
+   - Friend leaderboards
+   - Time-based competitions (daily, weekly, monthly)
+
+6. Search and Filters
+   - Find specific players or filter by various criteria
+
+
+## Web3 Focused
 
 Our Web3 integration allows users to connect their Sui Wallet (and other supported wallets in the future) to access premium features, integrate with Web3 games/achievements, and make blockchain-enabled transactions. For more details on our Web3 strategy, check out our [Web3 Vision](docs/web3-vision.md).
 
@@ -27,7 +59,9 @@ Our Web3 integration allows users to connect their Sui Wallet (and other support
 
 The platform will initially support [Sui](https://sui.io/), the first internet-scale programmable blockchain platform, for Web3 features. Depending on developer demand and community consensus we will consider supporting other blockchains and wallets.
 
-## Achievement System
+Our roadmap will be highly focused on Web3 gaming and competitive dApps, with extensibility to traditional applications for both free and paid features.
+
+### Primary Web3 Features
 
 1. **Permanent Record Keeping**
    - Immutable blockchain storage of significant achievements
@@ -57,7 +91,31 @@ Please reference the [SuiFrens Integration](docs/sui-frens.md) doc for detailed 
    
 Please reference the [Web3 vision](docs/web3-vision.md) doc for more detailed info.
 
-## Storage with Walrus
+### Web3 Gaming & NFTs
+- Sui Ecosystem Games: Track player achievements, rankings, and in-game asset performance
+- NFT Collection Rankings: Monitor floor prices, trading volume, and holder statistics
+- Play-to-Earn Leaderboards: Track earnings, achievements, and player progression
+- Cross-Game Achievement Systems: Unified leaderboards across multiple Web3 games
+- SuiFrens Integration: Achievement-based trait unlocks and rarity tracking
+
+### DeFi & Trading
+- DEX Trading Volumes: Track top traders and trading pair performance
+- Liquidity Provider Rankings: Monitor top LPs across different pools
+- Yield Farming Performance: Track APY and TVL across protocols
+- Wallet Performance: Track portfolio growth and trading success
+
+### Traditional Use Cases
+- Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
+- Education and E-learning: Track student progress and achievements in online courses
+- Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
+- Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
+- Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
+
+Future support planned for additional blockchain ecosystems based on community demand
+
+
+
+## Web3 Storage with Walrus
 
 <img src="images/walrus.png" alt="Sui" width="128" />
 
@@ -99,11 +157,9 @@ LeaderPort products will use [Walrus](https://docs.walrus.site/) for decentraliz
 
 Product Description: LeaderPort transforms your browser into a command center for real-time rankings. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your all-in-one portal to performance leadership. With customizable dashboards and instant updates, you'll always know what's leading the pack across any domain that matters to you.
 
-
-
 ## Browser Extension Strategy
 
-LeaderPort's browser extensions will leverage public APIs the backend will provide real-time data visualization and insights.
+Our browser extensions will use public APIs the backend will provide real-time data visualization and insights.
 
 - **Data Integration**: Connects to LeaderPort's backend API which aggregates data from official sources 
 - **Smart Caching**: Utilizes `chrome.storage` for data caching and user prefs, respecting subscription tiers
@@ -115,89 +171,6 @@ LeaderPort's browser extensions will leverage public APIs the backend will provi
 For a detailed strategy and API integration details, refer to the [Sports Data Integration Guide](./docs/sports-data.md).
 
 For development workflow, refer to [Extension Development](./docs/extension-dev.md)
-
-
-## Leaderboard Use Cases
-
-Primarily designed for Web3 gaming and competitive dApps, with extensibility to traditional applications:
-
-### Web3 Gaming & NFTs
-- Sui Ecosystem Games: Track player achievements, rankings, and in-game asset performance
-- NFT Collection Rankings: Monitor floor prices, trading volume, and holder statistics
-- Play-to-Earn Leaderboards: Track earnings, achievements, and player progression
-- Cross-Game Achievement Systems: Unified leaderboards across multiple Web3 games
-- SuiFrens Integration: Achievement-based trait unlocks and rarity tracking
-
-### DeFi & Trading
-- DEX Trading Volumes: Track top traders and trading pair performance
-- Liquidity Provider Rankings: Monitor top LPs across different pools
-- Yield Farming Performance: Track APY and TVL across protocols
-- Wallet Performance: Track portfolio growth and trading success
-
-### Traditional Use Cases
-- Sports Analytics: Real-time stats and rankings for professional leagues (e.g., NFL, NBA, MLB, NHL)
-- Education and E-learning: Track student progress and achievements in online courses
-- Fitness and Health Tracking: Monitor user rankings for steps taken, calories burned, or workout streaks
-- Sales and Marketing Performance: Showcase top performers or most effective marketing campaigns
-- Web Analytics: Real-time tracking of website metrics, user engagement, and content performance
-
-Future support planned for additional blockchain ecosystems based on community demand
-
-
-## Key Features to LeaderPort
-
-1. Real-time Leaderboard Updates
-   - WebSocket integration for instant score changes
-   - TanStack Query for efficient data management
-   - Smooth animations for rank changes
-
-2. Natural Language Queries
-   - Chat and interact with your leaderboard using AI
-   - Stream responses in real-time
-   - Query complex statistics naturally
-
-3. Responsive Design
-   - Mobile-first approach with desktop enhancements
-   - Adaptive layouts for various screen sizes
-
-4. Player Profile Cards
-   - Quick view of player stats and achievements
-   - Social sharing capabilities
-
-5. Multiple Leaderboard Views
-   - Global rankings
-   - Friend leaderboards
-   - Time-based competitions (daily, weekly, monthly)
-
-6. Search and Filters
-   - Find specific players or filter by various criteria
-
-### Leaderboard Logic
-- Implement a sorted set in Redis to maintain the leaderboard
-- Use Redis's atomic operations for accurate, concurrent score updates
-
-### Caching
-- Cache frequently accessed leaderboard segments in Redis for fast retrieval
-
-### Rate Limiting
-- Use Redis to implement rate limiting on score submissions to prevent cheating
-
-## Primary v1 Goals
-
-The first version of the LeaderPort product will include: 
-
-1. TypeScript implementation leveraging [Sui dApp Kit](https://sdk.mystenlabs.com/dapp-kit?ref=blog.sui.io)
-2. TanStack integration for robust data management
-3. Natural language querying capabilities
-4. Real-time updates via WebSocket
-5. Hybrid storage architecture:
-   - Sui blockchain for secure score management
-   - Walrus integration for decentralized media storage
-6. High-performance backend stack:
-   - Hono for efficient API routing
-   - Bun runtime for optimal performance
-   - Sui parallel transaction processing
-7. Scalable data management system capable of handling millions of concurrent users
 
 ## Project Plan & Roadmap
 
