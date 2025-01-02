@@ -1,4 +1,4 @@
-<img src="images/leaderport_logo_2.jpg" alt="Sui" width="256" />
+<img src="images/LeaderPort_256x256.png" alt="Sui" width="256" />
 
 In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your portal to performance leaders. 
 
@@ -51,7 +51,7 @@ With launches planned throughout 2025, the platform will be delivered through th
 
 ## Web3 Focused
 
-Our Web3 integration allows users to connect their Sui Wallet (and other supported wallets in the future) to access premium features, integrate with Web3 games/achievements, and make blockchain-enabled transactions. For more details on our Web3 strategy, check out our [Web3 Vision](docs/web3-vision.md).
+Our Web3 integration allows users to connect their Sui Wallet to access premium features, integrate with Web3 games/achievements, and make blockchain-enabled transactions. For more details on our Web3 strategy, check out our [Web3 Vision](docs/web3-vision.md).
 
 <img src="images/Sui_Logo_White.svg" alt="Sui" width="48" />
 
