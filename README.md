@@ -4,7 +4,7 @@ In a world of endless data, LeaderPort is your compass to what's winning. From W
 
 With launches planned throughout 2025, the platform will be delivered through three main channels:
 
-1. **Web Application** [leaderport.io](https://leaderport.io)
+1. **Web Application** [leaderport.io](http://leaderport.io)
    - Instant access to public leaderboards
    - Web3 wallet integration for premium features
    - Real-time sports, markets, and competitive data
