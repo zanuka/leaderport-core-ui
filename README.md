@@ -2,15 +2,15 @@
 
 <br>
 
-In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, this platform can serve as your all-in-one portal to performance leadership. 
+In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your portal to performance leaders. 
 
+With launches planned throughout 2025, the platform will be delivered through three main channels:
 
-The platform will be delivered through three main channels:
-
-1. **Web Application**
+1. **Web Application** [leaderport.io](https://leaderport.io)
    - Instant access to public leaderboards
    - Web3 wallet integration for premium features
    - Real-time sports, markets, and competitive data
+   - Developer tools, SDKs, utilities and resources 
 
 2. **Browser Extensions**
    - Transform your browser into a command center
