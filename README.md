@@ -1,7 +1,5 @@
 <img src="images/leaderport_logo_2.jpg" alt="Sui" width="256" />
 
-<br>
-
 In a world of endless data, LeaderPort is your compass to what's winning. From Wall Street to the World Series, never miss a leader in motion. Whether you're tracking top-performing stocks, leading sports scores, trending cryptocurrencies, or competitive metrics, LeaderPort serves as your portal to performance leaders. 
 
 With launches planned throughout 2025, the platform will be delivered through three main channels:
