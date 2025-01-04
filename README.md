@@ -178,6 +178,40 @@ If successful, work will continue towards developing a full-fledged SaaS platfor
 
 For a detailed overview of our development phases, milestones, and future plans, please refer to the [Roadmap](./docs/roadmap.md).
 
+## Links
+
+### Core Documentation
+- [Achievement Tester Guide](./achievement-tester.md) - Development tool guide for testing achievement creation and validation
+- [Extension Development](./extension-dev.md) - Setup and workflow guide for Chrome extension development with React + TypeScript + Vite
+- [Extension Strategy](./extension-strategy.md) - Strategic overview of Chrome extension API usage and implementation
+- [Frontend Details](./frontend-details.md) - Comprehensive guide to the frontend tech stack and implementation
+- [GitHub Workflow](./gh-workflow.md) - CI/CD workflow details for building and deploying browser extensions
+
+### Integration & Setup
+- [Leaderboard Embeds](./leaderboard-embeds.md) - Guide for embedding LeaderPort leaderboards in web and mobile applications
+- [Leaderboard Strategy](./leaderboard-strategy.md) - Core strategy for implementing competitive gaming mechanics with Web3
+- [LeaderPort Platform](./leaderport-platform.md) - Platform architecture and development strategy overview
+- [Local Development](./local-development.md) - Setup guide for local development environment
+- [Move Contract](./move-contract.md) - Documentation for Move smart contract implementation
+
+### State & Data Management
+- [Public & Private Repos](./public-private-repos.md) - Strategy for managing public and private repository structure
+- [Reserve Name Strategy](./reserve-name-strategy.md) - Guide for reserving Chrome extension names
+- [Sports Data](./sports-data.md) - Overview of sports data sources and integration strategies
+- [Sportradar Legal](./sportradar-legal.md) - Legal considerations for Sportradar API integration
+- [State Management](./state-management.md) - Frontend state management implementation using Valtio
+
+### Technical Integration
+- [Sui Deployment Guide](./sui-deployment-guide.md) - Guide for deploying smart contracts to Sui networks
+- [Sui Frens](./sui-frens.md) - Integration guide for SuiFrens NFT achievement system
+- [TanStack Details](./tanstack-details.md) - Overview of TanStack implementation for real-time leaderboards
+- [TanStack Hono](./tanstack-hono.md) - Integration guide for TanStack with Redis and Hono
+- [useAchievements](./useAchievements.md) - Documentation for the useAchievements React hook
+
+### Setup & Configuration
+- [Wallet Setup Guide](./wallet-setup-guide.md) - Guide for setting up development wallets for Sui
+- [Web3 Vision](./web3-vision.md) - Strategic vision for LeaderPort's Web3 implementation
+
 ## Future Expansion
 
 In future iterations, we can expand this prototype with features like:
@@ -212,3 +246,5 @@ This project is licensed under the [Apache License, Version 2.0](LICENSE).
 Copyright (c) 2024-present, Mike Delucchi - Zanuka Labs LLC.
 
 Official project build started by [zanuka](https://github.com/zanuka) :: December 21, 2024 at 12:05 AM (PST)
+
+
